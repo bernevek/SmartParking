@@ -165,7 +165,7 @@ module.exports = "/*!\n * Bootstrap v4.0.0-beta.3 (https://getbootstrap.com)\n *
 /***/ "./src/app/app-navbar-header/app-navbar-header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar style=\"background-color: rgb(250, 250, 250)\">\n    <h3>\n        <a routerLink=\"/\" style=\"color:black; font-size: 25px\">\n            <img src=\"http://www.changiairport.com/content/dam/cag/3-transports/x3.0_transport-icon-big-7.png.pagespeed.ic.ypgOjLWv_Q.png\"\n                 width=\"110px\" height=\"70px\">\n            SmartParking\n        </a>\n    </h3>\n    <span class=\"example-spacer\"></span>\n    <span *ngIf=\"hasToken()\">\n        <button [routerLink]=\"['/statistic']\" mat-icon-button>\n            <i class=\"material-icons\">&#xE8E5;</i>\n        </button>\n    </span>\n    <span *ngIf=\"hasToken()\">\n    <button [routerLink]=\"['/profile']\" mat-icon-button>\n    <mat-icon>&#xE853;</mat-icon>\n    </button>\n    </span>\n    <span *ngIf=\"getRole() === 'PROVIDER_MANAGER' || getRole() === 'SUPERUSER'\">\n\n        <button [routerLink]=\"['/configuration']\" mat-icon-button>\n            <mat-icon>settings</mat-icon>\n        </button>\n    </span>\n    <span *ngIf=\"!hasToken()\">\n    <button mat-raised-button class=\"ml-3\" color=\"primary\" [routerLink]=\"['/login']\" style=\"font-size:18px;\">\n        SignIn/SignUp\n        <i class=\"material-icons\">&#xE853;</i>\n    </button>\n    </span>\n    <span *ngIf=\"hasToken()\">\n        <button mat-raised-button class=\"ml-3\" color=\"primary\" (click)=\"logOut()\">\n        Logout\n        <i class=\"material-icons\">&#xE853;</i>\n    </button>\n    </span>\n</mat-toolbar>"
+module.exports = "<mat-toolbar style=\"background-color: rgb(250, 250, 250)\">\n    <h3>\n        <a routerLink=\"/\" style=\"color:black; font-size: 25px\">\n            <img src=\"http://www.changiairport.com/content/dam/cag/3-transports/x3.0_transport-icon-big-7.png.pagespeed.ic.ypgOjLWv_Q.png\"\n                 width=\"110px\" height=\"70px\">\n            SmartParking\n        </a>\n    </h3>\n    <span class=\"example-spacer\"></span>\n    <span *ngIf=\"hasToken()\">\n        <button [routerLink]=\"['/statistic']\" mat-icon-button>\n            <i class=\"material-icons\">&#xE8E5;</i>\n        </button>\n    </span>\n    <span *ngIf=\"hasToken()\">\n    <button [routerLink]=\"['/profile']\" mat-icon-button>\n    <mat-icon>&#xE853;</mat-icon>\n    </button>\n    </span>\n    <span *ngIf=\"getRole() === 'PROVIDER_MANAGER' || getRole() === 'SUPERUSER'\">\n        <button [routerLink]=\"['/configuration']\" mat-icon-button>\n            <mat-icon>settings</mat-icon>\n        </button>\n    </span>\n    <span *ngIf=\"!hasToken()\">\n    <button mat-raised-button class=\"ml-3\" color=\"primary\" [routerLink]=\"['/login']\" style=\"font-size:18px;\">\n        SignIn/SignUp\n        <i class=\"material-icons\">&#xE853;</i>\n    </button>\n    </span>\n    <span *ngIf=\"hasToken()\">\n        <button mat-raised-button class=\"ml-3\" color=\"primary\" (click)=\"logOut()\">\n        Logout\n        <i class=\"material-icons\">&#xE853;</i>\n    </button>\n    </span>\n</mat-toolbar>"
 
 /***/ }),
 
@@ -243,12 +243,14 @@ var AppNavbarHeaderComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__client_profile_client_profile_edit_password_client_profile_edit_password_component__ = __webpack_require__("./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__statistic_statistic_component__ = __webpack_require__("./src/app/statistic/statistic.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__statistic_parking_statistic_parking_statistic_component__ = __webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__spotstatistic_spotstatistic_component__ = __webpack_require__("./src/app/spotstatistic/spotstatistic.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -302,6 +304,7 @@ var routes = [
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_16__client_profile_client_profile_component__["a" /* ClientProfileComponent */] },
     { path: 'statistic', component: __WEBPACK_IMPORTED_MODULE_19__statistic_statistic_component__["a" /* StatisticComponent */] },
     { path: 'statistic/parkingstatistic', component: __WEBPACK_IMPORTED_MODULE_20__statistic_parking_statistic_parking_statistic_component__["a" /* ParkingStatisticComponent */] },
+    { path: 'spotstatistic/:id', component: __WEBPACK_IMPORTED_MODULE_21__spotstatistic_spotstatistic_component__["a" /* SpotstatisticComponent */] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -373,57 +376,60 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_navbar_header_app_navbar_header_component__ = __webpack_require__("./src/app/app-navbar-header/app-navbar-header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__index_parking_list_parking_list_component__ = __webpack_require__("./src/app/index/parking-list/parking-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__manager_manager_parking_service__ = __webpack_require__("./src/app/manager/manager-parking.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__superuser_configuration_superuser_configuration_component__ = __webpack_require__("./src/app/superuser-configuration/superuser-configuration.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__parking_detail_parking_detail_component__ = __webpack_require__("./src/app/parking-detail/parking-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__superuser_configuration_providers_provider_service__ = __webpack_require__("./src/app/superuser-configuration/providers/provider.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__clients_clients_component__ = __webpack_require__("./src/app/clients/clients.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__clients_client_list_client_list_component__ = __webpack_require__("./src/app/clients/client-list/client-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__clients_client_edit_client_edit_component__ = __webpack_require__("./src/app/clients/client-edit/client-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__clients_client_list_client_item_client_item_component__ = __webpack_require__("./src/app/clients/client-list/client-item/client-item.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__superuser_configuration_providers_provider_list_provider_list_component__ = __webpack_require__("./src/app/superuser-configuration/providers/provider-list/provider-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__superuser_configuration_providers_provider_detail_provider_detail_component__ = __webpack_require__("./src/app/superuser-configuration/providers/provider-detail/provider-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__superuser_configuration_providers_add_provider_add_provider_component__ = __webpack_require__("./src/app/superuser-configuration/providers/add-provider/add-provider.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__clients_client_list_filter_pipe__ = __webpack_require__("./src/app/clients/client-list/filter.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__clients_client_detail_client_detail_component__ = __webpack_require__("./src/app/clients/client-detail/client-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__auth_login_login_component__ = __webpack_require__("./src/app/auth/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__auth_registration_registration_component__ = __webpack_require__("./src/app/auth/registration/registration.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_materials_module__ = __webpack_require__("./src/app/angular-materials.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__index_index_component__ = __webpack_require__("./src/app/index/index.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__index_parking_list_filter_parking_list_filter_component__ = __webpack_require__("./src/app/index/parking-list-filter/parking-list-filter.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__manager_manager_parking_configure_manager_parking_configure_component__ = __webpack_require__("./src/app/manager/manager-parking-configure/manager-parking-configure.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__manager_manager_parking_list_manager_parking_list_component__ = __webpack_require__("./src/app/manager/manager-parking-list/manager-parking-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__interceptor_service__ = __webpack_require__("./src/app/interceptor.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__agm_core__ = __webpack_require__("./node_modules/@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__auth_login_login_service__ = __webpack_require__("./src/app/auth/login/login.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__auth_registration_registration_service__ = __webpack_require__("./src/app/auth/registration/registration.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__auth_token_token_storage__ = __webpack_require__("./src/app/auth/token/token-storage.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__index_parking_list_filter_location_field_location_field_component__ = __webpack_require__("./src/app/index/parking-list-filter/location-field/location-field.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__service_ip_location_service__ = __webpack_require__("./src/app/service/ip-location.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__index_parking_list_filter_radius_field_radius_field_component__ = __webpack_require__("./src/app/index/parking-list-filter/radius-field/radius-field.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__angular_material_slider__ = __webpack_require__("./node_modules/@angular/material/esm5/slider.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__index_parking_list_filter_price_range_field_price_range_field_component__ = __webpack_require__("./src/app/index/parking-list-filter/price-range-field/price-range-field.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__superuser_configuration_providers_update_provider_update_provider_component__ = __webpack_require__("./src/app/superuser-configuration/providers/update-provider/update-provider.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__ng_bootstrap_ng_bootstrap__ = __webpack_require__("./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__services_pager_service__ = __webpack_require__("./src/app/_services/pager.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__angular_material_radio__ = __webpack_require__("./node_modules/@angular/material/esm5/radio.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__ = __webpack_require__("./src/app/manager/manager-parking-list/delete-confirmation-dialog/delete-confirmation-dialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__client_profile_client_profile_component__ = __webpack_require__("./src/app/client-profile/client-profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__client_profile_client_profile_edit_client_profile_edit_component__ = __webpack_require__("./src/app/client-profile/client-profile-edit/client-profile-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__client_profile_client_profile_edit_password_client_profile_edit_password_component__ = __webpack_require__("./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__parking_detail_favorites_add_configm_dialog_favorites_add_configm_dialog_component__ = __webpack_require__("./src/app/parking-detail/favorites-add-configm-dialog/favorites-add-configm-dialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__index_parking_map_parking_map_component__ = __webpack_require__("./src/app/index/parking-map/parking-map.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__statistic_statistic_component__ = __webpack_require__("./src/app/statistic/statistic.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__statistic_parking_statistic_parking_statistic_component__ = __webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__asymmetrik_ngx_leaflet__ = __webpack_require__("./node_modules/@asymmetrik/ngx-leaflet/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_navbar_header_app_navbar_header_component__ = __webpack_require__("./src/app/app-navbar-header/app-navbar-header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__index_parking_list_parking_list_component__ = __webpack_require__("./src/app/index/parking-list/parking-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__manager_manager_parking_service__ = __webpack_require__("./src/app/manager/manager-parking.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__superuser_configuration_superuser_configuration_component__ = __webpack_require__("./src/app/superuser-configuration/superuser-configuration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__parking_detail_parking_detail_component__ = __webpack_require__("./src/app/parking-detail/parking-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__superuser_configuration_providers_provider_service__ = __webpack_require__("./src/app/superuser-configuration/providers/provider.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__clients_clients_component__ = __webpack_require__("./src/app/clients/clients.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__clients_client_list_client_list_component__ = __webpack_require__("./src/app/clients/client-list/client-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__clients_client_edit_client_edit_component__ = __webpack_require__("./src/app/clients/client-edit/client-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__clients_client_list_client_item_client_item_component__ = __webpack_require__("./src/app/clients/client-list/client-item/client-item.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__superuser_configuration_providers_provider_list_provider_list_component__ = __webpack_require__("./src/app/superuser-configuration/providers/provider-list/provider-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__superuser_configuration_providers_provider_detail_provider_detail_component__ = __webpack_require__("./src/app/superuser-configuration/providers/provider-detail/provider-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__superuser_configuration_providers_add_provider_add_provider_component__ = __webpack_require__("./src/app/superuser-configuration/providers/add-provider/add-provider.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__clients_client_list_filter_pipe__ = __webpack_require__("./src/app/clients/client-list/filter.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__clients_client_detail_client_detail_component__ = __webpack_require__("./src/app/clients/client-detail/client-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__auth_login_login_component__ = __webpack_require__("./src/app/auth/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__auth_registration_registration_component__ = __webpack_require__("./src/app/auth/registration/registration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_materials_module__ = __webpack_require__("./src/app/angular-materials.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__index_index_component__ = __webpack_require__("./src/app/index/index.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__index_parking_list_filter_parking_list_filter_component__ = __webpack_require__("./src/app/index/parking-list-filter/parking-list-filter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__manager_manager_parking_configure_manager_parking_configure_component__ = __webpack_require__("./src/app/manager/manager-parking-configure/manager-parking-configure.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__manager_manager_parking_list_manager_parking_list_component__ = __webpack_require__("./src/app/manager/manager-parking-list/manager-parking-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__interceptor_service__ = __webpack_require__("./src/app/interceptor.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__agm_core__ = __webpack_require__("./node_modules/@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__auth_login_login_service__ = __webpack_require__("./src/app/auth/login/login.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__auth_registration_registration_service__ = __webpack_require__("./src/app/auth/registration/registration.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__auth_token_token_storage__ = __webpack_require__("./src/app/auth/token/token-storage.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__index_parking_list_filter_location_field_location_field_component__ = __webpack_require__("./src/app/index/parking-list-filter/location-field/location-field.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__service_ip_location_service__ = __webpack_require__("./src/app/service/ip-location.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__index_parking_list_filter_radius_field_radius_field_component__ = __webpack_require__("./src/app/index/parking-list-filter/radius-field/radius-field.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__angular_material_slider__ = __webpack_require__("./node_modules/@angular/material/esm5/slider.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__index_parking_list_filter_price_range_field_price_range_field_component__ = __webpack_require__("./src/app/index/parking-list-filter/price-range-field/price-range-field.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__superuser_configuration_providers_update_provider_update_provider_component__ = __webpack_require__("./src/app/superuser-configuration/providers/update-provider/update-provider.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__ng_bootstrap_ng_bootstrap__ = __webpack_require__("./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__services_pager_service__ = __webpack_require__("./src/app/_services/pager.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__angular_material_radio__ = __webpack_require__("./node_modules/@angular/material/esm5/radio.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__ = __webpack_require__("./src/app/manager/manager-parking-list/delete-confirmation-dialog/delete-confirmation-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__client_profile_client_profile_component__ = __webpack_require__("./src/app/client-profile/client-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__client_profile_client_profile_edit_client_profile_edit_component__ = __webpack_require__("./src/app/client-profile/client-profile-edit/client-profile-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__client_profile_client_profile_edit_password_client_profile_edit_password_component__ = __webpack_require__("./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__parking_detail_favorites_add_configm_dialog_favorites_add_configm_dialog_component__ = __webpack_require__("./src/app/parking-detail/favorites-add-configm-dialog/favorites-add-configm-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__index_parking_map_parking_map_component__ = __webpack_require__("./src/app/index/parking-map/parking-map.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__statistic_statistic_component__ = __webpack_require__("./src/app/statistic/statistic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__statistic_parking_statistic_parking_statistic_component__ = __webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__spotstatistic_spotstatistic_component__ = __webpack_require__("./src/app/spotstatistic/spotstatistic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__statistic_statistics_service__ = __webpack_require__("./src/app/statistic/statistics.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -485,101 +491,98 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-/*export function tokenGetter() {
-    return localStorage.getItem('access_token');
-}*/
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_29__index_index_component__["a" /* IndexComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__app_navbar_header_app_navbar_header_component__["a" /* AppNavbarHeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__index_parking_list_parking_list_component__["a" /* ParkingListComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__superuser_configuration_superuser_configuration_component__["a" /* SuperuserConfigurationComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__parking_detail_parking_detail_component__["a" /* ParkingDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__superuser_configuration_superuser_configuration_component__["a" /* SuperuserConfigurationComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__clients_clients_component__["a" /* ClientsComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__clients_client_list_client_list_component__["a" /* ClientListComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__clients_client_edit_client_edit_component__["a" /* ClientEditComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__clients_client_list_client_item_client_item_component__["a" /* ClientItemComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__superuser_configuration_providers_provider_list_provider_list_component__["a" /* ProviderListComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__auth_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__auth_registration_registration_component__["a" /* RegistrationComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__superuser_configuration_providers_provider_detail_provider_detail_component__["a" /* ProviderDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_30__index_parking_list_filter_parking_list_filter_component__["a" /* ParkingListFilterComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__manager_manager_parking_configure_manager_parking_configure_component__["a" /* ManagerParkingConfigureComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__manager_manager_parking_list_manager_parking_list_component__["a" /* ManagerParkingListComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__superuser_configuration_providers_add_provider_add_provider_component__["a" /* AddProviderComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__clients_client_list_filter_pipe__["a" /* FilterPipe */],
-                __WEBPACK_IMPORTED_MODULE_24__clients_client_detail_client_detail_component__["a" /* ClientDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__index_parking_list_filter_location_field_location_field_component__["a" /* LocationFieldComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__index_parking_list_filter_radius_field_radius_field_component__["a" /* RadiusFieldComponent */],
-                __WEBPACK_IMPORTED_MODULE_42__index_parking_list_filter_price_range_field_price_range_field_component__["a" /* PriceRangeFieldComponent */],
-                __WEBPACK_IMPORTED_MODULE_43__superuser_configuration_providers_update_provider_update_provider_component__["a" /* UpdateProviderComponent */],
-                __WEBPACK_IMPORTED_MODULE_52__index_parking_map_parking_map_component__["a" /* ParkingMapComponent */],
-                __WEBPACK_IMPORTED_MODULE_47__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__["a" /* DeleteConfirmationDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_48__client_profile_client_profile_component__["a" /* ClientProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_49__client_profile_client_profile_edit_client_profile_edit_component__["a" /* ClientProfileEditComponent */],
-                __WEBPACK_IMPORTED_MODULE_50__client_profile_client_profile_edit_password_client_profile_edit_password_component__["a" /* ClientProfileEditPasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_51__parking_detail_favorites_add_configm_dialog_favorites_add_configm_dialog_component__["b" /* FavoritesAddConfigmDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_53__statistic_statistic_component__["a" /* StatisticComponent */],
-                __WEBPACK_IMPORTED_MODULE_54__statistic_parking_statistic_parking_statistic_component__["a" /* ParkingStatisticComponent */]
+                __WEBPACK_IMPORTED_MODULE_30__index_index_component__["a" /* IndexComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__app_navbar_header_app_navbar_header_component__["a" /* AppNavbarHeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__index_parking_list_parking_list_component__["a" /* ParkingListComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__superuser_configuration_superuser_configuration_component__["a" /* SuperuserConfigurationComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__parking_detail_parking_detail_component__["a" /* ParkingDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__superuser_configuration_superuser_configuration_component__["a" /* SuperuserConfigurationComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__clients_clients_component__["a" /* ClientsComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__clients_client_list_client_list_component__["a" /* ClientListComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__clients_client_edit_client_edit_component__["a" /* ClientEditComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__clients_client_list_client_item_client_item_component__["a" /* ClientItemComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__superuser_configuration_providers_provider_list_provider_list_component__["a" /* ProviderListComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__auth_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__auth_registration_registration_component__["a" /* RegistrationComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__superuser_configuration_providers_provider_detail_provider_detail_component__["a" /* ProviderDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__index_parking_list_filter_parking_list_filter_component__["a" /* ParkingListFilterComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__manager_manager_parking_configure_manager_parking_configure_component__["a" /* ManagerParkingConfigureComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__manager_manager_parking_list_manager_parking_list_component__["a" /* ManagerParkingListComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__superuser_configuration_providers_add_provider_add_provider_component__["a" /* AddProviderComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__clients_client_list_filter_pipe__["a" /* FilterPipe */],
+                __WEBPACK_IMPORTED_MODULE_25__clients_client_detail_client_detail_component__["a" /* ClientDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__index_parking_list_filter_location_field_location_field_component__["a" /* LocationFieldComponent */],
+                __WEBPACK_IMPORTED_MODULE_41__index_parking_list_filter_radius_field_radius_field_component__["a" /* RadiusFieldComponent */],
+                __WEBPACK_IMPORTED_MODULE_43__index_parking_list_filter_price_range_field_price_range_field_component__["a" /* PriceRangeFieldComponent */],
+                __WEBPACK_IMPORTED_MODULE_44__superuser_configuration_providers_update_provider_update_provider_component__["a" /* UpdateProviderComponent */],
+                __WEBPACK_IMPORTED_MODULE_53__index_parking_map_parking_map_component__["a" /* ParkingMapComponent */],
+                __WEBPACK_IMPORTED_MODULE_48__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__["a" /* DeleteConfirmationDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_49__client_profile_client_profile_component__["a" /* ClientProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_50__client_profile_client_profile_edit_client_profile_edit_component__["a" /* ClientProfileEditComponent */],
+                __WEBPACK_IMPORTED_MODULE_51__client_profile_client_profile_edit_password_client_profile_edit_password_component__["a" /* ClientProfileEditPasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_52__parking_detail_favorites_add_configm_dialog_favorites_add_configm_dialog_component__["b" /* FavoritesAddConfigmDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_54__statistic_statistic_component__["a" /* StatisticComponent */],
+                __WEBPACK_IMPORTED_MODULE_55__statistic_parking_statistic_parking_statistic_component__["a" /* ParkingStatisticComponent */],
+                __WEBPACK_IMPORTED_MODULE_56__spotstatistic_spotstatistic_component__["a" /* SpotstatisticComponent */]
             ],
             imports: [
                 /* AgmCoreModule.forRoot({
                      apiKey: 'AIzaSyDLIMvbPlry-zu4nLaSaYeAKW7Xjgum74I',
                      libraries: ['places']
                  }),*/
-                __WEBPACK_IMPORTED_MODULE_34__agm_core__["a" /* AgmCoreModule */].forRoot({
+                __WEBPACK_IMPORTED_MODULE_35__agm_core__["a" /* AgmCoreModule */].forRoot({
                     apiKey: 'AIzaSyB-ceTN3C1MJaUsAjPSKdXzGr11i-Ob7xU'
                 }),
-                /*JwtModule.forRoot({
-                    config: {
-                        tokenGetter: tokenGetter,
-                        whitelistedDomains: ['localhost:8080'],
-                        blacklistedRoutes: []
-                    }
-                }),*/
+                __WEBPACK_IMPORTED_MODULE_4__asymmetrik_ngx_leaflet__["a" /* LeafletModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */],
-                __WEBPACK_IMPORTED_MODULE_44__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_11__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_26__angular_forms__["k" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_26__angular_forms__["f" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_28__angular_materials_module__["a" /* AngularMaterialsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_common__["b" /* CommonModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MatAutocompleteModule */],
-                __WEBPACK_IMPORTED_MODULE_28__angular_materials_module__["a" /* AngularMaterialsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatDividerModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatExpansionModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatButtonModule */],
-                __WEBPACK_IMPORTED_MODULE_41__angular_material_slider__["b" /* MatSliderModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["p" /* MatProgressSpinnerModule */],
-                __WEBPACK_IMPORTED_MODULE_46__angular_material_radio__["a" /* MatRadioModule */]
+                __WEBPACK_IMPORTED_MODULE_45__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_12__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_27__angular_forms__["k" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_27__angular_forms__["f" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_29__angular_materials_module__["a" /* AngularMaterialsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["q" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatAutocompleteModule */],
+                __WEBPACK_IMPORTED_MODULE_29__angular_materials_module__["a" /* AngularMaterialsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["h" /* MatDividerModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["i" /* MatExpansionModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatButtonModule */],
+                __WEBPACK_IMPORTED_MODULE_42__angular_material_slider__["b" /* MatSliderModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["p" /* MatProgressSpinnerModule */],
+                __WEBPACK_IMPORTED_MODULE_47__angular_material_radio__["a" /* MatRadioModule */]
             ],
-            entryComponents: [__WEBPACK_IMPORTED_MODULE_47__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__["a" /* DeleteConfirmationDialogComponent */], __WEBPACK_IMPORTED_MODULE_51__parking_detail_favorites_add_configm_dialog_favorites_add_configm_dialog_component__["b" /* FavoritesAddConfigmDialogComponent */]],
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_48__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__["a" /* DeleteConfirmationDialogComponent */], __WEBPACK_IMPORTED_MODULE_52__parking_detail_favorites_add_configm_dialog_favorites_add_configm_dialog_component__["b" /* FavoritesAddConfigmDialogComponent */]],
             providers: [
                 {
                     provide: __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
-                    useClass: __WEBPACK_IMPORTED_MODULE_33__interceptor_service__["a" /* InterceptorService */],
+                    useClass: __WEBPACK_IMPORTED_MODULE_34__interceptor_service__["a" /* InterceptorService */],
                     multi: true
                 },
-                __WEBPACK_IMPORTED_MODULE_9__parking_service__["a" /* ParkingService */],
-                __WEBPACK_IMPORTED_MODULE_10__manager_manager_parking_service__["a" /* ManagerParkingService */],
-                __WEBPACK_IMPORTED_MODULE_14__superuser_configuration_providers_provider_service__["a" /* ProviderService */],
-                __WEBPACK_IMPORTED_MODULE_18__clients_client_service__["a" /* ClientService */],
-                __WEBPACK_IMPORTED_MODULE_35__auth_login_login_service__["a" /* LoginService */],
-                __WEBPACK_IMPORTED_MODULE_36__auth_registration_registration_service__["a" /* RegistrationService */],
-                __WEBPACK_IMPORTED_MODULE_37__auth_token_token_storage__["a" /* TokenStorage */],
-                __WEBPACK_IMPORTED_MODULE_39__service_ip_location_service__["a" /* IpLocationService */],
-                __WEBPACK_IMPORTED_MODULE_45__services_pager_service__["a" /* PagerService */]
+                __WEBPACK_IMPORTED_MODULE_10__parking_service__["a" /* ParkingService */],
+                __WEBPACK_IMPORTED_MODULE_11__manager_manager_parking_service__["a" /* ManagerParkingService */],
+                __WEBPACK_IMPORTED_MODULE_15__superuser_configuration_providers_provider_service__["a" /* ProviderService */],
+                __WEBPACK_IMPORTED_MODULE_19__clients_client_service__["a" /* ClientService */],
+                __WEBPACK_IMPORTED_MODULE_36__auth_login_login_service__["a" /* LoginService */],
+                __WEBPACK_IMPORTED_MODULE_37__auth_registration_registration_service__["a" /* RegistrationService */],
+                __WEBPACK_IMPORTED_MODULE_40__service_ip_location_service__["a" /* IpLocationService */],
+                __WEBPACK_IMPORTED_MODULE_46__services_pager_service__["a" /* PagerService */],
+                __WEBPACK_IMPORTED_MODULE_38__auth_token_token_storage__["a" /* TokenStorage */],
+                __WEBPACK_IMPORTED_MODULE_46__services_pager_service__["a" /* PagerService */],
+                __WEBPACK_IMPORTED_MODULE_57__statistic_statistics_service__["a" /* StatisticsService */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]],
             schemas: [__WEBPACK_IMPORTED_MODULE_1__angular_core__["j" /* CUSTOM_ELEMENTS_SCHEMA */]]
         })
     ], AppModule);
@@ -929,11 +932,7 @@ var TokenStorage = /** @class */ (function () {
         return TokenStorage_1.decodeToken().username;
     };
     TokenStorage.decodeToken = function () {
-        console.log(helper.decodeToken(TokenStorage_1.getToken()));
         return helper.decodeToken(TokenStorage_1.getToken());
-    };
-    TokenStorage.refresh = function () {
-        return null;
     };
     TokenStorage.hasToken = function () {
         return TokenStorage_1.getToken() != null;
@@ -953,14 +952,14 @@ var TokenStorage = /** @class */ (function () {
 /***/ "./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".container-style {\n    font-family: -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n    margin-top: 5%;\n}\n\n.heading {\n    margin-bottom: 5%;\n}\n\n.submit {\n    margin-top: 2%;\n}\n\n.customwidth {\n    width: 100%;\n}\n\n.cursor {\n    cursor: pointer;\n}"
+module.exports = "\n.submit {\n    padding: 5px;\n}\n\n.customwidth {\n    width: 100%;\n}\n\n.cursor {\n    cursor: pointer;\n}\n\nmat-form-field {\n    padding: 5px;\n    width: 50%;\n}"
 
 /***/ }),
 
 /***/ "./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid container-style\">\n\n    <form [formGroup]=\"passwordForm\" (ngSubmit)=\"updatePassword()\"\n          class=\"formstyle offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6\">\n        <h3 class=\"heading row offset-4\">Edit Password</h3>\n        <div class=\"row\">\n            <mat-form-field class=\"customwidth\">\n                <input matInput placeholder=\"Enter your password\" formControlName=\"password\"\n                       [type]=\"hide ? 'password' : 'text'\">\n                <mat-icon matSuffix (click)=\"hide = !hide\" class=\"cursor\">{{hide ? 'visibility' : 'visibility_off'}}\n                </mat-icon>\n                <mat-error *ngIf=\"passwordControl.hasError('minlength') && !passwordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('maxlength') && !passwordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class=\"row\">\n            <mat-form-field class=\"customwidth\">\n                <input matInput placeholder=\"Confirm your password\" formControlName=\"confirmPassword\"\n                       [type]=\"hide ? 'password' : 'text'\">\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('MatchPassword') && !confirmPasswordControl.hasError('required')\">\n                    Passwords doesn`t match\n                </mat-error>\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('minlength') && !confirmPasswordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('maxlength') && !confirmPasswordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"confirmPasswordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class=\"row offset-5 submit\">\n            <button mat-button class=\"btn btn-success\" [disabled]=\"!passwordForm.valid\">Submit</button>\n        </div>\n        <a id=\"aBack\" routerLink (click)=\"goToProfileEdit()\">(Back to profile)</a>\n    </form>\n</div>\n"
+module.exports = "<div>\n    <form [formGroup]=\"passwordForm\" (ngSubmit)=\"updatePassword()\"\n          class=\"formstyle\">\n        <div class=\"row\">\n            <mat-form-field>\n                <input matInput placeholder=\"Enter your password\" formControlName=\"password\"\n                       [type]=\"hide ? 'password' : 'text'\">\n                <mat-icon matSuffix (click)=\"hide = !hide\" class=\"cursor\">{{hide ? 'visibility' : 'visibility_off'}}\n                </mat-icon>\n                <mat-error *ngIf=\"passwordControl.hasError('minlength') && !passwordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('maxlength') && !passwordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class=\"row\">\n            <mat-form-field>\n                <input matInput placeholder=\"Confirm your password\" formControlName=\"confirmPassword\"\n                       [type]=\"hide ? 'password' : 'text'\">\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('MatchPassword') && !confirmPasswordControl.hasError('required')\">\n                    Passwords doesn`t match\n                </mat-error>\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('minlength') && !confirmPasswordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('maxlength') && !confirmPasswordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"confirmPasswordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class=\"row\">\n            <button mat-raised-button type=\"submit\" color=\"primary\" [disabled]=\"!passwordForm.valid\">Submit</button>\n        </div>\n    </form>\n</div>\n"
 
 /***/ }),
 
@@ -1065,14 +1064,14 @@ var ClientProfileEditPasswordComponent = /** @class */ (function () {
 /***/ "./src/app/client-profile/client-profile-edit/client-profile-edit.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".container-style {\n    font-family: -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n    margin-top: 5%;\n}\n\n.heading {\n    margin-bottom: 5%;\n    font-size: 1.4em;\n}\n\n.mat-form-field {\n    min-width: 100%;\n}\n\ninput {\n    margin: 1%;\n}\n\nh6 {\n    margin-top: 3%;\n    margin-left: auto;\n    margin-right: auto;\n    color: darkred;\n}\n\n#aBack {\n    display: block;\n    margin-left: 38%;\n    margin-top: 5%;\n}\n\n.mat-form-field {\n    font-size: 0.8em;\n}\n\n\n\n\n"
+module.exports = ".card {\n    width: 100%;\n    margin-top: 50px;\n    margin-bottom: 50px;\n}\n\n.submit-button {\n    margin-top: 20px;\n    margin-bottom: 20px;\n    width: 100%;\n}\n\n.parking-configure-headers-align .mat-expansion-panel-header-title,\n.parking-configure-headers-align .mat-expansion-panel-header-description {\n    -ms-flex-preferred-size: 0;\n        flex-basis: 0;\n}\n\n.parking-configure-headers-align .mat-expansion-panel-header-description {\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.full-width {\n    width: 100%;\n}\n\nmat-form-field {\n    padding: 5px;\n    width: 50%;\n}\n\nmat-panel-title {\n    width: 100px;\n}\n\nmat-panel-description {\n    width: 100%;\n    /*height: 25px;*/\n}\n\n.tokenField {\n    width: 290px;\n}\n\n\n\n\n"
 
 /***/ }),
 
 /***/ "./src/app/client-profile/client-profile-edit/client-profile-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid container-style\">\n    <div>\n        <form novalidate #clientForm=\"ngForm\"\n              class=\"formstyle offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6\">\n            <h3 class=\"heading row offset-4\">Cliet Edit Form</h3>\n\n\n            <div class=\"row\">\n                <label for=\"image\">Avatar</label>\n                <input type=\"file\" id=\"image\" accept=\"image/jpeg\" (change)=\"onFileChange($event)\" #fileInput>\n                <button type=\"button\" class=\"btn btn-sm btn-default\" (click)=\"clearFile()\">clear file</button>\n            </div>\n\n\n            <div class=\"row\">\n                <input type=\"text\" name=\"firstName\" [(ngModel)]=\"client.firstName\" class=\"form-control\" required\n                       minlength=\"3\" placeholder=\"First Name\">\n            </div>\n\n            <div class=\"row\">\n                <input type=\"text\" name=\"lastName\" [(ngModel)]=\"client.lastName\" class=\"form-control\" required\n                       minlength=\"3\" placeholder=\"Last Name\">\n            </div>\n\n            <div class=\"row\">\n                <input type=\"email\" name=\"email\" [(ngModel)]=\"client.email\" class=\"form-control\" readonly>\n            </div>\n\n            <div class=\"row\"\n                 *ngIf=\"client.provider!='no provider' && client.role!='SUPERUSER' && client.role!='DRIVER'\">\n                <h6>Current provider: {{client.provider}}</h6>\n            </div>\n\n            <div class=\"row\">\n                <h6>Current role: <span\n                        [ngStyle]=\"{'color': client.role === 'SUPERUSER' ? 'Chocolate' : 'BlueViolet '}\">{{client.role}}</span>\n                </h6>\n            </div>\n\n\n            <div class=\"row offset-5 submit\">\n                <button mat-button class=\"btn btn-outline-primary\"\n                        type=\"submit\"\n                        [disabled]=\"!clientForm.valid\"\n                        (click)=\"udateProfile()\">\n                    Save\n                </button>\n                <button mat-button class=\"btn btn-outline-primary\"\n                        (click)=\"goToPasswordEdit()\">\n                    Edit Password\n                </button>\n            </div>\n            <a id=\"aBack\" routerLink (click)=\"goToProfile()\">(Back to profile)</a>\n        </form>\n    </div>\n\n\n</div>\n\n\n\n\n\n\n\n\n"
+module.exports = "<div class=\"container-fluid\" *ngIf=\"!client\" class=\"text-center\">\n    <div class=\"row mx-auto mt-3 center-block\">\n        <div class=\"col-6 mx-auto my-auto text-center\">\n            <mat-spinner mode=\"indeterminate\" style=\"margin-left: 35%;\"></mat-spinner>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <mat-card-header>\n            <div>\n                <legend>Edit profile</legend>\n            </div>\n        </mat-card-header>\n        <mat-card-content>\n            <form class=\"formstyle\"\n                  [formGroup]=\"profileEditForm\" (ngSubmit)=\"udateProfile()\">\n                <mat-accordion class=\"parking-configure-headers-align\">\n                    <mat-expansion-panel [expanded]=\"step === 0\" (opened)=\"setStep(0)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Photo\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.image\">\n                                    <img src=\"data:image/JPEG;base64,{{client.image}}\" style=\"height: 50px;\">\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <button mat-raised-button type=\"button\" color=\"primary\" (click)=\"imgFileInput.click()\"\n                                style=\"padding: 5px;\">Change a photo\n                        </button>\n                        <input hidden type=\"file\" formControlName=\"image\" accept=\"image/jpeg\" #imgFileInput\n                               (change)=\"onFileChange($event)\"/>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"resetImage()\">Reset</button>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 1\" (opened)=\"setStep(1)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                First name\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.firstName\">\n                                    {{client.firstName}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-form-field>\n                            <input matInput [(ngModel)]=\"client.firstName\" placeholder=\"First name\"\n                                   type=\"text\"\n                                   formControlName=\"firstName\"\n                                   required>\n                        </mat-form-field>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"resetFirstName()\">Reset</button>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 2\" (opened)=\"setStep(2)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Last name\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.lastName\">\n                                    {{client.lastName}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-form-field>\n                            <input matInput [(ngModel)]=\"client.lastName\" placeholder=\"Last name\"\n                                   type=\"text\"\n                                   formControlName=\"lastName\"\n                                   required>\n                        </mat-form-field>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"resetLastName()\">Reset</button>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 3\" (opened)=\"setStep(3)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                E-mail\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.email\">\n                                    {{client.email}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-action-row>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 4\" (opened)=\"setStep(4)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Role\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.role\">\n                                    {{client.role}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-action-row>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 5\" (opened)=\"setStep(5)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Password\n                            </mat-panel-title>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <app-client-profile-edit-password></app-client-profile-edit-password>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n\n                </mat-accordion>\n                <!--<div class=\"row submit\">-->\n                <button class=\"submit-button\" mat-raised-button type=\"submit\" color=\"accent\"\n                        [disabled]=\"!profileEditForm.valid\">\n                    Submit\n                    <mat-icon aria-label=\"Send and save changes\">send</mat-icon>\n                </button>\n                <!--</div>-->\n            </form>\n            <button mat-button type=\"button\" color=\"primary\" (click)=\"goToProfile()\">Back to profile</button>\n        </mat-card-content>\n    </mat-card>\n\n\n</div>\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -1082,8 +1081,10 @@ module.exports = "<div class=\"container-fluid container-style\">\n    <div>\n  
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientProfileEditComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_view_client__ = __webpack_require__("./src/app/model/view/client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1096,22 +1097,50 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ClientProfileEditComponent = /** @class */ (function () {
     function ClientProfileEditComponent(route, clientService, router) {
         this.route = route;
         this.clientService = clientService;
         this.router = router;
+        this.step = -1;
+        this.profileEditForm = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["d" /* FormGroup */]({
+            image: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormControl */]('', []),
+            firstName: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_4__angular_forms__["l" /* Validators */].required,]),
+            lastName: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_4__angular_forms__["l" /* Validators */].required,])
+        });
     }
     ClientProfileEditComponent.prototype.ngOnInit = function () {
         this.getClientProfile();
     };
+    ClientProfileEditComponent.prototype.setStep = function (index) {
+        this.step = index;
+    };
+    ClientProfileEditComponent.prototype.nextStep = function () {
+        this.step++;
+    };
+    ClientProfileEditComponent.prototype.prevStep = function () {
+        this.step--;
+    };
+    ClientProfileEditComponent.prototype.resetFirstName = function () {
+        this.client.firstName = this.loadedClient.firstName;
+    };
+    ClientProfileEditComponent.prototype.resetLastName = function () {
+        this.client.lastName = this.loadedClient.lastName;
+    };
+    ClientProfileEditComponent.prototype.resetImage = function () {
+        this.client.image = this.loadedClient.image;
+    };
     ClientProfileEditComponent.prototype.getClientProfile = function () {
         var _this = this;
         this.clientService.getClientProfile()
-            .subscribe(function (client) { return _this.client = client; });
+            .subscribe(function (client) {
+            _this.client = client;
+            _this.loadedClient = __WEBPACK_IMPORTED_MODULE_1__model_view_client__["a" /* Client */].copyOf(client);
+        });
     };
     ClientProfileEditComponent.prototype.udateProfile = function () {
-        console.log(this.client.email);
         this.clientService.updateClientProfile(parseInt(this.client.id), this.client)
             .subscribe(function (data) {
             alert('Client was updated successfully.');
@@ -1128,30 +1157,21 @@ var ClientProfileEditComponent = /** @class */ (function () {
             reader.readAsDataURL(file);
             reader.onload = function () {
                 _this.client.image = reader.result.split(',')[1];
-                console.log(_this.client.image);
             };
         }
-    };
-    ClientProfileEditComponent.prototype.clearFile = function () {
-        this.client.image = null;
-        this.fileInput.nativeElement.value = '';
     };
     ClientProfileEditComponent.prototype.goToPasswordEdit = function () {
         this.router.navigate(['profile/edit/password']);
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('fileInput'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */])
-    ], ClientProfileEditComponent.prototype, "fileInput", void 0);
     ClientProfileEditComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'app-client-profile-edit',
             template: __webpack_require__("./src/app/client-profile/client-profile-edit/client-profile-edit.component.html"),
             styles: [__webpack_require__("./src/app/client-profile/client-profile-edit/client-profile-edit.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__clients_client_service__["a" /* ClientService */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_3__clients_client_service__["a" /* ClientService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], ClientProfileEditComponent);
     return ClientProfileEditComponent;
 }());
@@ -1239,7 +1259,7 @@ module.exports = "span {\n    color: #54456f;\n    font-weight:bold;\n}\n\n#role
 /***/ "./src/app/clients/client-detail/client-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <br/>\n    <br/>\n    <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <mat-card-header>\n            <div style=\"min-width: 70%;\">\n                <div>\n                    <mat-card-title><span>ID:</span> {{client.id}}\n                    </mat-card-title>\n                    <mat-card-title id=\"role\"><span>Role:</span> {{client.role}}\n                    </mat-card-title>\n                    <mat-card-title><span>Client name:</span> {{client.firstName}} {{client.lastName}}\n                    </mat-card-title>\n                    <mat-card-title><span>Email:</span> {{client.email}}</mat-card-title>\n                    <mat-card-title *ngIf=\"client.providerName!='no provider'\" (click)=\"goToProvidersDetails()\" id=\"prov\">\n                        <span>Provider: </span>{{client.providerName}}\n                    </mat-card-title>\n                    <mat-card-title><span>Favorites parkings: </span><span\n                            *ngFor=\"let favoriteName of client.favoritesNames\">{{favoriteName}}, </span>\n                    </mat-card-title>\n                </div>\n            </div>\n            <div style=\"width: 100%\"></div>\n        </mat-card-header>\n\n        <mat-card-actions align=\"right\">\n            <button mat-button (click)=\"goToClientsList()\" color=\"primary\">Go to clients list</button>\n            <button mat-button (click)=\"goToClientEditForm()\" color=\"warn\">Go to edit form</button>\n\n        </mat-card-actions>\n    </mat-card>\n</div>\n\n\n\n\n\n"
+module.exports = "<div>\n    <br/>\n    <br/>\n    <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <mat-card-header>\n            <div style=\"min-width: 70%;\">\n                <div>\n                    <mat-card-title><span>ID:</span> {{client.id}}\n                    </mat-card-title>\n                    <mat-card-title id=\"role\"><span>Role:</span> {{client.role}}\n                    </mat-card-title>\n                    <mat-card-title><span>Client name:</span> {{client.firstName}} {{client.lastName}}\n                    </mat-card-title>\n                    <mat-card-title><span>Email:</span> {{client.email}}</mat-card-title>\n                    <mat-card-title *ngIf=\"client.providerName!='no provider'\" (click)=\"goToProvidersDetails()\" id=\"prov\">\n                        <span>Provider: </span>{{client.providerName}}\n                    </mat-card-title>\n                    <mat-card-title><span>Favorites parkings: </span><span\n                            *ngFor=\"let name of client.favoritesNames\">{{name}}, </span>\n                    </mat-card-title>\n                </div>\n            </div>\n            <div style=\"width: 100%\"></div>\n        </mat-card-header>\n\n        <mat-card-actions align=\"right\">\n            <button mat-button (click)=\"goToClientsList()\" color=\"primary\">Go to clients list</button>\n            <button mat-button (click)=\"goToClientEditForm()\" color=\"warn\">Go to edit form</button>\n\n        </mat-card-actions>\n    </mat-card>\n</div>\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -1513,7 +1533,7 @@ var ClientListComponent = /** @class */ (function () {
         this.pager = {};
     }
     ClientListComponent.prototype.ngOnInit = function () {
-        this.findAllClients();
+        this.findLimitNumberOfClients();
     };
     ClientListComponent.prototype.setPage = function (page) {
         if (page < 1 || page > this.pager.totalPages) {
@@ -1549,7 +1569,7 @@ var ClientListComponent = /** @class */ (function () {
     ClientListComponent.prototype.findClientsFromBackEnd = function (searchInput) {
         var _this = this;
         if (this.inputInSearchFieldIsNull(searchInput)) {
-            this.findAllClients();
+            this.findLimitNumberOfClients();
         }
         else {
             this.clientService.getClientsByAnyMatch(searchInput)
@@ -1793,7 +1813,7 @@ module.exports = ".parent {\n    /*background-color: rgb(252, 252, 252);*/\n    
 /***/ "./src/app/index/index.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"parent\">\n    <app-parking-list #parkingList></app-parking-list>\n    <div class=\"filter offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <mat-progress-bar #progressbar *ngIf=\"progressBarVisible\" [color]=\"progressBarColor\" [mode]=\"progressBarMode\" class=\"progress-bar\" mode=\"query\" [value]=\"100\"></mat-progress-bar>\n        <app-parking-list-filter #filter></app-parking-list-filter>\n    </div>\n</div>"
+module.exports = "<app-parking-map></app-parking-map>\n<!--<app-parking-list></app-parking-list>-->\n<!--<app-parking-list-filter></app-parking-list-filter>-->\n"
 
 /***/ }),
 
@@ -1834,21 +1854,22 @@ var IndexComponent = /** @class */ (function () {
         this.progressBarColor = 'primary';
         this.progressBarMode = 'query';
     }
+    //TODO Розкоментити
     IndexComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.filter.radiusChanges.subscribe(function () { return _this.filterParkings(); });
-        this.filter.priceRangeChanges.subscribe(function () { return _this.filterParkings(); });
-        this.filter.locationChanges.subscribe(function (location) {
-            _this.showLoadingProgressBar();
-            _this.parkingService.getParkingsNearby(location.latitude, location.longitude, _this.filter.radiusMax * 1000).subscribe(function (response) {
-                _this.hideProgressBar();
-                _this.parkings = response.body;
-                _this.filterParkings();
-            }, function (error) {
-                console.log(error);
-                _this.showErrorProgressBar();
-            });
-        });
+        /*     this.filter.radiusChanges.subscribe(() => this.filterParkings());
+             this.filter.priceRangeChanges.subscribe(() => this.filterParkings());
+     
+             this.filter.locationChanges.subscribe(location => {
+                 this.showLoadingProgressBar();
+                 this.parkingService.getParkingsNearby(location.latitude, location.longitude, this.filter.radiusMax * 1000).subscribe((response) => {
+                     this.hideProgressBar();
+                     this.parkings = response.body;
+                     this.filterParkings();
+                 }, error => {
+                     console.log(error);
+                     this.showErrorProgressBar();
+                 });
+             });*/
     };
     IndexComponent.prototype.showLoadingProgressBar = function () {
         this.progressBarVisible = true;
@@ -2660,14 +2681,14 @@ var ParkingListComponent = /** @class */ (function () {
 /***/ "./src/app/index/parking-map/parking-map.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "agm-map {\n    height: 300px;\n}"
+module.exports = "agm-map {\n    height: 300px;\n}\n\n.map {\n    height: 300px;\n    padding: 0;\n}\n\n/*html, body {\n    height: 100%;\n    margin: 0;\n    padding: 0;\n}*/\n"
 
 /***/ }),
 
 /***/ "./src/app/index/parking-map/parking-map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>{{ title }}</h1>\n\n<!-- this creates a google map on the page with the given lat/lng from -->\n<!-- the component as the initial center of the map: -->\n\n<div class=\"text-white\">\n    <span>Longitude: {{lat}}</span>\n    <span>Longitude: {{lng}}</span>\n</div>\n<button (click)=\"findMe()\">Refresh</button>\n<div class=\"offset-2 col-md-8\">\n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n        <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n       <!-- <span *ngFor=\"let parking of parkings\">\n            <agm-marker [latitude]=\"parking.latitude\" [longitude]=\"parking.longitude\"></agm-marker>\n        </span>-->\n\n    </agm-map>\n</div>"
+module.exports = "<h1>{{ title }}</h1>\n\n<!-- this creates a google map on the page with the given lat/lng from -->\n<!-- the component as the initial center of the map: -->\n\n<div class=\"text-white\">\n    <span>Longitude: {{lat}}</span>\n    <span>Longitude: {{lng}}</span>\n</div>\n<!--\n<button (click)=\"findMe()\">Refresh</button>\n<div class=\"offset-2 col-md-8\">\n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n        <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n       &lt;!&ndash; <span *ngFor=\"let parking of parkings\">\n            <agm-marker [latitude]=\"parking.latitude\" [longitude]=\"parking.longitude\"></agm-marker>\n        </span>&ndash;&gt;\n    </agm-map>\n    lol ={{parkings}}\n\n</div>-->\n<div class=\"map\"\n     leaflet\n     [leafletOptions]=\"options\">\n</div>"
 
 /***/ }),
 
@@ -2678,6 +2699,8 @@ module.exports = "<h1>{{ title }}</h1>\n\n<!-- this creates a google map on the 
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParkingMapComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_leaflet__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2689,14 +2712,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var ParkingMapComponent = /** @class */ (function () {
     function ParkingMapComponent(parkingService) {
         this.parkingService = parkingService;
         this.title = 'My first AGM project';
+        this.options = {
+            layers: [
+                Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["tileLayer"])('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+                    maxZoom: 20,
+                    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+                    detectRetina: true
+                })
+            ],
+            zoom: 7,
+            center: Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["latLng"])([46.879966, -121.726909])
+        };
     }
     ParkingMapComponent.prototype.ngOnInit = function () {
         this.findMe();
-        this.parkingCoord();
     };
     ParkingMapComponent.prototype.findMe = function () {
         var _this = this;
@@ -2709,15 +2743,17 @@ var ParkingMapComponent = /** @class */ (function () {
     ParkingMapComponent.prototype.showPosition = function (position) {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
+        this.parkingCoord();
     };
     ParkingMapComponent.prototype.parkingCoord = function () {
         var _this = this;
-        this.parkingService.getParkingsNearby(this.lat, this.lng, 20)
+        this.parkingService.getParkingsNearby(this.lat, this.lng, 30000)
             .subscribe(function (response) {
             _this.parkings = response.body;
         }, function (error) {
             console.log(error);
         });
+        console.log(this.parkings);
     };
     ParkingMapComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
@@ -2759,25 +2795,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var InterceptorService = /** @class */ (function () {
     function InterceptorService() {
     }
+    InterceptorService_1 = InterceptorService;
     InterceptorService.prototype.intercept = function (request, next) {
         if (request.url.startsWith('http://localhost:8080/') && (__WEBPACK_IMPORTED_MODULE_3__auth_token_token_storage__["a" /* TokenStorage */].getToken())) {
-            request = request.clone({
-                headers: request.headers.append('Authorization', "Bearer " + __WEBPACK_IMPORTED_MODULE_3__auth_token_token_storage__["a" /* TokenStorage */].getToken())
-            });
+            request = InterceptorService_1.addAuthHeaderToRequest(request);
         }
         return next.handle(request).do(function (event) {
             if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["e" /* HttpResponse */]) {
             }
         }, function (error) {
             if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpErrorResponse */]) {
+                if (error.status === 401) {
+                    __WEBPACK_IMPORTED_MODULE_3__auth_token_token_storage__["a" /* TokenStorage */].saveToken(error.error);
+                }
             }
         });
     };
-    InterceptorService = __decorate([
+    InterceptorService.addAuthHeaderToRequest = function (request) {
+        return request.clone({
+            headers: request.headers.append('Authorization', "Bearer " + __WEBPACK_IMPORTED_MODULE_3__auth_token_token_storage__["a" /* TokenStorage */].getToken())
+        });
+    };
+    InterceptorService = InterceptorService_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], InterceptorService);
     return InterceptorService;
+    var InterceptorService_1;
 }());
 
 
@@ -3192,7 +3236,25 @@ var ManagerParkingService = /** @class */ (function () {
 var Client = /** @class */ (function () {
     function Client() {
     }
+    Client.copyOf = function (client) {
+        return Object.assign(new Client(), client);
+    };
     return Client;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/view/favorite.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Favorite; });
+var Favorite = /** @class */ (function () {
+    function Favorite() {
+    }
+    return Favorite;
 }());
 
 
@@ -3230,7 +3292,7 @@ module.exports = ""
 /***/ "./src/app/parking-detail/favorites-add-configm-dialog/favorites-add-configm-dialog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1 mat-dialog-title style=\"text-align: center\">Enter the name for favorite parking?</h1>\n<form [formGroup]=\"addToFavoritesForm\" (ngSubmit)=\"onOkClick()\">\n    <mat-form-field>\n        <input matInput [(ngModel)]=\"data.name\" placeholder=\"Enter name\">\n    </mat-form-field>\n</form>\n<div mat-dialog-actions>\n    <button mat-button (click)=\"onNoClick()\" [mat-dialog-close]=\"data\">Cancel</button>\n    <button mat-button color=\"primary\" (click)=\"onOkClick()\" [mat-dialog-close]=\"data\"\n            cdkFocusInitial>Add\n    </button>\n</div>"
+module.exports = "<h1 mat-dialog-title style=\"text-align: center\">Enter the name for favorite parking?</h1>\n    <mat-form-field>\n        <input matInput [(ngModel)]=\"data.name\" placeholder=\"Enter name\">\n    </mat-form-field>\n<div mat-dialog-actions>\n    <button mat-button (click)=\"onNoClick()\" [mat-dialog-close]=\"data\">Cancel</button>\n    <button mat-button color=\"primary\" (click)=\"onOkClick()\" [mat-dialog-close]=\"data\"\n            cdkFocusInitial>Add\n    </button>\n</div>"
 
 /***/ }),
 
@@ -3242,7 +3304,6 @@ module.exports = "<h1 mat-dialog-title style=\"text-align: center\">Enter the na
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoriteAddData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3257,15 +3318,10 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 
 
-
 var FavoritesAddConfigmDialogComponent = /** @class */ (function () {
-    function FavoritesAddConfigmDialogComponent(dialogRef, data, formBuilder) {
+    function FavoritesAddConfigmDialogComponent(dialogRef, data) {
         this.dialogRef = dialogRef;
         this.data = data;
-        this.formBuilder = formBuilder;
-        this.addToFavoritesForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
-            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', []),
-        });
     }
     FavoritesAddConfigmDialogComponent.prototype.ngOnInit = function () {
     };
@@ -3283,14 +3339,14 @@ var FavoritesAddConfigmDialogComponent = /** @class */ (function () {
         }),
         __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MAT_DIALOG_DATA */])),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material__["g" /* MatDialogRef */],
-            FavoriteAddData,
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormBuilder */]])
+            FavoriteAddData])
     ], FavoritesAddConfigmDialogComponent);
     return FavoritesAddConfigmDialogComponent;
 }());
 
 var FavoriteAddData = /** @class */ (function () {
     function FavoriteAddData() {
+        this.name = '';
     }
     return FavoriteAddData;
 }());
@@ -3309,7 +3365,7 @@ module.exports = ""
 /***/ "./src/app/parking-detail/parking-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" *ngIf=\"!parking\" class=\"text-center\">\n    <div class=\"row mx-auto mt-3 center-block\">\n        <div class=\"col-6 mx-auto my-auto text-center\">\n            <mat-spinner mode=\"indeterminate\" style=\"margin-left: 35%;\"></mat-spinner>\n        </div>\n    </div>\n</div>\n<div *ngIf=\"parking\">\n    <mat-card class=\"card col-sm-12 col-md-12 col-lg-12 mt-3\">\n        <mat-card-header>\n            <div mat-card-avatar class=\"example-header-image\">\n                <mat-icon>local_parking</mat-icon>\n            </div>\n            <div style=\"min-width: 70%;\">\n                <div>\n                    <h5>\n                        <b>\n                            <i>Address: </i>\n                        </b>{{parking.address}}</h5>\n                    <mat-card-subtitle>Provider: {{parking.providerName}}</mat-card-subtitle>\n                </div>\n            </div>\n            <div style=\"width: 100%\"></div>\n            <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n            <p style=\"font-size: 18px;\">{{parking.price}}</p>\n        </mat-card-header>\n\n        <mat-card-content>\n            <mat-list>\n                <mat-list-item>\n                    <mat-icon color=\"warn\" style=\"margin-right: 15px\" (click)=\"showOnMap(parking.latitude, parking.longitude)\">place\n                    </mat-icon>\n                    <span> {{parking.latitude}}, {{parking.longitude}}</span>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item>\n                    <div class=\"col-4\">\n                        <span style=\"font-size:18px;\"><b><i>Add to favorites</i></b></span>\n                        <button mat-icon-button color=\"warn\" (click)=\"onParkingAddToFavoritesClick()\">\n                        <mat-icon>star_rate</mat-icon>\n                    </button>\n                </div>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item>\n                    <div class=\"col-8\">\n                        <h5>\n                            <b>\n                                <i>Spots: </i>\n                            </b> General: {{parking.spotsCount}} / Available: {{parking.availableSpotsCount}}\n                        </h5>\n                    </div>\n                    <div class=\"col-2 ml-auto\">\n                        <button mat-raised-button color=\"primary\" (click)=\"refresh()\">Refresh\n                            <i class=\"material-icons\">&#xE863;</i>\n                        </button>\n                    </div>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item>\n                    <div class=\"col-8\">\n                        <h5>\n                            <b>\n                                <i>Fullness: </i>\n                            </b>\n                        </h5>\n                    </div>\n                </mat-list-item>\n                <mat-list-item>\n                    <ngb-progressbar [type]=\"type\" [value]=\"value\" [max]=\"max\" style=\"width:100%; height:0.7em;\">\n                        <b>{{fullnessBarMessage}} {{parking.availableSpotsCount}} spot(s) left!</b>\n                    </ngb-progressbar>\n                </mat-list-item>\n\n\n                <mat-divider></mat-divider>\n            </mat-list>\n        </mat-card-content>\n        <mat-card-actions align=\"center\">\n            <ngb-accordion>\n                <ngb-panel id=\"preventchange-1\">\n                    <ng-template ngbPanelTitle>\n                        <div>\n                            <h5>\n                                <b> Show all spots</b>\n                            </h5>\n                        </div>\n                    </ng-template>\n                    <ng-template ngbPanelContent>\n                        <ngb-tabset justify=\"justified\">\n                            <ngb-tab>\n                                <ng-template ngbTabTitle>\n                                    <div>\n                                        <b>Show all spots</b>\n                                    </div>\n                                </ng-template>\n                                <ng-template ngbTabContent>\n                                    <table class=\"table table-hover\">\n                                        <thead>\n                                            <tr class=\"text-center\">\n                                                <th scope=\"col\">Spot number #</th>\n                                                <th scope=\"col\">Availability</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr *ngFor=\"let spot of spots\" class=\"text-center\">\n                                                <th scope=\"row\">{{spot.id}}</th>\n\n                                                <td scope=\"row\" *ngIf=\"!!spot.isFree; else busy\">\n                                                    <button type=\"button\" class=\"btn btn-sm btn-success\" disabled>\n                                                        Available\n                                                    </button>\n                                                </td>\n\n                                                <ng-template #busy>\n                                                    <td scope=\"row\">\n                                                        <button type=\"button\" class=\"btn btn-sm btn-secondary\" disabled>\n                                                            Not Available\n                                                        </button>\n                                                    </td>\n                                                </ng-template>\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                </ng-template>\n                            </ngb-tab>\n                            <ngb-tab>\n                                <ng-template ngbTabTitle>\n                                    <div>\n                                        <b>Show only available spots</b>\n                                    </div>\n                                </ng-template>\n                                <ng-template ngbTabContent>\n                                    <table class=\"table table-hover\">\n                                        <thead>\n                                            <tr class=\"text-center\">\n                                                <th scope=\"col\">Spot number #</th>\n                                                <th scope=\"col\">Availability</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr *ngFor=\"let spot of freeSpots\" class=\"text-center\">\n                                                <th scope=\"row\">{{spot.id}}</th>\n\n                                                <td scope=\"row\">\n                                                    <button type=\"button\" class=\"btn btn-sm btn-success\" disabled>\n                                                        Available\n                                                    </button>\n                                                </td>\n\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                </ng-template>\n                            </ngb-tab>\n                        </ngb-tabset>\n\n                    </ng-template>\n                </ngb-panel>\n            </ngb-accordion>\n        </mat-card-actions>\n    </mat-card>\n\n\n</div>"
+module.exports = "<div class=\"container-fluid\" *ngIf=\"!parking\" class=\"text-center\">\n    <div class=\"row mx-auto mt-3 center-block\">\n        <div class=\"col-6 mx-auto my-auto text-center\">\n            <mat-spinner mode=\"indeterminate\" style=\"margin-left: 35%;\"></mat-spinner>\n        </div>\n    </div>\n</div>\n<div *ngIf=\"parking\">\n    <mat-card class=\"card col-sm-12 col-md-12 col-lg-12 mt-3\">\n        <mat-card-header>\n            <div mat-card-avatar class=\"example-header-image\">\n                <mat-icon>local_parking</mat-icon>\n            </div>\n            <div style=\"min-width: 70%;\">\n                <div>\n                    <h5>\n                        <b>\n                            <i>Address: </i>\n                        </b>{{parking.address}}</h5>\n                    <mat-card-subtitle>Provider: {{parking.providerName}}</mat-card-subtitle>\n                </div>\n            </div>\n            <div style=\"width: 100%\"></div>\n            <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n            <p style=\"font-size: 18px;\">{{parking.price}}</p>\n        </mat-card-header>\n\n        <mat-card-content>\n            <mat-list>\n                <mat-list-item>\n                    <mat-icon color=\"warn\" style=\"margin-right: 15px\" (click)=\"showOnMap(parking.latitude, parking.longitude)\">place\n                    </mat-icon>\n                    <span> {{parking.latitude}}, {{parking.longitude}}</span>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item *ngIf=\"hasToken()\">\n                    <div class=\"col-4\" *ngIf=\"!parking.isFavorite\">\n                        <span style=\"font-size:18px;\" ><b><i>Add to favorites</i></b></span>\n                        <button mat-icon-button color=\"warn\" (click)=\"onParkingAddToFavoritesClick()\">\n                        <mat-icon>star_rate</mat-icon>\n                    </button>\n                </div>\n                <div class=\"col-10\" *ngIf=\"parking.isFavorite\">\n                    <span style=\"font-size:18px;\" ><b>Parking is in your favorites as:</b> <b><i>{{parking.favoriteName}}</i></b></span>\n                    <!-- <button mat-icon-button color=\"warn\" (click)=\"onParkingAddToFavoritesClick()\">\n                    <mat-icon>star_rate</mat-icon>\n                </button> -->\n            </div>\n                \n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item>\n                    <div class=\"col-8\">\n                        <h5>\n                            <b>\n                                <i>Spots: </i>\n                            </b> General: {{parking.spotsCount}} / Available: {{parking.availableSpotsCount}}\n                        </h5>\n                    </div>\n                    <div class=\"col-2 ml-auto\">\n                        <button mat-raised-button color=\"primary\" (click)=\"refresh()\">Refresh\n                            <i class=\"material-icons\">&#xE863;</i>\n                        </button>\n                    </div>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item>\n                    <div class=\"col-8\">\n                        <h5>\n                            <b>\n                                <i>Fullness: </i>\n                            </b>\n                        </h5>\n                    </div>\n                </mat-list-item>\n                <mat-list-item>\n                    <ngb-progressbar [type]=\"type\" [value]=\"value\" [max]=\"max\" style=\"width:100%; height:0.7em;\">\n                        <b>{{fullnessBarMessage}} {{parking.availableSpotsCount}} spot(s) left!</b>\n                    </ngb-progressbar>\n                </mat-list-item>\n\n\n                <mat-divider></mat-divider>\n            </mat-list>\n        </mat-card-content>\n        <mat-card-actions align=\"center\">\n            <ngb-accordion>\n                <ngb-panel id=\"preventchange-1\">\n                    <ng-template ngbPanelTitle>\n                        <div>\n                            <h5>\n                                <b> Show all spots</b>\n                            </h5>\n                        </div>\n                    </ng-template>\n                    <ng-template ngbPanelContent>\n                        <ngb-tabset justify=\"justified\">\n                            <ngb-tab>\n                                <ng-template ngbTabTitle>\n                                    <div>\n                                        <b>Show all spots</b>\n                                    </div>\n                                </ng-template>\n                                <ng-template ngbTabContent>\n                                    <table class=\"table table-hover\">\n                                        <thead>\n                                            <tr class=\"text-center\">\n                                                <th scope=\"col\">Spot number #</th>\n                                                <th scope=\"col\">Availability</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr *ngFor=\"let spot of spots\" class=\"text-center\">\n                                                <th scope=\"row\">{{spot.id}}</th>\n\n                                                <td scope=\"row\" *ngIf=\"!!spot.isFree; else busy\">\n                                                    <button type=\"button\" class=\"btn btn-sm btn-success\" disabled>\n                                                        Available\n                                                    </button>\n                                                </td>\n\n                                                <ng-template #busy>\n                                                    <td scope=\"row\">\n                                                        <button type=\"button\" class=\"btn btn-sm btn-secondary\" disabled>\n                                                            Not Available\n                                                        </button>\n                                                    </td>\n                                                </ng-template>\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                </ng-template>\n                            </ngb-tab>\n                            <ngb-tab>\n                                <ng-template ngbTabTitle>\n                                    <div>\n                                        <b>Show only available spots</b>\n                                    </div>\n                                </ng-template>\n                                <ng-template ngbTabContent>\n                                    <table class=\"table table-hover\">\n                                        <thead>\n                                            <tr class=\"text-center\">\n                                                <th scope=\"col\">Spot number #</th>\n                                                <th scope=\"col\">Availability</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr *ngFor=\"let spot of freeSpots\" class=\"text-center\">\n                                                <th scope=\"row\">{{spot.id}}</th>\n\n                                                <td scope=\"row\">\n                                                    <button type=\"button\" class=\"btn btn-sm btn-success\" disabled>\n                                                        Available\n                                                    </button>\n                                                </td>\n\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                </ng-template>\n                            </ngb-tab>\n                        </ngb-tabset>\n\n                    </ng-template>\n                </ngb-panel>\n            </ngb-accordion>\n        </mat-card-actions>\n    </mat-card>\n\n\n</div>"
 
 /***/ }),
 
@@ -3322,8 +3378,10 @@ module.exports = "<div class=\"container-fluid\" *ngIf=\"!parking\" class=\"text
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__favorites_add_configm_dialog_favorites_add_configm_dialog_component__ = __webpack_require__("./src/app/parking-detail/favorites-add-configm-dialog/favorites-add-configm-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_token_token_storage__ = __webpack_require__("./src/app/auth/token/token-storage.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__favorites_add_configm_dialog_favorites_add_configm_dialog_component__ = __webpack_require__("./src/app/parking-detail/favorites-add-configm-dialog/favorites-add-configm-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__model_view_favorite__ = __webpack_require__("./src/app/model/view/favorite.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3333,6 +3391,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 
@@ -3367,6 +3427,7 @@ var ParkingDetailComponent = /** @class */ (function () {
         this.getAvailableSpots();
     };
     ParkingDetailComponent.prototype.fullnessBarCount = function () {
+        console.log('isFavorite ->' + this.parking.isFavorite);
         this.max = this.parking.spotsCount;
         this.value = this.parking.spotsCount - this.parking.availableSpotsCount;
         if (this.value < (this.max * 0.6)) {
@@ -3406,15 +3467,37 @@ var ParkingDetailComponent = /** @class */ (function () {
             .subscribe(function (spots) { return _this.freeSpots = spots; });
     };
     ParkingDetailComponent.prototype.onParkingAddToFavoritesClick = function () {
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_5__favorites_add_configm_dialog_favorites_add_configm_dialog_component__["b" /* FavoritesAddConfigmDialogComponent */], {
-            data: new __WEBPACK_IMPORTED_MODULE_5__favorites_add_configm_dialog_favorites_add_configm_dialog_component__["a" /* FavoriteAddData */]()
+        var _this = this;
+        var id = parseInt(this.route.snapshot.paramMap.get('id'));
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_6__favorites_add_configm_dialog_favorites_add_configm_dialog_component__["b" /* FavoritesAddConfigmDialogComponent */], {
+            data: new __WEBPACK_IMPORTED_MODULE_6__favorites_add_configm_dialog_favorites_add_configm_dialog_component__["a" /* FavoriteAddData */]()
         });
         dialogRef.afterClosed().subscribe(function (data) {
             if (data.confirmed) {
-                // this.managerParkingService.deleteParking(parking)
-                //     .subscribe(response => this.onDeleteResponse(parking, response));
+                _this.favorite = new __WEBPACK_IMPORTED_MODULE_7__model_view_favorite__["a" /* Favorite */]();
+                if (data.name.length != 0) {
+                    _this.favorite.name = data.name;
+                }
+                else {
+                    _this.favorite.name = _this.parking.address;
+                }
+                _this.parkingService.saveToFavorite(id, _this.favorite).subscribe(function (response) {
+                    _this.snackBar.open('Parking add to favorite sucsessfully.', null, {
+                        duration: 2000
+                    });
+                });
+                _this.ngOnInit();
             }
         });
+    };
+    ParkingDetailComponent.prototype.getRole = function () {
+        return __WEBPACK_IMPORTED_MODULE_4__auth_token_token_storage__["a" /* TokenStorage */].getRole();
+    };
+    ParkingDetailComponent.prototype.hasToken = function () {
+        return __WEBPACK_IMPORTED_MODULE_4__auth_token_token_storage__["a" /* TokenStorage */].hasToken();
+    };
+    ParkingDetailComponent.prototype.logOut = function () {
+        __WEBPACK_IMPORTED_MODULE_4__auth_token_token_storage__["a" /* TokenStorage */].signOut();
     };
     ParkingDetailComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
@@ -3423,7 +3506,7 @@ var ParkingDetailComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/parking-detail/parking-detail.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_4__parking_service__["a" /* ParkingService */],
+            __WEBPACK_IMPORTED_MODULE_5__parking_service__["a" /* ParkingService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_common__["f" /* Location */],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MatDialog */]])
@@ -3460,6 +3543,7 @@ var ParkingService = /** @class */ (function () {
         this.http = http;
         this.parkingNearbyUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].apiUrl + '/parkings-nearby/';
         this.parkingDetailUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].apiUrl + '/parkingdetail/';
+        this.spotstatistic = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].apiUrl + '/spotstatistic/';
     }
     ParkingService.prototype.getParkingsNearby = function (latitude, longitude, radius) {
         return this.http.get(this.parkingNearbyUrl, {
@@ -3479,6 +3563,16 @@ var ParkingService = /** @class */ (function () {
     };
     ParkingService.prototype.getAvailableSpotsByParkingId = function (id) {
         return this.http.get(this.parkingDetailUrl + id + '/freespots');
+    };
+    // saveParking(parking: Parking): Observable<HttpResponse<any>> {
+    //     return this.http.post<HttpResponse<any>>(
+    //         this.parkingConfigureUrl + '/parking/save', parking, {observe: 'response'});
+    // }
+    ParkingService.prototype.saveToFavorite = function (id, favorite) {
+        return this.http.post(this.parkingDetailUrl + id + '/savetofavorites', favorite, { observe: 'response' });
+    };
+    ParkingService.prototype.getSpotStatistic = function (id) {
+        return this.http.get(this.spotstatistic + id);
     };
     ParkingService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Injectable */])(),
@@ -3565,26 +3659,29 @@ var IpLocationError = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/statistic/parking-statistic/parking-statistic.component.css":
+/***/ "./src/app/spotstatistic/spotstatistic.component.css":
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/statistic/parking-statistic/parking-statistic.component.html":
+/***/ "./src/app/spotstatistic/spotstatistic.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  parking-statistic works!\n</p>\n"
+module.exports = "<mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n  <mat-card-header>\n\n<table class=\"table table-hover\">\n  <thead>\n      <tr class=\"text-center\">\n          <th scope=\"col\">Spot number #</th>\n          <th scope=\"col\">Hours have been taken</th>\n      </tr>\n  </thead>\n  <tbody>\n      <tr *ngFor=\"let spotstatistic of statistic\" class=\"text-center\">\n          <th scope=\"row\">{{spotstatistic.id}}</th>\n          <th scope=\"row\">{{spotstatistic.numberOfHours}}</th>\n\n        \n          \n      </tr>\n  </tbody>\n</table>\n</mat-card-header> \n</mat-card> \n\n"
 
 /***/ }),
 
-/***/ "./src/app/statistic/parking-statistic/parking-statistic.component.ts":
+/***/ "./src/app/spotstatistic/spotstatistic.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParkingStatisticComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpotstatisticComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3595,10 +3692,92 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+var SpotstatisticComponent = /** @class */ (function () {
+    function SpotstatisticComponent(route, parkingService, location) {
+        this.route = route;
+        this.parkingService = parkingService;
+        this.location = location;
+        this.thirtySecInterval = 30000;
+        this.favoriteNameInputHide = true;
+    }
+    SpotstatisticComponent.prototype.ngOnInit = function () {
+        this.getSpotStatistic();
+        setInterval(this.refresh(), this.thirtySecInterval);
+    };
+    SpotstatisticComponent.prototype.refresh = function () {
+        this.getSpotStatistic();
+    };
+    SpotstatisticComponent.prototype.getSpotStatistic = function () {
+        var _this = this;
+        var id = parseInt(this.route.snapshot.paramMap.get('id'));
+        this.parkingService.getSpotStatistic(id)
+            .subscribe(function (statistic) { return _this.statistic = statistic; });
+    };
+    SpotstatisticComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+            selector: 'app-spotstatistic',
+            template: __webpack_require__("./src/app/spotstatistic/spotstatistic.component.html"),
+            styles: [__webpack_require__("./src/app/spotstatistic/spotstatistic.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_3__parking_service__["a" /* ParkingService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_common__["f" /* Location */]])
+    ], SpotstatisticComponent);
+    return SpotstatisticComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/statistic/parking-statistic/parking-statistic.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/statistic/parking-statistic/parking-statistic.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p *ngFor=\"let parking of parkings\">\n    {{parking.city}}\n</p>\ndsjakljaskd\n"
+
+/***/ }),
+
+/***/ "./src/app/statistic/parking-statistic/parking-statistic.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParkingStatisticComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__statistics_service__ = __webpack_require__("./src/app/statistic/statistics.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 var ParkingStatisticComponent = /** @class */ (function () {
-    function ParkingStatisticComponent() {
+    function ParkingStatisticComponent(statisticService) {
+        this.statisticService = statisticService;
     }
     ParkingStatisticComponent.prototype.ngOnInit = function () {
+        this.findAllParkings();
+    };
+    ParkingStatisticComponent.prototype.findAllParkings = function () {
+        var _this = this;
+        this.statisticService.getAllParkings()
+            .subscribe(function (parkings) {
+            _this.parkings = parkings;
+        });
     };
     ParkingStatisticComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
@@ -3606,7 +3785,7 @@ var ParkingStatisticComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.html"),
             styles: [__webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__statistics_service__["a" /* StatisticsService */]])
     ], ParkingStatisticComponent);
     return ParkingStatisticComponent;
 }());
@@ -3659,6 +3838,45 @@ var StatisticComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], StatisticComponent);
     return StatisticComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/statistic/statistics.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatisticsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var StatisticsService = /** @class */ (function () {
+    function StatisticsService(http) {
+        this.http = http;
+        this.statisticUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].apiUrl + '/statistic';
+    }
+    StatisticsService.prototype.getAllParkings = function () {
+        return this.http.get(this.statisticUrl + '/allparkings');
+    };
+    StatisticsService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+    ], StatisticsService);
+    return StatisticsService;
 }());
 
 
