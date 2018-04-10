@@ -1,10 +1,8 @@
 package com.smartparking.controller;
 
 import com.smartparking.entity.Spot;
-import com.smartparking.model.request.ClientRequest;
-import com.smartparking.model.request.DateRangeRequest;
-import com.smartparking.model.response.SpotResponse;
 import com.smartparking.model.response.SpotStatisticResponse;
+import com.smartparking.model.response.SpotStatusResponse;
 import com.smartparking.service.SpotService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -31,30 +33,30 @@ public class SpotController {
     }
 
     @RequestMapping("parkingdetail/{id}/spots")
-    List<SpotResponse> findAllSpotsDto(@PathVariable Long id) {
+    List<SpotStatusResponse> findAllSpotsDto(@PathVariable Long id) {
         List<Spot> allSpots = spotService.findAllSpotsByParkingId(id);
         List<Spot> freeSpots = spotService.findAllAvailableSpotsByParkingId(id);
-        List<SpotResponse> spotResponseList = new ArrayList<>();
+        List<SpotStatusResponse> spotStatusResponseList = new ArrayList<>();
         for (Spot spot : allSpots) {
-            SpotResponse spotResponse = new SpotResponse();
-            spotResponse.setId(spot.getId());
-            spotResponse.setIsFree(freeSpots.contains(spot));
-            spotResponseList.add(spotResponse);
+            SpotStatusResponse spotStatusResponse = new SpotStatusResponse();
+            spotStatusResponse.setId(spot.getId());
+            spotStatusResponse.setIsFree(freeSpots.contains(spot));
+            spotStatusResponseList.add(spotStatusResponse);
         }
-        return spotResponseList;
+        return spotStatusResponseList;
     }
 
     @RequestMapping("parkingdetail/{id}/freespots")
-    List<SpotResponse> findAvailableSpotsDto(@PathVariable Long id) {
+    List<SpotStatusResponse> findAvailableSpotsDto(@PathVariable Long id) {
         List<Spot> freeSpots = spotService.findAllAvailableSpotsByParkingId(id);
-        List<SpotResponse> spotResponseList = new ArrayList<>();
+        List<SpotStatusResponse> spotStatusResponseList = new ArrayList<>();
         for (Spot spot : freeSpots) {
-            SpotResponse spotResponse = new SpotResponse();
-            spotResponse.setId(spot.getId());
-            spotResponse.setIsFree(true);
-            spotResponseList.add(spotResponse);
+            SpotStatusResponse spotStatusResponse = new SpotStatusResponse();
+            spotStatusResponse.setId(spot.getId());
+            spotStatusResponse.setIsFree(true);
+            spotStatusResponseList.add(spotStatusResponse);
         }
-        return spotResponseList;
+        return spotStatusResponseList;
     }
 
 
@@ -64,20 +66,8 @@ public class SpotController {
             @PathVariable Long id,
             @RequestParam("start_time") String startTime,
             @RequestParam("end_time") String endTime) {
-        LOGGER.info("------------------------------ResponseEntity<List<SpotStatisticResponse>> getSpotStatistic------------------------------");
-        LOGGER.info("------------------------------"+startTime+"------------------------------");
-        LOGGER.info("------------------------------"+endTime+"------------------------------");
-        List<SpotStatisticResponse> spotStatisticResponseList = new ArrayList<>();
-        Map<Long, Double> spotStatistic = spotService.getSpotStatistic(id);
-        for (Map.Entry<Long, Double> entry : spotStatistic.entrySet()) {
-            Long key = entry.getKey();
-            Double value = entry.getValue();
-            SpotStatisticResponse spotStatisticResponse = new SpotStatisticResponse();
-            spotStatisticResponse.setId(key);
-            spotStatisticResponse.setNumberOfHours(value);
-            spotStatisticResponseList.add(spotStatisticResponse);
-        }
-        LOGGER.info(spotStatisticResponseList.toString());
+
+        List<SpotStatisticResponse> spotStatisticResponseList = spotService.getSpotStatistic(id,Long.parseLong(startTime),Long.parseLong(endTime));
         return new ResponseEntity<>(spotStatisticResponseList, HttpStatus.OK);
     }
 

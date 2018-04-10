@@ -543,7 +543,7 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_35__agm_core__["AgmCoreModule"].forRoot({
-                    apiKey: 'AIzaSyB-ceTN3C1MJaUsAjPSKdXzGr11i-Ob7xU',
+                    apiKey: 'AIzaSyAufS5bcmpO5UiWxG_MpcSOrIiRNzbUJus',
                     libraries: ['places']
                 }),
                 __WEBPACK_IMPORTED_MODULE_4_agm_direction__["AgmDirectionModule"],
@@ -1895,7 +1895,7 @@ module.exports = ".parent {\n    /*background-color: rgb(252, 252, 252);*/\n    
 /***/ "./src/app/index/index.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"parent\">\n    <app-parking-map #parkingList></app-parking-map>\n    <div class=\"filter offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <mat-progress-bar #progressbar *ngIf=\"progressBarVisible\" [color]=\"progressBarColor\" [mode]=\"progressBarMode\"\n                          class=\"progress-bar\" mode=\"query\" [value]=\"100\"></mat-progress-bar>\n        <app-parking-list-filter #filter></app-parking-list-filter>\n    </div>\n</div>"
+module.exports = "<div class=\"parent\">\n    <app-parking-map #parkingMap></app-parking-map>\n    <div class=\"filter offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <mat-progress-bar #progressbar *ngIf=\"progressBarVisible\" [color]=\"progressBarColor\" [mode]=\"progressBarMode\"\n                          class=\"progress-bar\" mode=\"query\" [value]=\"100\"></mat-progress-bar>\n        <app-parking-list-filter #filter></app-parking-list-filter>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1942,6 +1942,8 @@ var IndexComponent = /** @class */ (function () {
         this.filter.priceRangeChanges.subscribe(function () { return _this.filterParkings(); });
         this.filter.locationChanges.subscribe(function (location) {
             _this.showLoadingProgressBar();
+            _this.parkingMap.lat = location.latitude;
+            _this.parkingMap.lng = location.longitude;
             _this.parkingService.getParkingsNearby(location.latitude, location.longitude, _this.filter.radiusMax * 1000).subscribe(function (response) {
                 _this.hideProgressBar();
                 _this.parkings = response.body;
@@ -1967,7 +1969,7 @@ var IndexComponent = /** @class */ (function () {
     };
     IndexComponent.prototype.filterParkings = function () {
         var _this = this;
-        this.parkingList.parkings = this.parkings.filter(function (parking) {
+        this.parkingMap.parkings = this.parkings.filter(function (parking) {
             var filter = _this.filter.value;
             return parking.distance <= filter.radius * 1000
                 && ((filter.priceRange.min) ? parking.price >= filter.priceRange.min : true)
@@ -1981,9 +1983,9 @@ var IndexComponent = /** @class */ (function () {
         setTimeout(function () { return _this.changeDetector.detectChanges(); }, 1);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('parkingList'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('parkingMap'),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_6__parking_map_parking_map_component__["a" /* ParkingMapComponent */])
-    ], IndexComponent.prototype, "parkingList", void 0);
+    ], IndexComponent.prototype, "parkingMap", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('filter'),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__parking_list_filter_parking_list_filter_component__["a" /* ParkingListFilterComponent */])
@@ -2762,14 +2764,14 @@ var ParkingListComponent = /** @class */ (function () {
 /***/ "./src/app/index/parking-map/parking-map.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "agm-map {\n    height: 900px;\n}\n\n.map {\n    height: 300px;\n    padding: 0;\n}\n\n/*html, body {\n    height: 100%;\n    margin: 0;\n    padding: 0;\n}*/\n\nbody, html {\n    height: 100%;\n    width: 100%;\n}\n\ndiv#content {\n    width: 100%;\n    height: 100%;\n}\n"
+module.exports = "agm-map {\n    height: 500px;\n}\n\n\n/*html, body {\n    height: 100%;\n    margin: 0;\n    padding: 0;\n}*/\n\n\nbody, html {\n    height: 100%;\n    width: 100%;\n}\n\n\ndiv#content {\n    width: 100%;\n    height: 100%;\n}\n\n\nul {\n    list-style-type: none;\n}\n\n\n.btn-success {\n    color: darkgrey;\n    background-color: #6610f2;;\n    border-color: darkgrey;\n\n}\n\n\n.btn-success:hover {\n    color: #fff;\n    background-color: #6610f2;;\n    border-color: #1e7e34;\n}\n\n\n.btn-success:focus, .btn-success.focus {\n    -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);\n            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/index/parking-map/parking-map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<agm-map [latitude]=\"lat\"\n         [longitude]=\"lng\"\n         [fullscreenControl]=\"true\">\n    <agm-marker [latitude]=\"lat\" [longitude]=\"lng\" [draggable]=\"true\"></agm-marker>\n    <div *ngFor=\"let parking of parkings\">\n        <agm-marker [latitude]=\"parking.latitude\" [longitude]=\"parking.longitude\"\n                    [iconUrl]=\"'/assets/images/icon_parking_info_40x38.png'\">\n            <agm-info-window [disableAutoPan]=\"false\">\n                <ul>\n                    <li><b>Address:</b> {{parking.city}} / {{parking.street}} / {{parking.building}}</li>\n                    <li><b>Distance:</b> {{parking.distance}}</li>\n                    <li><b>Spots:</b> {{parking.spotsCount}}</li>\n                    <li><b>Spots available:</b> {{parking.availableSpotsCount}}</li>\n                </ul>\n                <button type=\"button\" (click)=\"getDirection(parking.latitude, parking.longitude)\">Get</button>\n            </agm-info-window>\n        </agm-marker>\n        <agm-direction *ngIf=\"dir\" [origin]=\"dir.origin\" [destination]=\"dir.destination\"></agm-direction>\n    </div>\n</agm-map>\n\n\n<!--LEAFLET VARIANT-->\n<!--\n<div class=\"map\"\n     leaflet\n     [leafletOptions]=\"options\"\n     [leafletLayersControl]=\"layersControl\">\n</div>\n-->\n\n\n"
+module.exports = "<agm-map [latitude]=\"49.83826\"\n         [longitude]=\"24.02324\"\n         [fullscreenControl]=\"true\"\n         [zoom]=\"10\">\n\n    <agm-marker [latitude]=\"lat\" [longitude]=\"lng\" [draggable]=\"true\"></agm-marker>\n    <div *ngFor=\"let parking of parkings\">\n        <agm-marker [latitude]=\"parking.latitude\" [longitude]=\"parking.longitude\"\n                    [iconUrl]=\"'/assets/images/icon_parking_info_40x38.png'\">\n            <agm-info-window [disableAutoPan]=\"false\">\n                <ul>\n                    <li><b>Address:</b> {{parking.city}} / {{parking.street}} / {{parking.building}}</li>\n                    <li><b>Distance:</b> {{round(parking.distance)}} km</li>\n                    <li><b>Spots:</b> {{parking.spotsCount}}</li>\n                    <li><b>Spots available:</b> {{parking.availableSpotsCount}}</li>\n                </ul>\n                <button mat-button class=\"btn btn-success\" (click)=\"getDirection(parking.latitude, parking.longitude)\">\n                    Start route!\n                </button>\n            </agm-info-window>\n        </agm-marker>\n        <agm-direction *ngIf=\"dir\" [origin]=\"dir.origin\" [destination]=\"dir.destination\"></agm-direction>\n    </div>\n</agm-map>\n\n\n\n"
 
 /***/ }),
 
@@ -2779,7 +2781,6 @@ module.exports = "<agm-map [latitude]=\"lat\"\n         [longitude]=\"lng\"\n   
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParkingMapComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2790,27 +2791,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
 var ParkingMapComponent = /** @class */ (function () {
-    function ParkingMapComponent(parkingService) {
-        this.parkingService = parkingService;
+    function ParkingMapComponent() {
         this.dir = undefined;
     }
     ParkingMapComponent.prototype.ngOnInit = function () {
-        this.findMe();
-    };
-    ParkingMapComponent.prototype.findMe = function () {
-        var _this = this;
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((function (position) {
-                _this.getPosition(position);
-            }));
-        }
-    };
-    ParkingMapComponent.prototype.getPosition = function (position) {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-        console.log(this.lat, this.lng);
     };
     ParkingMapComponent.prototype.getDirection = function (lat, lng) {
         this.dir = {
@@ -2818,13 +2803,16 @@ var ParkingMapComponent = /** @class */ (function () {
             destination: { lat: lat, lng: lng }
         };
     };
+    ParkingMapComponent.prototype.round = function (floatNumber) {
+        return Math.floor(floatNumber) / 1000;
+    };
     ParkingMapComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-parking-map',
             template: __webpack_require__("./src/app/index/parking-map/parking-map.component.html"),
             styles: [__webpack_require__("./src/app/index/parking-map/parking-map.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__parking_service__["a" /* ParkingService */]])
+        __metadata("design:paramtypes", [])
     ], ParkingMapComponent);
     return ParkingMapComponent;
 }());
@@ -3728,7 +3716,7 @@ module.exports = "/* .bs-datepicker */\n.bs-datepicker {\n    display: -webkit-b
 /***/ "./src/app/spotstatistic/spotstatistic.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n  <mat-card-header>\n\n<table class=\"table table-hover\">\n  <thead>\n      <tr class=\"text-center\">\n          <th scope=\"col\">Spot number #</th>\n          <th scope=\"col\">Hours have been taken</th>\n      </tr>\n  </thead>\n  <tbody>\n      <tr *ngFor=\"let spotstatistic of statistic\" class=\"text-center\">\n          <th scope=\"row\">{{spotstatistic.id}}</th>\n          <th scope=\"row\">{{spotstatistic.numberOfHours}}</th>\n\n        \n          \n      </tr>\n  </tbody>\n</table>\n</mat-card-header> \n</mat-card> \n\n<div class=\"row\">\n\n        <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n                <label>Set min data</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"Datepicker\" #dp=\"bsDatepicker\" bsDatepicker  [(ngModel)]=\"minDate\">                    \n              </div>\n\n              <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n                    <label>Set max data</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Datepicker\" #dp=\"bsDatepicker\" bsDatepicker  [(ngModel)]=\"maxDate\">                                 \n              </div>\n\n\n\n\n    <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n        <div>\n      <label>Display statistic of spots</label>\n    </div>\n    <div>\n     <button class=\"btn btn-success\" (click)=\"addItem()\">Display</button>\n    </div>  \n    </div>\n    \n  </div>\n\n\n  <p class=\"life-container\" *ngFor=\"let goal of goals\">\n    {{ goal }}\n  </p>\n  \n\n"
+module.exports = "<mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n  <mat-card-header>\n\n<table class=\"table table-hover\">\n  <thead>\n      <tr class=\"text-center\">\n          <th scope=\"col\">Spot number #</th>\n          <th scope=\"col\">Hours have been taken</th>\n          <th scope=\"col\">Popularity(How many times was busy)</th>\n      </tr>\n  </thead>\n  <tbody>\n      <tr *ngFor=\"let spotstatistic of statistic\" class=\"text-center\">\n          <th scope=\"row\">{{spotstatistic.id}}</th>\n          <th scope=\"row\">{{spotstatistic.numberOfHours}}</th>\n          <th scope=\"row\">{{spotstatistic.numberOfEvent}}</th>\n\n        \n          \n      </tr>\n  </tbody>\n</table>\n</mat-card-header> \n</mat-card> \n\n<div class=\"row\">\n\n        <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n                <label>Set min data</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"Datepicker\" #dp=\"bsDatepicker\" bsDatepicker  [(ngModel)]=\"minDate\">                    \n              </div>\n\n              <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n                    <label>Set max data</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Datepicker\" #dp=\"bsDatepicker\" bsDatepicker  [(ngModel)]=\"maxDate\">                                 \n              </div>\n\n\n\n\n    <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n        <div>\n      <label>Display statistic of spots</label>\n    </div>\n    <div>\n     <button class=\"btn btn-success\" (click)=\"addItem()\">Display</button>\n    </div>  \n    </div>\n    \n  </div>\n\n\n  <p class=\"life-container\" *ngFor=\"let goal of goals\">\n    {{ goal }}\n  </p>\n  \n\n"
 
 /***/ }),
 
@@ -3777,7 +3765,8 @@ var SpotstatisticComponent = /** @class */ (function () {
     SpotstatisticComponent.prototype.getSpotStatistic = function () {
         var _this = this;
         var id = parseInt(this.route.snapshot.paramMap.get('id'));
-        this.parkingService.getSpotStatistic(id, this.start_date, this.end_date)
+        this.minDate.getMilliseconds();
+        this.parkingService.getSpotStatistic(id, this.minDate.getTime().toString(), this.maxDate.getTime().toString())
             .subscribe(function (statistic) { return _this.statistic = statistic; });
     };
     SpotstatisticComponent.prototype.addItem = function () {
@@ -3786,8 +3775,8 @@ var SpotstatisticComponent = /** @class */ (function () {
             this.minDate = this.maxDate;
             this.maxDate = this.tempDate;
         }
-        this.goals.push(this.start_date);
-        this.goals.push(this.end_date);
+        this.getSpotStatistic();
+        setInterval(this.refresh(), this.thirtySecInterval);
     };
     SpotstatisticComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -3815,7 +3804,7 @@ module.exports = "h6 {\n    text-align: center;\n}\n\n.mat-form-field {\n    dis
 /***/ "./src/app/statistic/parking-statistic/parking-statistic.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h3 class=\"text-center\">The most popular parkings </h3>\n<div class=\"parent row\">\n\n    <div class=\"col-md-12\">\n        <ul>\n            <div *ngFor=\"let parking of parkings\">\n                <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n                    <mat-card-header>\n                        <div mat-card-avatar class=\"example-header-image\">\n                            <mat-icon>local_parking</mat-icon>\n                        </div>\n                        <div style=\"min-width: 70%;\">\n                            <div>\n                                <mat-card-title>{{parking.city}}, {{parking.street}} street</mat-card-title>\n                                <mat-card-subtitle>{{parking.providerName}}</mat-card-subtitle>\n                            </div>\n                        </div>\n                        <div style=\"width: 100%\"></div>\n                        <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n                        <p style=\"font-size: 18px;\">{{parking.price}}</p>\n                    </mat-card-header>\n\n                    <mat-card-actions align=\"right\">\n                        <button mat-button routerLink='parkingdetail/2' color=\"primary\">MORE INFO</button>\n                    </mat-card-actions>\n                </mat-card>\n                <hr/>\n            </div>\n        </ul>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"filter offset-1 col-md-10\" id=\"cont\">\n        <mat-divider style=\"border-color: purple;\"></mat-divider>\n        <mat-card class=\"card\">\n            <h6 [(ngModel)]=\"selectedStreet\" [(ngModel)]=\"selectedCity\" ngDefaultControl>Find the most popular parking\n                by in <span>{{selectedCity}}</span> on the street: <span>{{selectedStreet}}</span></h6>\n            <div class=\"row\">\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedCity\" placeholder=\"change city\">\n                        <mat-option *ngFor=\"let parkingsCity of parkingsCities\" [value]=\"parkingsCity\"\n                                    (click)=\"theCityWasSelected()\">\n                            {{ parkingsCity }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n\n                <mat-form-field class=\"col-md-3\">\n                    <input matInput placeholder=\"find street\" #streetSearchBox id=\"street-box\"\n                           (keyup)=\"findParkingsStreets(streetSearchBox.value)\" [matAutocomplete]=\"auto2\">\n                    <mat-autocomplete #auto2=\"matAutocomplete\">\n                        <mat-option *ngFor=\"let parkingsStreet of parkingsStreets\"\n                                    (click)=\"theStreetWasSelected(parkingsStreet)\"\n                                    (click)=\"findBestParkingsByStreet(parkingsStreet)\">\n                            {{parkingsStreet}}\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n            </div>\n        </mat-card>\n    </div>\n</div>\n"
+module.exports = "<h3 class=\"text-center\">The most popular parkings </h3>\n<div class=\"parent row\">\n\n    <div class=\"col-md-12\">\n        <ul>\n            <div *ngFor=\"let parking of parkings\">\n                <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n                    <mat-card-header>\n                        <div mat-card-avatar class=\"example-header-image\">\n                            <mat-icon>local_parking</mat-icon>\n                        </div>\n                        <div style=\"min-width: 70%;\">\n                            <div>\n                                <mat-card-title>{{parking.city}}, {{parking.street}} street</mat-card-title>\n                                <mat-card-subtitle>{{parking.providerName}}</mat-card-subtitle>\n                            </div>\n                        </div>\n                        <div style=\"width: 100%\"></div>\n                        <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n                        <p style=\"font-size: 18px;\">{{parking.price}}</p>\n                    </mat-card-header>\n\n                    <mat-card-actions align=\"right\">\n                        <button mat-button routerLink='parkingdetail/2' color=\"primary\">MORE INFO</button>\n                    </mat-card-actions>\n                </mat-card>\n                <hr/>\n            </div>\n        </ul>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"filter offset-1 col-md-10\" id=\"cont\">\n        <mat-divider style=\"border-color: purple;\"></mat-divider>\n        <mat-card class=\"card\">\n            <h6 [(ngModel)]=\"selectedStreet\" [(ngModel)]=\"selectedCity\" ngDefaultControl>Find the most popular parking\n                in <span>{{selectedCity}}</span> on the street: <span *ngIf=\"selectedStreet ==null\">--not selected--</span><span>{{selectedStreet}}</span> for the last <span>{{selectedNumberOfDays}}</span></h6>\n            <div class=\"row\">\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedCity\" placeholder=\"change city\">\n                        <mat-option *ngFor=\"let parkingsCity of parkingsCities\" [value]=\"parkingsCity\"\n                                    (click)=\"theCityWasSelected()\">\n                            {{ parkingsCity }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n\n                <mat-form-field class=\"col-md-3\">\n                    <input matInput placeholder=\"find street\" #streetSearchBox id=\"street-box\"\n                           (keyup)=\"findParkingsStreets(streetSearchBox.value)\"\n                           [matAutocomplete]=\"auto2\">\n                    <mat-autocomplete #auto2=\"matAutocomplete\">\n                        <mat-option *ngFor=\"let parkingsStreet of parkingsStreets\"\n                                    [value]=\"selectedStreet\"\n                                    (click)=\"theStreetWasSelected(parkingsStreet)\"\n                                    (click)=\"findBestParkingsByStreet(parkingsStreet)\">\n                            {{parkingsStreet}}\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedNumberOfDays\" placeholder=\"for the last days\">\n                        <mat-option *ngFor=\"let day of days\" [value]=\"day\"\n                                    (click)=\"calculateDate()\"\n                        >\n                            {{ day }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n            </div>\n        </mat-card>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3844,16 +3833,20 @@ var ParkingStatisticComponent = /** @class */ (function () {
         this.statisticService = statisticService;
         this.router = router;
         this.selectedCity = 'Lviv';
+        this.selectedNumberOfDays = 7;
+        this.days = [7, 14, 30, 365];
+        this.calculatedDate = new Date();
     }
     ParkingStatisticComponent.prototype.ngOnInit = function () {
         this.findAllParkingsCities();
     };
     ParkingStatisticComponent.prototype.findBestParkingsByStreet = function (inputStreet) {
         var _this = this;
-        this.statisticService.getBestParkingsByCityAndStreet(this.selectedCity, inputStreet)
+        this.statisticService.getBestParkingsByCityAndStreet(this.selectedCity, inputStreet, this.calculatedDate.getTime())
             .subscribe(function (parkings) {
             _this.parkings = parkings;
         });
+        this.refreshDate();
     };
     ParkingStatisticComponent.prototype.findParkingsStreets = function (input) {
         var _this = this;
@@ -3881,6 +3874,12 @@ var ParkingStatisticComponent = /** @class */ (function () {
     };
     ParkingStatisticComponent.prototype.theStreetWasSelected = function (street) {
         this.selectedStreet = street;
+    };
+    ParkingStatisticComponent.prototype.calculateDate = function () {
+        this.calculatedDate.setDate(new Date().getDate() - this.selectedNumberOfDays);
+    };
+    ParkingStatisticComponent.prototype.refreshDate = function () {
+        this.calculatedDate = new Date();
     };
     ParkingStatisticComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -3986,11 +3985,12 @@ var StatisticsService = /** @class */ (function () {
     StatisticsService.prototype.getAllParkingsCities = function () {
         return this.http.get(this.statisticUrl + '/findAllparkingscities');
     };
-    StatisticsService.prototype.getBestParkingsByCityAndStreet = function (city, street) {
+    StatisticsService.prototype.getBestParkingsByCityAndStreet = function (city, street, date) {
         return this.http.get(this.statisticUrl + '/findbestparkingsbystreetandcity', {
             params: {
                 city: city,
-                street: street
+                street: street,
+                date: date.toString()
             }
         });
     };

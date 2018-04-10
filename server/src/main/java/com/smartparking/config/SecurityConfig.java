@@ -18,11 +18,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import java.util.Arrays;
 
 
 @Configuration
@@ -63,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth/**", "/parkingdetail/**", "/parkings-nearby/**", "/statistic/**","/spotstatistic/**").permitAll()
                 .antMatchers("/profile", "/profile/**").hasAnyAuthority(Role.DRIVER.toString(), Role.PROVIDER_MANAGER.toString(), Role.SUPERUSER.toString())
                 .antMatchers("/clients", "/clients/**", "/manager-configuration/**", "/providers", "/providers/**").hasAnyAuthority(Role.PROVIDER_MANAGER.toString(), Role.SUPERUSER.toString())
-                .antMatchers().hasAnyAuthority(Role.SUPERUSER.toString())
+                .antMatchers("parkings-with-spots", "events/save").hasAnyAuthority(Role.SUPERUSER.toString())
                 .anyRequest().permitAll();
         http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
     }
