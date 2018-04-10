@@ -4434,7 +4434,7 @@ var SuperuserConfigurationComponent = /** @class */ (function () {
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
     production: false,
-    apiUrl: 'http://ec2-18-184-26-219.eu-central-1.compute.amazonaws.com',
+    apiUrl: 'https://ec2-18-184-26-219.eu-central-1.compute.amazonaws.com',
 };
 
 
