@@ -2,15 +2,16 @@ package com.smartparking.controller;
 
 import com.smartparking.entity.Spot;
 import com.smartparking.model.request.ClientRequest;
+import com.smartparking.model.request.DateRangeRequest;
 import com.smartparking.model.response.SpotResponse;
 import com.smartparking.model.response.SpotStatisticResponse;
 import com.smartparking.service.SpotService;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ import java.util.Map;
 public class SpotController {
 
     private final SpotService spotService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(SpotController.class);
 
 
 
@@ -55,41 +57,28 @@ public class SpotController {
         return spotResponseList;
     }
 
+
+
     @RequestMapping("spotstatistic/{id}")
-    List<SpotStatisticResponse> getSpotStatistic (@PathVariable Long id) {
+    public ResponseEntity<List<SpotStatisticResponse>> getSpotStatistic(
+            @PathVariable Long id,
+            @RequestParam("start_time") String startTime,
+            @RequestParam("end_time") String endTime) {
+        LOGGER.info("------------------------------ResponseEntity<List<SpotStatisticResponse>> getSpotStatistic------------------------------");
+        LOGGER.info("------------------------------"+startTime+"------------------------------");
+        LOGGER.info("------------------------------"+endTime+"------------------------------");
         List<SpotStatisticResponse> spotStatisticResponseList = new ArrayList<>();
-
-        Map<Long, Double > spotStatistic = spotService.getSpotStatistic(id);
-        for(Map.Entry<Long, Double> entry : spotStatistic.entrySet()) {
+        Map<Long, Double> spotStatistic = spotService.getSpotStatistic(id);
+        for (Map.Entry<Long, Double> entry : spotStatistic.entrySet()) {
             Long key = entry.getKey();
             Double value = entry.getValue();
             SpotStatisticResponse spotStatisticResponse = new SpotStatisticResponse();
             spotStatisticResponse.setId(key);
             spotStatisticResponse.setNumberOfHours(value);
             spotStatisticResponseList.add(spotStatisticResponse);
-
         }
-
-        return spotStatisticResponseList;
-    }
-
-
-    @RequestMapping("spotstatistic/byDate/{id}")
-    List<SpotStatisticResponse> getSpotStatisticByDateRange (@PathVariable Long id,@RequestBody ClientRequest clientRequest) {
-        List<SpotStatisticResponse> spotStatisticResponseList = new ArrayList<>();
-
-        /*Map<Long, Double > spotStatistic = spotService.getSpotStatistic(id);
-        for(Map.Entry<Long, Double> entry : spotStatistic.entrySet()) {
-            Long key = entry.getKey();
-            Double value = entry.getValue();
-            SpotStatisticResponse spotStatisticResponse = new SpotStatisticResponse();
-            spotStatisticResponse.setId(key);
-            spotStatisticResponse.setNumberOfHours(value);
-            spotStatisticResponseList.add(spotStatisticResponse);
-
-        }*/
-
-        return spotStatisticResponseList;
+        LOGGER.info(spotStatisticResponseList.toString());
+        return new ResponseEntity<>(spotStatisticResponseList, HttpStatus.OK);
     }
 
 
