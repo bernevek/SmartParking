@@ -12,7 +12,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import java.io.IOException;
 
 @SpringBootApplication
-@EnableWebMvc
 @EnableConfigurationProperties
 @Configuration
 @ComponentScan

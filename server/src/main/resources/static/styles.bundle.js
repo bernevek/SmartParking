@@ -547,7 +547,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__("./src/styles.css");
@@ -556,5 +556,5 @@ module.exports = __webpack_require__("./node_modules/leaflet/dist/leaflet.css");
 
 /***/ })
 
-},[2]);
+},[5]);
 //# sourceMappingURL=styles.bundle.js.map

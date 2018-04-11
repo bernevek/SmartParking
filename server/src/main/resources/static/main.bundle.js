@@ -1,5 +1,300 @@
 webpackJsonp(["main"],{
 
+/***/ "./node_modules/har-validator/node_modules/ajv/lib recursive":
+/***/ (function(module, exports) {
+
+function webpackEmptyContext(req) {
+	throw new Error("Cannot find module '" + req + "'.");
+}
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = "./node_modules/har-validator/node_modules/ajv/lib recursive";
+
+/***/ }),
+
+/***/ "./node_modules/har-validator/node_modules/ajv/lib/compile recursive":
+/***/ (function(module, exports) {
+
+function webpackEmptyContext(req) {
+	throw new Error("Cannot find module '" + req + "'.");
+}
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = "./node_modules/har-validator/node_modules/ajv/lib/compile recursive";
+
+/***/ }),
+
+/***/ "./node_modules/moment/locale recursive ^\\.\\/.*$":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
@@ -244,13 +539,21 @@ var AppNavbarHeaderComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__client_profile_client_profile_edit_password_client_profile_edit_password_component__ = __webpack_require__("./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__statistic_statistic_component__ = __webpack_require__("./src/app/statistic/statistic.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__statistic_parking_statistic_parking_statistic_component__ = __webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__spotstatistic_spotstatistic_component__ = __webpack_require__("./src/app/spotstatistic/spotstatistic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__statistic_spotstatistic_spotstatistic_component__ = __webpack_require__("./src/app/statistic/spotstatistic/spotstatistic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__errors_non_found_non_found_component__ = __webpack_require__("./src/app/errors/non-found/non-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__errors_internal_server_error_internal_server_error_component__ = __webpack_require__("./src/app/errors/internal-server-error/internal-server-error.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__errors_forbidden_forbidden_component__ = __webpack_require__("./src/app/errors/forbidden/forbidden.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__client_profile_client_password_change_confirmation_client_password_change_confirmation_component__ = __webpack_require__("./src/app/client-profile/client-password-change-confirmation/client-password-change-confirmation.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -304,10 +607,13 @@ var routes = [
     { path: 'profile/edit/password', component: __WEBPACK_IMPORTED_MODULE_18__client_profile_client_profile_edit_password_client_profile_edit_password_component__["a" /* ClientProfileEditPasswordComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_16__client_profile_client_profile_component__["a" /* ClientProfileComponent */] },
     { path: 'statistic', component: __WEBPACK_IMPORTED_MODULE_19__statistic_statistic_component__["a" /* StatisticComponent */] },
-    { path: 'statistic/parkingstatistic', component: __WEBPACK_IMPORTED_MODULE_20__statistic_parking_statistic_parking_statistic_component__["a" /* ParkingStatisticComponent */] },
     { path: 'statistic/parkingstatistic/parkingdetail/:id', component: __WEBPACK_IMPORTED_MODULE_4__parking_detail_parking_detail_component__["a" /* ParkingDetailComponent */] },
     { path: 'statistic/parkingstatistic', component: __WEBPACK_IMPORTED_MODULE_20__statistic_parking_statistic_parking_statistic_component__["a" /* ParkingStatisticComponent */] },
-    { path: 'spotstatistic/:id', component: __WEBPACK_IMPORTED_MODULE_21__spotstatistic_spotstatistic_component__["a" /* SpotstatisticComponent */] }
+    { path: 'parkingdetail/:id/spotstatistic', component: __WEBPACK_IMPORTED_MODULE_21__statistic_spotstatistic_spotstatistic_component__["a" /* SpotstatisticComponent */] },
+    { path: 'update/password/:uuid', component: __WEBPACK_IMPORTED_MODULE_25__client_profile_client_password_change_confirmation_client_password_change_confirmation_component__["a" /* ClientPasswordChangeConfirmationComponent */] },
+    { path: 'non-found', component: __WEBPACK_IMPORTED_MODULE_22__errors_non_found_non_found_component__["a" /* NonFoundComponent */] },
+    { path: 'server-error', component: __WEBPACK_IMPORTED_MODULE_23__errors_internal_server_error_internal_server_error_component__["a" /* InternalServerErrorComponent */] },
+    { path: 'forbidden', component: __WEBPACK_IMPORTED_MODULE_24__errors_forbidden_forbidden_component__["a" /* ForbiddenComponent */] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -374,6 +680,7 @@ var AppComponent = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export getAuthServiceConfigs */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
@@ -388,29 +695,30 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__index_parking_list_parking_list_component__ = __webpack_require__("./src/app/index/parking-list/parking-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__manager_manager_parking_service__ = __webpack_require__("./src/app/manager/manager-parking.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__superuser_configuration_superuser_configuration_component__ = __webpack_require__("./src/app/superuser-configuration/superuser-configuration.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__parking_detail_parking_detail_component__ = __webpack_require__("./src/app/parking-detail/parking-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__superuser_configuration_providers_provider_service__ = __webpack_require__("./src/app/superuser-configuration/providers/provider.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__clients_clients_component__ = __webpack_require__("./src/app/clients/clients.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__clients_client_list_client_list_component__ = __webpack_require__("./src/app/clients/client-list/client-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__clients_client_edit_client_edit_component__ = __webpack_require__("./src/app/clients/client-edit/client-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__clients_client_list_client_item_client_item_component__ = __webpack_require__("./src/app/clients/client-list/client-item/client-item.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__superuser_configuration_providers_provider_list_provider_list_component__ = __webpack_require__("./src/app/superuser-configuration/providers/provider-list/provider-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__superuser_configuration_providers_provider_detail_provider_detail_component__ = __webpack_require__("./src/app/superuser-configuration/providers/provider-detail/provider-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__superuser_configuration_providers_add_provider_add_provider_component__ = __webpack_require__("./src/app/superuser-configuration/providers/add-provider/add-provider.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__clients_client_list_filter_pipe__ = __webpack_require__("./src/app/clients/client-list/filter.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__clients_client_detail_client_detail_component__ = __webpack_require__("./src/app/clients/client-detail/client-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__auth_login_login_component__ = __webpack_require__("./src/app/auth/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__auth_registration_registration_component__ = __webpack_require__("./src/app/auth/registration/registration.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_materials_module__ = __webpack_require__("./src/app/angular-materials.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__index_index_component__ = __webpack_require__("./src/app/index/index.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__index_parking_list_filter_parking_list_filter_component__ = __webpack_require__("./src/app/index/parking-list-filter/parking-list-filter.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__manager_manager_parking_configure_manager_parking_configure_component__ = __webpack_require__("./src/app/manager/manager-parking-configure/manager-parking-configure.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__manager_manager_parking_list_manager_parking_list_component__ = __webpack_require__("./src/app/manager/manager-parking-list/manager-parking-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__interceptor_service__ = __webpack_require__("./src/app/interceptor.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__ = __webpack_require__("./node_modules/angular5-social-auth/angular5-social-auth.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__superuser_configuration_superuser_configuration_component__ = __webpack_require__("./src/app/superuser-configuration/superuser-configuration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__parking_detail_parking_detail_component__ = __webpack_require__("./src/app/parking-detail/parking-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__superuser_configuration_providers_provider_service__ = __webpack_require__("./src/app/superuser-configuration/providers/provider.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__clients_clients_component__ = __webpack_require__("./src/app/clients/clients.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__clients_client_list_client_list_component__ = __webpack_require__("./src/app/clients/client-list/client-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__clients_client_edit_client_edit_component__ = __webpack_require__("./src/app/clients/client-edit/client-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__clients_client_list_client_item_client_item_component__ = __webpack_require__("./src/app/clients/client-list/client-item/client-item.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__superuser_configuration_providers_provider_list_provider_list_component__ = __webpack_require__("./src/app/superuser-configuration/providers/provider-list/provider-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__superuser_configuration_providers_provider_detail_provider_detail_component__ = __webpack_require__("./src/app/superuser-configuration/providers/provider-detail/provider-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__superuser_configuration_providers_add_provider_add_provider_component__ = __webpack_require__("./src/app/superuser-configuration/providers/add-provider/add-provider.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__clients_client_list_filter_pipe__ = __webpack_require__("./src/app/clients/client-list/filter.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__clients_client_detail_client_detail_component__ = __webpack_require__("./src/app/clients/client-detail/client-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__auth_login_login_component__ = __webpack_require__("./src/app/auth/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__auth_registration_registration_component__ = __webpack_require__("./src/app/auth/registration/registration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__angular_materials_module__ = __webpack_require__("./src/app/angular-materials.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__index_index_component__ = __webpack_require__("./src/app/index/index.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__index_parking_list_filter_parking_list_filter_component__ = __webpack_require__("./src/app/index/parking-list-filter/parking-list-filter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__manager_manager_parking_configure_manager_parking_configure_component__ = __webpack_require__("./src/app/manager/manager-parking-configure/manager-parking-configure.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__manager_manager_parking_list_manager_parking_list_component__ = __webpack_require__("./src/app/manager/manager-parking-list/manager-parking-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__agm_core__ = __webpack_require__("./node_modules/@agm/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__auth_token_token_storage__ = __webpack_require__("./src/app/auth/token/token-storage.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__index_parking_list_filter_location_field_location_field_component__ = __webpack_require__("./src/app/index/parking-list-filter/location-field/location-field.component.ts");
@@ -430,11 +738,15 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__index_parking_map_parking_map_component__ = __webpack_require__("./src/app/index/parking-map/parking-map.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__statistic_statistic_component__ = __webpack_require__("./src/app/statistic/statistic.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__statistic_parking_statistic_parking_statistic_component__ = __webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__spotstatistic_spotstatistic_component__ = __webpack_require__("./src/app/spotstatistic/spotstatistic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__statistic_spotstatistic_spotstatistic_component__ = __webpack_require__("./src/app/statistic/spotstatistic/spotstatistic.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__statistic_statistics_service__ = __webpack_require__("./src/app/statistic/statistics.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56_ngx_bootstrap_datepicker__ = __webpack_require__("./node_modules/ngx-bootstrap/datepicker/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__expiration_checker_service__ = __webpack_require__("./src/app/expiration-checker.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__auth_auth_service__ = __webpack_require__("./src/app/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__client_profile_client_password_change_confirmation_client_password_change_confirmation_component__ = __webpack_require__("./src/app/client-profile/client-password-change-confirmation/client-password-change-confirmation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__auth_custom_auth_service__ = __webpack_require__("./src/app/auth/custom-auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__errors_non_found_non_found_component__ = __webpack_require__("./src/app/errors/non-found/non-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__errors_internal_server_error_internal_server_error_component__ = __webpack_require__("./src/app/errors/internal-server-error/internal-server-error.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__errors_forbidden_forbidden_component__ = __webpack_require__("./src/app/errors/forbidden/forbidden.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__interceptors_http_interceptors__ = __webpack_require__("./src/app/interceptors/http-interceptors.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -500,33 +812,54 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+function getAuthServiceConfigs() {
+    var config = new __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__["AuthServiceConfig"]([
+        {
+            id: __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__["FacebookLoginProvider"].PROVIDER_ID,
+            provider: new __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__["FacebookLoginProvider"]('372788403197318')
+        },
+        {
+            id: __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__["GoogleLoginProvider"].PROVIDER_ID,
+            provider: new __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__["GoogleLoginProvider"]("Your-Google-Client-Id")
+        },
+        {
+            id: __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__["LinkedinLoginProvider"].PROVIDER_ID,
+            provider: new __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__["GoogleLoginProvider"]("Your-Linkedin-Client-Id")
+        },
+    ]);
+    return config;
+}
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_30__index_index_component__["a" /* IndexComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__index_index_component__["a" /* IndexComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__app_navbar_header_app_navbar_header_component__["a" /* AppNavbarHeaderComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__index_parking_list_parking_list_component__["a" /* ParkingListComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__superuser_configuration_superuser_configuration_component__["a" /* SuperuserConfigurationComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__parking_detail_parking_detail_component__["a" /* ParkingDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__superuser_configuration_superuser_configuration_component__["a" /* SuperuserConfigurationComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__clients_clients_component__["a" /* ClientsComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__clients_client_list_client_list_component__["a" /* ClientListComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__clients_client_edit_client_edit_component__["a" /* ClientEditComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__clients_client_list_client_item_client_item_component__["a" /* ClientItemComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__superuser_configuration_providers_provider_list_provider_list_component__["a" /* ProviderListComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__auth_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__auth_registration_registration_component__["a" /* RegistrationComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__superuser_configuration_providers_provider_detail_provider_detail_component__["a" /* ProviderDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__index_parking_list_filter_parking_list_filter_component__["a" /* ParkingListFilterComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__manager_manager_parking_configure_manager_parking_configure_component__["a" /* ManagerParkingConfigureComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__manager_manager_parking_list_manager_parking_list_component__["a" /* ManagerParkingListComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__superuser_configuration_providers_add_provider_add_provider_component__["a" /* AddProviderComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__clients_client_list_filter_pipe__["a" /* FilterPipe */],
-                __WEBPACK_IMPORTED_MODULE_25__clients_client_detail_client_detail_component__["a" /* ClientDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__superuser_configuration_superuser_configuration_component__["a" /* SuperuserConfigurationComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__parking_detail_parking_detail_component__["a" /* ParkingDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__superuser_configuration_superuser_configuration_component__["a" /* SuperuserConfigurationComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__clients_clients_component__["a" /* ClientsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__clients_client_list_client_list_component__["a" /* ClientListComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__clients_client_edit_client_edit_component__["a" /* ClientEditComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__clients_client_list_client_item_client_item_component__["a" /* ClientItemComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__superuser_configuration_providers_provider_list_provider_list_component__["a" /* ProviderListComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__auth_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__auth_registration_registration_component__["a" /* RegistrationComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__superuser_configuration_providers_provider_detail_provider_detail_component__["a" /* ProviderDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__index_parking_list_filter_parking_list_filter_component__["a" /* ParkingListFilterComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__manager_manager_parking_configure_manager_parking_configure_component__["a" /* ManagerParkingConfigureComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__manager_manager_parking_list_manager_parking_list_component__["a" /* ManagerParkingListComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__superuser_configuration_providers_add_provider_add_provider_component__["a" /* AddProviderComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__clients_client_list_filter_pipe__["a" /* FilterPipe */],
+                __WEBPACK_IMPORTED_MODULE_26__clients_client_detail_client_detail_component__["a" /* ClientDetailComponent */],
                 __WEBPACK_IMPORTED_MODULE_37__index_parking_list_filter_location_field_location_field_component__["a" /* LocationFieldComponent */],
                 __WEBPACK_IMPORTED_MODULE_39__index_parking_list_filter_radius_field_radius_field_component__["a" /* RadiusFieldComponent */],
                 __WEBPACK_IMPORTED_MODULE_41__index_parking_list_filter_price_range_field_price_range_field_component__["a" /* PriceRangeFieldComponent */],
@@ -539,7 +872,12 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_50__parking_detail_favorites_add_configm_dialog_favorites_add_configm_dialog_component__["b" /* FavoritesAddConfigmDialogComponent */],
                 __WEBPACK_IMPORTED_MODULE_52__statistic_statistic_component__["a" /* StatisticComponent */],
                 __WEBPACK_IMPORTED_MODULE_53__statistic_parking_statistic_parking_statistic_component__["a" /* ParkingStatisticComponent */],
-                __WEBPACK_IMPORTED_MODULE_54__spotstatistic_spotstatistic_component__["a" /* SpotstatisticComponent */]
+                __WEBPACK_IMPORTED_MODULE_54__statistic_spotstatistic_spotstatistic_component__["a" /* SpotstatisticComponent */],
+                __WEBPACK_IMPORTED_MODULE_59__errors_non_found_non_found_component__["a" /* NonFoundComponent */],
+                __WEBPACK_IMPORTED_MODULE_60__errors_internal_server_error_internal_server_error_component__["a" /* InternalServerErrorComponent */],
+                __WEBPACK_IMPORTED_MODULE_61__errors_forbidden_forbidden_component__["a" /* ForbiddenComponent */],
+                __WEBPACK_IMPORTED_MODULE_54__statistic_spotstatistic_spotstatistic_component__["a" /* SpotstatisticComponent */],
+                __WEBPACK_IMPORTED_MODULE_57__client_profile_client_password_change_confirmation_client_password_change_confirmation_component__["a" /* ClientPasswordChangeConfirmationComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_35__agm_core__["AgmCoreModule"].forRoot({
@@ -551,44 +889,40 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */],
                 __WEBPACK_IMPORTED_MODULE_43__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_12__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_27__angular_forms__["k" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_27__angular_forms__["f" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_29__angular_materials_module__["a" /* AngularMaterialsModule */],
+                __WEBPACK_IMPORTED_MODULE_13__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_28__angular_forms__["k" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_28__angular_forms__["f" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_30__angular_materials_module__["a" /* AngularMaterialsModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_material__["q" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_common__["CommonModule"],
                 __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatAutocompleteModule */],
-                __WEBPACK_IMPORTED_MODULE_29__angular_materials_module__["a" /* AngularMaterialsModule */],
+                __WEBPACK_IMPORTED_MODULE_30__angular_materials_module__["a" /* AngularMaterialsModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_material__["h" /* MatDividerModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_material__["i" /* MatExpansionModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatButtonModule */],
                 __WEBPACK_IMPORTED_MODULE_40__angular_material_slider__["b" /* MatSliderModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_material__["p" /* MatProgressSpinnerModule */],
                 __WEBPACK_IMPORTED_MODULE_45__angular_material_radio__["a" /* MatRadioModule */],
-                __WEBPACK_IMPORTED_MODULE_56_ngx_bootstrap_datepicker__["a" /* BsDatepickerModule */].forRoot()
+                __WEBPACK_IMPORTED_MODULE_56_ngx_bootstrap_datepicker__["a" /* BsDatepickerModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__["SocialLoginModule"]
             ],
             entryComponents: [__WEBPACK_IMPORTED_MODULE_46__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__["a" /* DeleteConfirmationDialogComponent */], __WEBPACK_IMPORTED_MODULE_50__parking_detail_favorites_add_configm_dialog_favorites_add_configm_dialog_component__["b" /* FavoritesAddConfigmDialogComponent */]],
             providers: [
                 {
-                    provide: __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
-                    useClass: __WEBPACK_IMPORTED_MODULE_57__expiration_checker_service__["a" /* ExpirationCheckerService */],
-                    multi: true
+                    provide: __WEBPACK_IMPORTED_MODULE_12_angular5_social_auth__["AuthServiceConfig"],
+                    useFactory: getAuthServiceConfigs
                 },
-                {
-                    provide: __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
-                    useClass: __WEBPACK_IMPORTED_MODULE_34__interceptor_service__["a" /* InterceptorService */],
-                    multi: true
-                },
+                __WEBPACK_IMPORTED_MODULE_62__interceptors_http_interceptors__["a" /* httpInterceptorProviders */],
                 __WEBPACK_IMPORTED_MODULE_10__parking_service__["a" /* ParkingService */],
                 __WEBPACK_IMPORTED_MODULE_11__manager_manager_parking_service__["a" /* ManagerParkingService */],
-                __WEBPACK_IMPORTED_MODULE_15__superuser_configuration_providers_provider_service__["a" /* ProviderService */],
-                __WEBPACK_IMPORTED_MODULE_19__clients_client_service__["a" /* ClientService */],
+                __WEBPACK_IMPORTED_MODULE_16__superuser_configuration_providers_provider_service__["a" /* ProviderService */],
+                __WEBPACK_IMPORTED_MODULE_20__clients_client_service__["a" /* ClientService */],
                 __WEBPACK_IMPORTED_MODULE_38__service_ip_location_service__["a" /* IpLocationService */],
                 __WEBPACK_IMPORTED_MODULE_44__services_pager_service__["a" /* PagerService */],
                 __WEBPACK_IMPORTED_MODULE_36__auth_token_token_storage__["a" /* TokenStorage */],
                 __WEBPACK_IMPORTED_MODULE_44__services_pager_service__["a" /* PagerService */],
                 __WEBPACK_IMPORTED_MODULE_55__statistic_statistics_service__["a" /* StatisticsService */],
-                __WEBPACK_IMPORTED_MODULE_58__auth_auth_service__["a" /* AuthService */]
+                __WEBPACK_IMPORTED_MODULE_58__auth_custom_auth_service__["a" /* CustomAuthService */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]],
             schemas: [__WEBPACK_IMPORTED_MODULE_1__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]]
@@ -601,11 +935,11 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/auth/auth.service.ts":
+/***/ "./src/app/auth/custom-auth.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomAuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
@@ -621,29 +955,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/*const httpOptions = {
-    headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'Basic ' + btoa(angularClient.clientID + ':' + angularClient.clientSecret)
-    })
-};*/
-var AuthService = /** @class */ (function () {
-    function AuthService(http) {
+var CustomAuthService = /** @class */ (function () {
+    function CustomAuthService(http) {
         this.http = http;
         this.loginUrl = __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].apiUrl + '/auth/generate-token';
         this.registrationUrl = __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].apiUrl + '/auth/signup';
     }
-    AuthService.prototype.signIn = function (loginData) {
+    CustomAuthService.prototype.signIn = function (loginData) {
         return this.http.post(this.loginUrl, loginData);
     };
-    AuthService.prototype.register = function (data) {
+    CustomAuthService.prototype.register = function (data) {
         return this.http.post(this.registrationUrl, data);
     };
-    AuthService = __decorate([
+    CustomAuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClient */]])
-    ], AuthService);
-    return AuthService;
+    ], CustomAuthService);
+    return CustomAuthService;
 }());
 
 
@@ -660,7 +988,7 @@ module.exports = ".container-style {\n    font-family: -apple-system, system-ui,
 /***/ "./src/app/auth/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"container-fluid container-style\">\n    <form [formGroup]=\"loginForm\" (ngSubmit)=\"login()\" class = \"formstyle offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6\">\n        <h3 class=\"heading row offset-4\">Authorization</h3>\n        <div class = \"row\">\n            <mat-form-field class = \"customwidth\">\n                <input matInput placeholder=\"Enter email address\" formControlName=\"email\">\n                <mat-error *ngIf=\"emailControl.hasError('email') && !emailControl.hasError('required')\">\n                    Please enter a valid email address\n                </mat-error>\n                <mat-error *ngIf=\"emailControl.hasError('required')\">\n                    Email is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class = \"row\">\n            <mat-form-field class = \"customwidth\">\n                <input matInput placeholder=\"Enter your password\" formControlName=\"password\" [type]=\"hide ? 'password' : 'text'\">\n                <mat-icon matSuffix (click)=\"hide = !hide\" class=\"cursor\">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>\n                <mat-error *ngIf=\"passwordControl.hasError('minlength') && !passwordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('maxlength') && !passwordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class = \"row offset-5 submit\">\n            <button mat-button class=\"btn btn-success\" [disabled]=\"!loginForm.valid\">Submit</button>\n        </div>\n        <span class=\"registration row offset-3\">Do not have an account ? <a routerLink=\"/registration\"> Sign up!</a></span>\n    </form>\n</div>\n\n\n"
+module.exports = "<div class = \"container-fluid container-style\">\n    <form [formGroup]=\"loginForm\" (ngSubmit)=\"login()\" class = \"formstyle offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6\">\n        <h3 class=\"heading row offset-4\">Authorization</h3>\n        <div class = \"row\">\n            <mat-form-field class = \"customwidth\">\n                <input matInput placeholder=\"Enter email address\" formControlName=\"email\">\n                <mat-error *ngIf=\"emailControl.hasError('email') && !emailControl.hasError('required')\">\n                    Please enter a valid email address\n                </mat-error>\n                <mat-error *ngIf=\"emailControl.hasError('required')\">\n                    Email is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class = \"row\">\n            <mat-form-field class = \"customwidth\">\n                <input matInput placeholder=\"Enter your password\" formControlName=\"password\" [type]=\"hide ? 'password' : 'text'\">\n                <mat-icon matSuffix (click)=\"hide = !hide\" class=\"cursor\">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>\n                <mat-error *ngIf=\"passwordControl.hasError('minlength') && !passwordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('maxlength') && !passwordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class = \"row offset-5 submit\">\n            <button mat-button class=\"btn btn-success\" [disabled]=\"!loginForm.valid\">Submit</button>\n        </div>\n        <span class=\"registration row offset-3\">Do not have an account ? <a routerLink=\"/registration\"> Sign up!</a></span>\n    </form>\n    <button (click)=\"socialSignIn('facebook')\">Sign in with Facebook</button>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -674,7 +1002,9 @@ module.exports = "<div class = \"container-fluid container-style\">\n    <form [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__token_token_storage__ = __webpack_require__("./src/app/auth/token/token-storage.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__auth_service__ = __webpack_require__("./src/app/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__custom_auth_service__ = __webpack_require__("./src/app/auth/custom-auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular5_social_auth__ = __webpack_require__("./node_modules/angular5-social-auth/angular5-social-auth.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular5_social_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular5_social_auth__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -690,13 +1020,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(formBuilder, authService, router, tokenStorage) {
+    function LoginComponent(formBuilder, authService, router, tokenStorage, socialAuthService) {
         var _this = this;
         this.formBuilder = formBuilder;
         this.authService = authService;
         this.router = router;
         this.tokenStorage = tokenStorage;
+        this.socialAuthService = socialAuthService;
         this.hide = true;
         this.emailControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["l" /* Validators */].required,
@@ -726,6 +1058,21 @@ var LoginComponent = /** @class */ (function () {
             password: this.passwordControl
         });
     };
+    LoginComponent.prototype.socialSignIn = function (socialPlatform) {
+        var socialPlatformProvider;
+        if (socialPlatform == "facebook") {
+            socialPlatformProvider = __WEBPACK_IMPORTED_MODULE_6_angular5_social_auth__["FacebookLoginProvider"].PROVIDER_ID;
+        }
+        else if (socialPlatform == "google") {
+            socialPlatformProvider = __WEBPACK_IMPORTED_MODULE_6_angular5_social_auth__["GoogleLoginProvider"].PROVIDER_ID;
+        }
+        else if (socialPlatform == "linkedin") {
+            socialPlatformProvider = __WEBPACK_IMPORTED_MODULE_6_angular5_social_auth__["LinkedinLoginProvider"].PROVIDER_ID;
+        }
+        this.socialAuthService.signIn(socialPlatformProvider).then(function (userData) {
+            console.log(socialPlatform + " sign in data : ", userData);
+        });
+    };
     LoginComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-login',
@@ -733,9 +1080,10 @@ var LoginComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/auth/login/login.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_5__auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_5__custom_auth_service__["a" /* CustomAuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__token_token_storage__["a" /* TokenStorage */]])
+            __WEBPACK_IMPORTED_MODULE_3__token_token_storage__["a" /* TokenStorage */],
+            __WEBPACK_IMPORTED_MODULE_6_angular5_social_auth__["AuthService"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -768,7 +1116,7 @@ module.exports = "<div class = \"container-fluid container-style\">\n\n  <form [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_service__ = __webpack_require__("./src/app/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__custom_auth_service__ = __webpack_require__("./src/app/auth/custom-auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -858,7 +1206,7 @@ var RegistrationComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/auth/registration/registration.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_4__auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_4__custom_auth_service__["a" /* CustomAuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], RegistrationComponent);
     return RegistrationComponent;
@@ -917,6 +1265,7 @@ var TokenStorage = /** @class */ (function () {
         window.localStorage.clear();
         this.accessToken = null;
         this.refreshToken = null;
+        this.decodedToken = null;
     };
     TokenStorage.prototype.saveToken = function (token) {
         this.signOut();
@@ -924,6 +1273,7 @@ var TokenStorage = /** @class */ (function () {
         window.localStorage.setItem(REFRESH_TOKEN_KEY, token.refreshToken);
         this.accessToken = window.localStorage.getItem(ACCESS_TOKEN_KEY);
         this.refreshToken = window.localStorage.getItem(REFRESH_TOKEN_KEY);
+        this.decodedToken = this.decodeToken();
     };
     TokenStorage.prototype.getAccessToken = function () {
         return this.accessToken;
@@ -963,31 +1313,30 @@ var TokenStorage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.css":
+/***/ "./src/app/client-profile/client-password-change-confirmation/client-password-change-confirmation.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\n.submit {\n    padding: 5px;\n}\n\n.customwidth {\n    width: 100%;\n}\n\n.cursor {\n    cursor: pointer;\n}\n\nmat-form-field {\n    padding: 5px;\n    width: 50%;\n}"
+module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.html":
+/***/ "./src/app/client-profile/client-password-change-confirmation/client-password-change-confirmation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <form [formGroup]=\"passwordForm\" (ngSubmit)=\"updatePassword()\"\n          class=\"formstyle\">\n        <div class=\"row\">\n            <mat-form-field>\n                <input matInput placeholder=\"Enter your password\" formControlName=\"password\"\n                       [type]=\"hide ? 'password' : 'text'\">\n                <mat-icon matSuffix (click)=\"hide = !hide\" class=\"cursor\">{{hide ? 'visibility' : 'visibility_off'}}\n                </mat-icon>\n                <mat-error *ngIf=\"passwordControl.hasError('minlength') && !passwordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('maxlength') && !passwordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class=\"row\">\n            <mat-form-field>\n                <input matInput placeholder=\"Confirm your password\" formControlName=\"confirmPassword\"\n                       [type]=\"hide ? 'password' : 'text'\">\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('MatchPassword') && !confirmPasswordControl.hasError('required')\">\n                    Passwords doesn`t match\n                </mat-error>\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('minlength') && !confirmPasswordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('maxlength') && !confirmPasswordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"confirmPasswordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class=\"row\">\n            <button mat-raised-button type=\"submit\" color=\"primary\" [disabled]=\"!passwordForm.valid\">Submit</button>\n        </div>\n    </form>\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-12 text-center\">\n      <img src=\"https://static.mytaxi.com/images/layout-1/icons/success.svg\" alt=\"Successful\">\n      <h3>Your password is changed successfully</h3>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
-/***/ "./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.ts":
+/***/ "./src/app/client-profile/client-password-change-confirmation/client-password-change-confirmation.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export PasswordValidation */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientProfileEditPasswordComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientPasswordChangeConfirmationComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__client_profile_edit_password_password_data__ = __webpack_require__("./src/app/client-profile/client-profile-edit-password/password-data.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1002,6 +1351,99 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+var NEW_PASSWORD = 'new_password';
+var UUID_PASSWORD_CONFIRM = 'uuid_password_confirm';
+var ClientPasswordChangeConfirmationComponent = /** @class */ (function () {
+    function ClientPasswordChangeConfirmationComponent(clientService, route, snackBar, router) {
+        this.clientService = clientService;
+        this.route = route;
+        this.snackBar = snackBar;
+        this.router = router;
+    }
+    ClientPasswordChangeConfirmationComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var localUUID = window.localStorage.getItem(UUID_PASSWORD_CONFIRM);
+        var pathUUID = this.route.snapshot.paramMap.get('uuid');
+        if (localUUID == pathUUID) {
+            var data = new __WEBPACK_IMPORTED_MODULE_3__client_profile_edit_password_password_data__["a" /* PasswordData */]();
+            data.password = window.localStorage.getItem(NEW_PASSWORD);
+            data.confirmPassword = window.localStorage.getItem(NEW_PASSWORD);
+            this.clientService.updateClientPassword(data).subscribe(function (response) {
+                _this.snackBar.open('Password changed successfully!', null, {
+                    duration: 4000
+                });
+                window.localStorage.removeItem(UUID_PASSWORD_CONFIRM);
+                window.localStorage.removeItem(NEW_PASSWORD);
+            }, function (error) {
+                _this.snackBar.open('Password changing Error! Try again', null, {
+                    duration: 4000
+                });
+            });
+            ;
+        }
+        else {
+            this.router.navigate(['/']);
+        }
+    };
+    ClientPasswordChangeConfirmationComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-client-password-change-confirmation',
+            template: __webpack_require__("./src/app/client-profile/client-password-change-confirmation/client-password-change-confirmation.component.html"),
+            styles: [__webpack_require__("./src/app/client-profile/client-password-change-confirmation/client-password-change-confirmation.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__clients_client_service__["a" /* ClientService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MatSnackBar */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
+    ], ClientPasswordChangeConfirmationComponent);
+    return ClientPasswordChangeConfirmationComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "\n.submit {\n    padding: 5px;\n}\n\n.customwidth {\n    width: 100%;\n}\n\n.cursor {\n    cursor: pointer;\n}\n\nmat-form-field {\n    padding: 5px;\n    width: 50%;\n}"
+
+/***/ }),
+
+/***/ "./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n    <form [formGroup]=\"passwordForm\" (ngSubmit)=\"sendConfirmation()\"\n          class=\"formstyle\">\n        <div class=\"row\">\n            <mat-form-field>\n                <input matInput placeholder=\"Enter your password\" formControlName=\"password\"\n                       [type]=\"hide ? 'password' : 'text'\">\n                <mat-icon matSuffix (click)=\"hide = !hide\" class=\"cursor\">{{hide ? 'visibility' : 'visibility_off'}}\n                </mat-icon>\n                <mat-error *ngIf=\"passwordControl.hasError('minlength') && !passwordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('maxlength') && !passwordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class=\"row\">\n            <mat-form-field>\n                <input matInput placeholder=\"Confirm your password\" formControlName=\"confirmPassword\"\n                       [type]=\"hide ? 'password' : 'text'\">\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('MatchPassword') && !confirmPasswordControl.hasError('required')\">\n                    Passwords doesn`t match\n                </mat-error>\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('minlength') && !confirmPasswordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error\n                        *ngIf=\"confirmPasswordControl.hasError('maxlength') && !confirmPasswordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"confirmPasswordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class=\"row\">\n            <button mat-raised-button type=\"submit\" color=\"primary\" [disabled]=\"!passwordForm.valid\">Send email confirmation</button>\n        </div>\n    </form>\n"
+
+/***/ }),
+
+/***/ "./src/app/client-profile/client-profile-edit-password/client-profile-edit-password.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export PasswordValidation */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientProfileEditPasswordComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var NEW_PASSWORD = 'new_password';
+var UUID_PASSWORD_CONFIRM = 'uuid_password_confirm';
 var PasswordValidation = /** @class */ (function () {
     function PasswordValidation() {
     }
@@ -1019,10 +1461,11 @@ var PasswordValidation = /** @class */ (function () {
 }());
 
 var ClientProfileEditPasswordComponent = /** @class */ (function () {
-    function ClientProfileEditPasswordComponent(formBuilder, clientService, router) {
+    function ClientProfileEditPasswordComponent(formBuilder, clientService, snackBar, router) {
         var _this = this;
         this.formBuilder = formBuilder;
         this.clientService = clientService;
+        this.snackBar = snackBar;
         this.router = router;
         this.hide = true;
         this.passwordControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [
@@ -1035,15 +1478,20 @@ var ClientProfileEditPasswordComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["l" /* Validators */].minLength(6),
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["l" /* Validators */].maxLength(16),
         ]);
-        this.updatePassword = function () {
+        this.sendConfirmation = function () {
+            window.localStorage.removeItem(NEW_PASSWORD);
+            window.localStorage.removeItem(UUID_PASSWORD_CONFIRM);
             _this.passwordData = _this.passwordForm.value;
-            _this.clientService.updateClientPassword(_this.passwordData).subscribe(function (info) {
-                alert(info.response);
-                _this.router.navigate(['/']);
+            _this.clientService.sendConfirmation().subscribe(function (response) {
+                window.localStorage.setItem(NEW_PASSWORD, _this.passwordData.password);
+                window.localStorage.setItem(UUID_PASSWORD_CONFIRM, response.response);
+                _this.snackBar.open('Email with confirmation sent successfuly. Check your email and confirm new password.', null, {
+                    duration: 5000
+                });
             }, function (error) {
-                if (error instanceof __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["d" /* HttpErrorResponse */]) {
-                    alert(error.error.response);
-                }
+                _this.snackBar.open('Email sending Error!', null, {
+                    duration: 4000
+                });
             });
         };
     }
@@ -1055,9 +1503,6 @@ var ClientProfileEditPasswordComponent = /** @class */ (function () {
             validator: PasswordValidation.MatchPassword
         });
     };
-    ClientProfileEditPasswordComponent.prototype.goToProfileEdit = function () {
-        this.router.navigate(['profile/edit']);
-    };
     ClientProfileEditPasswordComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-client-profile-edit-password',
@@ -1066,9 +1511,25 @@ var ClientProfileEditPasswordComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_2__clients_client_service__["a" /* ClientService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
     ], ClientProfileEditPasswordComponent);
     return ClientProfileEditPasswordComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/client-profile/client-profile-edit-password/password-data.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordData; });
+var PasswordData = /** @class */ (function () {
+    function PasswordData() {
+    }
+    return PasswordData;
 }());
 
 
@@ -1085,7 +1546,7 @@ module.exports = ".card {\n    width: 100%;\n    margin-top: 50px;\n    margin-b
 /***/ "./src/app/client-profile/client-profile-edit/client-profile-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" *ngIf=\"!client\" class=\"text-center\">\n    <div class=\"row mx-auto mt-3 center-block\">\n        <div class=\"col-6 mx-auto my-auto text-center\">\n            <mat-spinner mode=\"indeterminate\" style=\"margin-left: 35%;\"></mat-spinner>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <mat-card-header>\n            <div>\n                <legend>Edit profile</legend>\n            </div>\n        </mat-card-header>\n        <mat-card-content>\n            <form class=\"formstyle\"\n                  [formGroup]=\"profileEditForm\" (ngSubmit)=\"udateProfile()\">\n                <mat-accordion class=\"parking-configure-headers-align\">\n                    <mat-expansion-panel [expanded]=\"step === 0\" (opened)=\"setStep(0)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Photo\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.image\">\n                                    <img src=\"data:image/JPEG;base64,{{client.image}}\" style=\"height: 50px;\">\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <button mat-raised-button type=\"button\" color=\"primary\" (click)=\"imgFileInput.click()\"\n                                style=\"padding: 5px;\">Change a photo\n                        </button>\n                        <input hidden type=\"file\" formControlName=\"image\" accept=\"image/jpeg\" #imgFileInput\n                               (change)=\"onFileChange($event)\"/>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"resetImage()\">Reset</button>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 1\" (opened)=\"setStep(1)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                First name\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.firstName\">\n                                    {{client.firstName}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-form-field>\n                            <input matInput [(ngModel)]=\"client.firstName\" placeholder=\"First name\"\n                                   type=\"text\"\n                                   formControlName=\"firstName\"\n                                   required>\n                        </mat-form-field>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"resetFirstName()\">Reset</button>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 2\" (opened)=\"setStep(2)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Last name\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.lastName\">\n                                    {{client.lastName}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-form-field>\n                            <input matInput [(ngModel)]=\"client.lastName\" placeholder=\"Last name\"\n                                   type=\"text\"\n                                   formControlName=\"lastName\"\n                                   required>\n                        </mat-form-field>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"resetLastName()\">Reset</button>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 3\" (opened)=\"setStep(3)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                E-mail\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.email\">\n                                    {{client.email}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-action-row>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 4\" (opened)=\"setStep(4)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Role\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.role\">\n                                    {{client.role}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-action-row>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 5\" (opened)=\"setStep(5)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Password\n                            </mat-panel-title>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <app-client-profile-edit-password></app-client-profile-edit-password>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n\n                </mat-accordion>\n                <!--<div class=\"row submit\">-->\n                <button class=\"submit-button\" mat-raised-button type=\"submit\" color=\"accent\"\n                        [disabled]=\"!profileEditForm.valid\">\n                    Submit\n                    <mat-icon aria-label=\"Send and save changes\">send</mat-icon>\n                </button>\n                <!--</div>-->\n            </form>\n            <button mat-button type=\"button\" color=\"primary\" (click)=\"goToProfile()\">Back to profile</button>\n        </mat-card-content>\n    </mat-card>\n\n\n</div>\n\n\n\n\n\n\n\n\n"
+module.exports = "<div class=\"container-fluid\" *ngIf=\"!client\" class=\"text-center\">\n    <div class=\"row mx-auto mt-3 center-block\">\n        <div class=\"col-6 mx-auto my-auto text-center\">\n            <mat-spinner mode=\"indeterminate\" style=\"margin-left: 35%;\"></mat-spinner>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\" *ngIf=\"client\">\n    <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <mat-card-header>\n            <div>\n                <legend>Edit profile</legend>\n            </div>\n        </mat-card-header>\n        <mat-card-content>\n            <form class=\"formstyle\"\n                  [formGroup]=\"profileEditForm\" (ngSubmit)=\"udateProfile()\">\n                <mat-accordion class=\"parking-configure-headers-align\">\n                    <mat-expansion-panel [expanded]=\"step === 0\" (opened)=\"setStep(0)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Photo\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.image\">\n                                    <img src=\"data:image/JPEG;base64,{{client.image}}\" style=\"height: 50px; width:50px;\" class=\"rounded-circle\">\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <button mat-raised-button type=\"button\" color=\"primary\" (click)=\"imgFileInput.click()\"\n                                style=\"padding: 5px;\">Change a photo\n                        </button>\n                        <input hidden type=\"file\" formControlName=\"image\" accept=\"image/jpeg\" #imgFileInput\n                               (change)=\"onFileChange($event)\"/>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"resetImage()\">Reset</button>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 1\" (opened)=\"setStep(1)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                First name\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.firstName\">\n                                    {{client.firstName}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-form-field>\n                            <input matInput [(ngModel)]=\"client.firstName\" placeholder=\"First name\"\n                                   type=\"text\"\n                                   formControlName=\"firstName\"\n                                   required>\n                        </mat-form-field>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"resetFirstName()\">Reset</button>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 2\" (opened)=\"setStep(2)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Last name\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.lastName\">\n                                    {{client.lastName}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-form-field>\n                            <input matInput [(ngModel)]=\"client.lastName\" placeholder=\"Last name\"\n                                   type=\"text\"\n                                   formControlName=\"lastName\"\n                                   required>\n                        </mat-form-field>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"resetLastName()\">Reset</button>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 3\" (opened)=\"setStep(3)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                E-mail\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.email\">\n                                    {{client.email}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-action-row>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 4\" (opened)=\"setStep(4)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Role\n                            </mat-panel-title>\n                            <mat-panel-description>\n                                <span *ngIf=\"client.role\">\n                                    {{client.role}}\n                                </span>\n                            </mat-panel-description>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <mat-action-row>\n                            <div class=\"full-width\"></div>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                            <button mat-button type=\"button\" color=\"primary\" (click)=\"nextStep()\">Next</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n                    <mat-expansion-panel [expanded]=\"step === 5\" (opened)=\"setStep(5)\" hideToggle=\"true\">\n                        <mat-expansion-panel-header>\n                            <mat-panel-title>\n                                Password/ <span style=\"color:grey;\">(If you didn`t get email, try latter)</span>\n                            </mat-panel-title>\n                            <!--<mat-icon>store</mat-icon>-->\n                        </mat-expansion-panel-header>\n                        <app-client-profile-edit-password></app-client-profile-edit-password>\n                        <mat-action-row>\n                            <button mat-button type=\"button\" color=\"warn\" (click)=\"prevStep()\">Previous</button>\n                        </mat-action-row>\n                    </mat-expansion-panel>\n\n\n                </mat-accordion>\n                <!--<div class=\"row submit\">-->\n                <button class=\"submit-button\" mat-raised-button type=\"submit\" color=\"accent\"\n                        [disabled]=\"!profileEditForm.valid\">\n                    Submit\n                    <mat-icon aria-label=\"Send and save changes\">send</mat-icon>\n                </button>\n                <!--</div>-->\n            </form>\n            <button mat-button type=\"button\" color=\"primary\" (click)=\"goToProfile()\">Back to profile</button>\n        </mat-card-content>\n    </mat-card>\n\n\n</div>\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -1197,14 +1658,14 @@ var ClientProfileEditComponent = /** @class */ (function () {
 /***/ "./src/app/client-profile/client-profile.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "span {\n    color: #54456f;\n    font-weight: bold;\n}\n\n#role {\n    color: coral;\n}\n\n#prov:hover::after {\n    color: #6610f2;\n    content: \"go to providers details\";\n}"
+module.exports = "span {\n    color: #54456f;\n    font-weight: bold;\n}\n\n#role {\n    color: coral;\n}\n\n#prov:hover::after {\n    color: #6610f2;\n    content: \"go to providers details\";\n}\n\nmat-panel-title {\n    width: 100px;\n}"
 
 /***/ }),
 
 /***/ "./src/app/client-profile/client-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <br/>\n    <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <mat-card-header>\n            <div style=\"min-width: 70%;\">\n                <div>\n                    <img src=\"data:image/JPEG;base64,{{client.image}}\" style=\"width: 200px;\">\n                    <mat-card-title><span>ID:</span> {{client.id}}\n                    </mat-card-title>\n                    <mat-card-title id=\"role\"><span>Role:</span> {{client.role}}\n                    </mat-card-title>\n                    <mat-card-title><span>Client name:</span> {{client.firstName}} {{client.lastName}}\n                    </mat-card-title>\n                    <mat-card-title><span>Email:</span> {{client.email}}</mat-card-title>\n                    <mat-card-title *ngIf=\"client.favoritesNames.length!=0\">\n                        <span>Favorites parkings: </span>\n                        <span *ngFor=\"let favoriteName of client.favoritesNames\">{{favoriteName}}, </span>\n                    </mat-card-title>\n                </div>\n            </div>\n            <div style=\"width: 100%\"></div>\n        </mat-card-header>\n\n        <mat-card-actions align=\"right\">\n            <button mat-button (click)=\"goToProfileEdit()\" color=\"warn\">Go to edit form</button>\n        </mat-card-actions>\n    </mat-card>\n</div>\n\n\n\n\n\n"
+module.exports = "<div class=\"container-fluid\" *ngIf=\"!client\" class=\"text-center\">\n        <div class=\"row mx-auto mt-3 center-block\">\n            <div class=\"col-6 mx-auto my-auto text-center\">\n                <mat-spinner mode=\"indeterminate\" style=\"margin-left: 35%;\"></mat-spinner>\n            </div>\n        </div>\n    </div>\n<div *ngIf=\"client\">\n    <br/>\n    <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n        <div class=\"container-fluid\">\n            <div class=\"row\">\n                <div class=\"col-4\">\n                        <img src=\"data:image/JPEG;base64,{{client.image}}\" style=\"width: 200px; height:200px;\" class=\"rounded-circle\">\n                </div>\n                <div class=\"col-8\">\n                        <div style=\"min-width: 70%;\">\n                                <div>\n                                    <mat-card-title id=\"role\"><span>Role:</span> {{client.role}}\n                                    </mat-card-title>\n                                    <mat-card-title><span>Your name:</span> {{client.firstName}} {{client.lastName}}\n                                    </mat-card-title>\n                                    <mat-card-title><span>Email:</span> {{client.email}}</mat-card-title>\n                                    <mat-card-title *ngIf=\"client.favoritesNames.length!=0\">\n                                        <mat-expansion-panel hideToggle=\"true\">\n                                            <mat-expansion-panel-header>\n                                                <mat-panel-title>\n                                                    <span>Show favorite parkings</span>\n                                                </mat-panel-title>\n\n                                            </mat-expansion-panel-header>\n                                            <div *ngFor=\"let favoriteParking of favoritesParkings\">\n                                                <div class=\"row\">\n                                                    <div class=\"col-10\"\n                                                         [routerLink]=\"['/parkingdetail/'+favoriteParking.id]\">\n                                                        <!--<button mat-button (click)=\"goToParkingDetails()\">-->\n                                                        <div class=\"row\">\n                                                            <mat-panel-title>\n                                                                Name\n                                                            </mat-panel-title>\n                                                            <mat-panel-description>\n                                                                {{favoriteParking.favoriteName}}\n                                                            </mat-panel-description>\n                                                        </div>\n                                                        <div class=\"row\">\n                                                            <mat-panel-title>\n                                                                Address\n                                                            </mat-panel-title>\n                                                            <mat-panel-description>\n                                                                {{favoriteParking.address}}\n                                                            </mat-panel-description>\n                                                        </div>\n                                                    </div>\n                                                    <div class=\"col-2\">\n                                                        <button mat-icon-button color=\"warn\"\n                                                                (click)=\"onParkingDeleteClick(favoriteParking.id)\">\n                                                            <mat-icon>delete_forever</mat-icon>\n                                                        </button>\n                                                    </div>\n                                                </div>\n                                                <mat-action-row></mat-action-row>\n                                            </div>\n\n                                        </mat-expansion-panel>\n                                    </mat-card-title>\n                                </div>\n                        </div>\n                </div>\n            </div>\n            <mat-action-row>\n                <div class=\"full-width\"></div>\n                <button mat-button (click)=\"goToProfileEdit()\" color=\"warn\">Go to edit form</button>\n            </mat-action-row>\n        </div>\n    </mat-card>\n</div>\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -1216,6 +1677,9 @@ module.exports = "<div>\n    <br/>\n    <mat-card class=\"card offset-sm-1 col-s
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clients_client_service__ = __webpack_require__("./src/app/clients/client.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__ = __webpack_require__("./src/app/manager/manager-parking-list/delete-confirmation-dialog/delete-confirmation-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1228,23 +1692,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 var ClientProfileComponent = /** @class */ (function () {
-    function ClientProfileComponent(route, clientService, router) {
+    function ClientProfileComponent(route, clientService, router, snackBar, parkingService, dialog) {
         this.route = route;
         this.clientService = clientService;
         this.router = router;
+        this.snackBar = snackBar;
+        this.parkingService = parkingService;
+        this.dialog = dialog;
         this.showProviderDetails = false;
     }
     ClientProfileComponent.prototype.ngOnInit = function () {
         this.getClientProfile();
+        this.getFavoriteParkings();
     };
     ClientProfileComponent.prototype.getClientProfile = function () {
         var _this = this;
         this.clientService.getClientProfile()
             .subscribe(function (client) { return _this.client = client; });
     };
+    ClientProfileComponent.prototype.getFavoriteParkings = function () {
+        var _this = this;
+        this.clientService.getFavoritesParkingsForClient()
+            .subscribe(function (parkings) { return _this.favoritesParkings = parkings; });
+    };
     ClientProfileComponent.prototype.goToProfileEdit = function () {
         this.router.navigate(['profile/edit']);
+    };
+    ClientProfileComponent.prototype.onParkingDeleteClick = function (id) {
+        // console.log(id);
+        // const id = parseInt(this.route.snapshot.paramMap.get('id'));
+        var _this = this;
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_4__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__["a" /* DeleteConfirmationDialogComponent */], {
+            data: { confirmed: false }
+        });
+        dialogRef.afterClosed().subscribe(function (data) {
+            if (data.confirmed) {
+                _this.parkingService.deleteFromFavorite(id).subscribe(function (response) {
+                    _this.snackBar.open('Parking delete from favorite sucsessfully.', null, {
+                        duration: 2000
+                    });
+                });
+            }
+            _this.getFavoriteParkings();
+        });
     };
     ClientProfileComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1254,7 +1748,10 @@ var ClientProfileComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__clients_client_service__["a" /* ClientService */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */],
+            __WEBPACK_IMPORTED_MODULE_5__parking_service__["a" /* ParkingService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MatDialog */]])
     ], ClientProfileComponent);
     return ClientProfileComponent;
 }());
@@ -1742,6 +2239,12 @@ var ClientService = /** @class */ (function () {
     ClientService.prototype.updateClientPassword = function (data) {
         return this.http.post(this.clientProfile + '/update/password', data);
     };
+    ClientService.prototype.sendConfirmation = function () {
+        return this.http.get(this.clientProfile + '/update/password/confirm');
+    };
+    ClientService.prototype.getFavoritesParkingsForClient = function () {
+        return this.http.get(this.clientProfile + '/favorites');
+    };
     ClientService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
@@ -1817,16 +2320,26 @@ var ROLES = [
 
 /***/ }),
 
-/***/ "./src/app/expiration-checker.service.ts":
+/***/ "./src/app/errors/forbidden/forbidden.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".container-style {\n    font-family: -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n}\n.content {\n    margin-top: 15%;\n}\n.error-status {\n    font-size: 200px;\n}\n.error-description {\n    font-size: 16px;\n    margin-top: 8%;\n}"
+
+/***/ }),
+
+/***/ "./src/app/errors/forbidden/forbidden.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class = \"container-fluid container-style\">\n  <div class = \"row content\">\n    <div class = \"col error-status\">\n      403\n    </div>\n    <div class = \"col error-description\">\n      <h3>Forbidden</h3>\n      <p>You do not have permissions to access this resource</p>\n      <p>If you wish you can return on the <a href=\"{{appUrl + '/index'}}\">home page.</a></p>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/errors/forbidden/forbidden.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExpirationCheckerService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForbiddenComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_token_token_storage__ = __webpack_require__("./src/app/auth/token/token-storage.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__auth_token_token_pair__ = __webpack_require__("./src/app/auth/token/token-pair.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1837,48 +2350,123 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
-
-
-
-var ExpirationCheckerService = /** @class */ (function () {
-    function ExpirationCheckerService(http, router, tokenStorage) {
-        this.http = http;
-        this.router = router;
-        this.tokenStorage = tokenStorage;
+var ForbiddenComponent = /** @class */ (function () {
+    // appUrl = environment.angularUrl;
+    function ForbiddenComponent() {
     }
-    ExpirationCheckerService.prototype.intercept = function (req, next) {
-        var _this = this;
-        console.log('Go into interceptor 1');
-        if (this.tokenStorage.isExpired()) {
-            req = req.clone({
-                headers: req.headers.append('Refresh-token', this.tokenStorage.getRefreshToken())
-            });
-        }
-        console.log('Exit from interceptor 1');
-        return next.handle(req).do(function (response) {
-            if (response instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["e" /* HttpResponse */]) {
-                if (response.headers.get('Access-token') != null && response.headers.get('Refresh-token') != null) {
-                    _this.tokenStorage.saveToken(new __WEBPACK_IMPORTED_MODULE_3__auth_token_token_pair__["a" /* TokenPair */](response.headers.get('Access-token'), response.headers.get('Refresh-token')));
-                }
-            }
-            return response;
-        }, function (error) {
-            if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpErrorResponse */]) {
-                if (error.status == 401) {
-                    _this.tokenStorage.signOut();
-                    _this.router.navigate(['/']);
-                }
-            }
-        });
+    ForbiddenComponent.prototype.ngOnInit = function () {
     };
-    ExpirationCheckerService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_2__auth_token_token_storage__["a" /* TokenStorage */]])
-    ], ExpirationCheckerService);
-    return ExpirationCheckerService;
+    ForbiddenComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-forbidden',
+            template: __webpack_require__("./src/app/errors/forbidden/forbidden.component.html"),
+            styles: [__webpack_require__("./src/app/errors/forbidden/forbidden.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ForbiddenComponent);
+    return ForbiddenComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/errors/internal-server-error/internal-server-error.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".container-style {\n    font-family: -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n}\n.content {\n    margin-top: 15%;\n}\n.error-status {\n    font-size: 200px;\n}\n.error-description {\n    font-size: 16px;\n    margin-top: 8%;\n}"
+
+/***/ }),
+
+/***/ "./src/app/errors/internal-server-error/internal-server-error.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class = \"container-fluid container-style\">\n  <div class = \"row content\">\n    <div class = \"col error-status\">\n      500\n    </div>\n    <div class = \"col error-description\">\n      <h3>Internal server error</h3>\n      <p>This is our fault. This resource will be available shortly</p>\n      <p>If you wish you can return on the <a href=\"{{appUrl + '/index'}}\">home page.</a></p>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/errors/internal-server-error/internal-server-error.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InternalServerErrorComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var InternalServerErrorComponent = /** @class */ (function () {
+    // appUrl = environment.angularUrl;
+    function InternalServerErrorComponent() {
+    }
+    InternalServerErrorComponent.prototype.ngOnInit = function () {
+    };
+    InternalServerErrorComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-internal-server-error',
+            template: __webpack_require__("./src/app/errors/internal-server-error/internal-server-error.component.html"),
+            styles: [__webpack_require__("./src/app/errors/internal-server-error/internal-server-error.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], InternalServerErrorComponent);
+    return InternalServerErrorComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/errors/non-found/non-found.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".container-style {\n    font-family: -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n}\n.content {\n    margin-top: 15%;\n}\n.error-status {\n    font-size: 200px;\n}\n.error-description {\n    font-size: 16px;\n    margin-top: 8%;\n}"
+
+/***/ }),
+
+/***/ "./src/app/errors/non-found/non-found.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class = \"container-fluid container-style\">\n  <div class = \"row content\">\n    <div class = \"col error-status\">\n      404\n    </div>\n    <div class = \"col error-description\">\n      <h3>Page Not Found</h3>\n      <p>Sorry, but this page doesn`t exist</p>\n      <p>If you wish you can return on the <a href=\"{{appUrl + '/index'}}\">home page.</a></p>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/errors/non-found/non-found.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NonFoundComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NonFoundComponent = /** @class */ (function () {
+    // appUrl = environment.angularUrl;
+    function NonFoundComponent() {
+    }
+    NonFoundComponent.prototype.ngOnInit = function () {
+    };
+    NonFoundComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-non-found',
+            template: __webpack_require__("./src/app/errors/non-found/non-found.component.html"),
+            styles: [__webpack_require__("./src/app/errors/non-found/non-found.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], NonFoundComponent);
+    return NonFoundComponent;
 }());
 
 
@@ -1938,13 +2526,11 @@ var IndexComponent = /** @class */ (function () {
     }
     IndexComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.filter.radiusChanges.subscribe(function () { return _this.filterParkings(); });
-        this.filter.priceRangeChanges.subscribe(function () { return _this.filterParkings(); });
-        this.filter.locationChanges.subscribe(function (location) {
+        this.filter.valueChanges.subscribe(function (filter) {
             _this.showLoadingProgressBar();
-            _this.parkingMap.lat = location.latitude;
-            _this.parkingMap.lng = location.longitude;
-            _this.parkingService.getParkingsNearby(location.latitude, location.longitude, _this.filter.radiusMax * 1000).subscribe(function (response) {
+            _this.parkingMap.lat = filter.location.latitude;
+            _this.parkingMap.lng = filter.location.longitude;
+            _this.parkingService.getParkingsNearby(filter.location.latitude, filter.location.longitude, _this.filter.radiusMax * 1000).subscribe(function (response) {
                 _this.hideProgressBar();
                 _this.parkings = response.body;
                 _this.filterParkings();
@@ -1971,6 +2557,36 @@ var IndexComponent = /** @class */ (function () {
         var _this = this;
         this.parkingMap.parkings = this.parkings.filter(function (parking) {
             var filter = _this.filter.value;
+            var distance = __webpack_require__("./node_modules/google-distance-matrix/index.js");
+            var latLngOrigin = _this.parkingMap.lat + ',' + _this.parkingMap.lng;
+            var lanLngDest = parking.latitude + ',' + parking.longitude;
+            var origins = [latLngOrigin];
+            var destinations = [lanLngDest];
+            distance.key('AIzaSyAufS5bcmpO5UiWxG_MpcSOrIiRNzbUJus');
+            distance.units('imperial');
+            distance.matrix(origins, destinations, function (err, distances) {
+                if (err) {
+                    return console.log(err);
+                }
+                if (!distances) {
+                    return console.log('no distances');
+                }
+                if (distances.status == 'OK') {
+                    for (var i = 0; i < origins.length; i++) {
+                        for (var j = 0; j < destinations.length; j++) {
+                            var origin = distances.origin_addresses[i];
+                            var destination = distances.destination_addresses[j];
+                            if (distances.rows[0].elements[j].status == 'OK') {
+                                var distance_1 = distances.rows[i].elements[j].distance.text;
+                                parking.distance = distance_1;
+                            }
+                            else {
+                                console.log(destination + ' is not reachable by land from ' + origin);
+                            }
+                        }
+                    }
+                }
+            });
             return parking.distance <= filter.radius * 1000
                 && ((filter.priceRange.min) ? parking.price >= filter.priceRange.min : true)
                 && ((filter.priceRange.max) ? parking.price <= filter.priceRange.max : true);
@@ -2390,40 +3006,22 @@ var ParkingListFilterComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ParkingListFilterComponent.prototype, "locationChanges", {
-        get: function () {
-            return this.locationField.valueChanges;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ParkingListFilterComponent.prototype, "radiusChanges", {
-        get: function () {
-            return this.radiusField.valueChanges;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ParkingListFilterComponent.prototype, "priceRangeChanges", {
-        get: function () {
-            return this.priceRangeField.valueChanges;
-        },
-        enumerable: true,
-        configurable: true
-    });
     ParkingListFilterComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.locationField.valueChanges.subscribe(function (location) {
             _this.internalValue = new ParkingListFilter(location, _this.priceRangeField.value, _this.radiusField.value);
+            _this.valueChangesSubject.next(_this.internalValue);
         });
         this.priceRangeField.valueChanges.subscribe(function (priceRange) {
             if (_this.locationField.value) {
                 _this.internalValue = new ParkingListFilter(_this.locationField.value, priceRange, _this.radiusField.value);
+                _this.valueChangesSubject.next(_this.internalValue);
             }
         });
         this.radiusField.valueChanges.subscribe(function (radius) {
             if (_this.locationField.value) {
                 _this.internalValue = new ParkingListFilter(_this.locationField.value, _this.priceRangeField.value, radius);
+                _this.valueChangesSubject.next(_this.internalValue);
             }
         });
     };
@@ -2771,7 +3369,7 @@ module.exports = "agm-map {\n    height: 500px;\n}\n\n\n/*html, body {\n    heig
 /***/ "./src/app/index/parking-map/parking-map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<agm-map [latitude]=\"49.83826\"\n         [longitude]=\"24.02324\"\n         [fullscreenControl]=\"true\"\n         [zoom]=\"10\">\n\n    <agm-marker [latitude]=\"lat\" [longitude]=\"lng\" [draggable]=\"true\"></agm-marker>\n    <div *ngFor=\"let parking of parkings\">\n        <agm-marker [latitude]=\"parking.latitude\" [longitude]=\"parking.longitude\"\n                    [iconUrl]=\"'/assets/images/icon_parking_info_40x38.png'\">\n            <agm-info-window [disableAutoPan]=\"false\">\n                <ul>\n                    <li><b>Address:</b> {{parking.city}} / {{parking.street}} / {{parking.building}}</li>\n                    <li><b>Distance:</b> {{round(parking.distance)}} km</li>\n                    <li><b>Spots:</b> {{parking.spotsCount}}</li>\n                    <li><b>Spots available:</b> {{parking.availableSpotsCount}}</li>\n                </ul>\n                <button mat-button class=\"btn btn-success\" (click)=\"getDirection(parking.latitude, parking.longitude)\">\n                    Start route!\n                </button>\n            </agm-info-window>\n        </agm-marker>\n        <agm-direction *ngIf=\"dir\" [origin]=\"dir.origin\" [destination]=\"dir.destination\"></agm-direction>\n    </div>\n</agm-map>\n\n\n\n"
+module.exports = "<agm-map [latitude]=\"49.83826\"\n         [longitude]=\"24.02324\"\n         [fullscreenControl]=\"true\"\n         [zoom]=\"10\">\n    <agm-direction *ngIf=\"dir\" [drivingOptions]=\"dir.drivingOptions\" [travelMode]=\"dir.travelMode\" [origin]=\"dir.origin\"\n                   [destination]=\"dir.destination\">\n    </agm-direction>\n    <agm-marker [latitude]=\"lat\" [longitude]=\"lng\" [draggable]=\"true\"></agm-marker>\n    <div *ngFor=\"let parking of parkings\">\n        <agm-marker [latitude]=\"parking.latitude\" [longitude]=\"parking.longitude\"\n                    [iconUrl]=\"'/assets/images/icon_parking_info_40x38.png'\">\n            <agm-info-window [disableAutoPan]=\"false\">\n                <ul>\n                    <li><b>Address:</b> {{parking.city}} / {{parking.street}} / {{parking.building}}</li>\n                    <li><b>Distance:</b> {{revertMileToKm(parking.distance)}} km</li>\n                    <li><b>Spots:</b> {{parking.spotsCount}}</li>\n                    <li><b>Spots available:</b> {{parking.availableSpotsCount}}</li>\n                </ul>\n\n                <button mat-button routerLink='/parkingdetail/{{parking.id}}' color=\"primary\">Get detail</button>\n                <button mat-button class=\"btn btn-success\" (click)=\"getDirection(parking.latitude, parking.longitude)\">\n                    Start route!\n                </button>\n            </agm-info-window>\n        </agm-marker>\n    </div>\n</agm-map>\n\n\n\n"
 
 /***/ }),
 
@@ -2791,6 +3389,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+var MiToKm = 1.60934;
 var ParkingMapComponent = /** @class */ (function () {
     function ParkingMapComponent() {
         this.dir = undefined;
@@ -2800,11 +3399,23 @@ var ParkingMapComponent = /** @class */ (function () {
     ParkingMapComponent.prototype.getDirection = function (lat, lng) {
         this.dir = {
             origin: { lat: this.lat, lng: this.lng },
-            destination: { lat: lat, lng: lng }
+            destination: { lat: lat, lng: lng },
+            drivingOptions: {
+                departureTime: new Date(Date.now()),
+                trafficModel: 'pessimistic'
+            },
+            travelMode: 'DRIVING'
         };
     };
     ParkingMapComponent.prototype.round = function (floatNumber) {
         return Math.floor(floatNumber) / 1000;
+    };
+    ParkingMapComponent.prototype.revertMileToKm = function (distance) {
+        var distance = distance.toString();
+        distance = distance.substr(0, distance.indexOf(' '));
+        Number.parseInt(distance);
+        distance *= MiToKm;
+        return Math.floor(distance * 10) / 10;
     };
     ParkingMapComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -2821,7 +3432,101 @@ var ParkingMapComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/interceptor.service.ts":
+/***/ "./src/app/interceptors/expiration-checker.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExpirationCheckerService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_token_token_storage__ = __webpack_require__("./src/app/auth/token/token-storage.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__auth_token_token_pair__ = __webpack_require__("./src/app/auth/token/token-pair.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var ExpirationCheckerService = /** @class */ (function () {
+    function ExpirationCheckerService(http, router, tokenStorage) {
+        this.http = http;
+        this.router = router;
+        this.tokenStorage = tokenStorage;
+        this.accessTokenHeader = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].accessTokenHeader;
+        this.refreshTokenHeader = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].refreshTokenHeader;
+    }
+    ExpirationCheckerService.prototype.intercept = function (req, next) {
+        var _this = this;
+        console.log('Go into interceptor 1');
+        if (this.tokenStorage.isExpired()) {
+            req = this.addRefreshTokentToRequest(req);
+        }
+        console.log('Exit from interceptor 1');
+        return next.handle(req).do(function (response) {
+            if (response instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["e" /* HttpResponse */]) {
+                if (response.headers.has(_this.accessTokenHeader) && response.headers.has(_this.refreshTokenHeader)) {
+                    _this.tokenStorage.saveToken(new __WEBPACK_IMPORTED_MODULE_3__auth_token_token_pair__["a" /* TokenPair */](response.headers.get(_this.accessTokenHeader), response.headers.get(_this.refreshTokenHeader)));
+                }
+            }
+            return response;
+        }, function (error) {
+            if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpErrorResponse */]) {
+                if (error.status == 401) {
+                    _this.tokenStorage.signOut();
+                    _this.router.navigate(['/']);
+                }
+            }
+        });
+    };
+    ExpirationCheckerService.prototype.addRefreshTokentToRequest = function (request) {
+        return request.clone({
+            headers: request.headers.append(this.refreshTokenHeader, this.tokenStorage.getRefreshToken())
+        });
+    };
+    ExpirationCheckerService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__auth_token_token_storage__["a" /* TokenStorage */]])
+    ], ExpirationCheckerService);
+    return ExpirationCheckerService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/interceptors/http-interceptors.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return httpInterceptorProviders; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__interceptor_service__ = __webpack_require__("./src/app/interceptors/interceptor.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__expiration_checker_service__ = __webpack_require__("./src/app/interceptors/expiration-checker.service.ts");
+
+
+
+var httpInterceptorProviders = [
+    { provide: __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HTTP_INTERCEPTORS */], useClass: __WEBPACK_IMPORTED_MODULE_2__expiration_checker_service__["a" /* ExpirationCheckerService */], multi: true },
+    { provide: __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HTTP_INTERCEPTORS */], useClass: __WEBPACK_IMPORTED_MODULE_1__interceptor_service__["a" /* InterceptorService */], multi: true }
+];
+
+
+/***/ }),
+
+/***/ "./src/app/interceptors/interceptor.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2846,19 +3551,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var InterceptorService = /** @class */ (function () {
     function InterceptorService(tokenStorage) {
         this.tokenStorage = tokenStorage;
-        this.loginUrl = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiUrl;
+        this.accessTokenHeader = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].accessTokenHeader;
+        this.apiUrl = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiUrl;
     }
-    InterceptorService.prototype.intercept = function (request, next) {
+    InterceptorService.prototype.intercept = function (req, next) {
         console.log('Go into interceptor 2');
-        if (request.url.startsWith(this.loginUrl) && this.tokenStorage.getAccessToken()) {
-            request = this.addAuthHeaderToRequest(request);
+        if (req.url.startsWith(this.apiUrl) && this.tokenStorage.getAccessToken()) {
+            req = this.addAuthHeaderToRequest(req);
         }
         console.log('Exit from interceptor 2');
-        return next.handle(request);
+        return next.handle(req);
     };
     InterceptorService.prototype.addAuthHeaderToRequest = function (request) {
         return request.clone({
-            headers: request.headers.append('Access-token', this.tokenStorage.getAccessToken())
+            headers: request.headers.append(this.accessTokenHeader, this.tokenStorage.getAccessToken())
         });
     };
     InterceptorService = __decorate([
@@ -3409,7 +4115,7 @@ module.exports = ""
 /***/ "./src/app/parking-detail/parking-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" *ngIf=\"!parking\" class=\"text-center\">\n    <div class=\"row mx-auto mt-3 center-block\">\n        <div class=\"col-6 mx-auto my-auto text-center\">\n            <mat-spinner mode=\"indeterminate\" style=\"margin-left: 35%;\"></mat-spinner>\n        </div>\n    </div>\n</div>\n<div *ngIf=\"parking\">\n    <mat-card class=\"card col-sm-12 col-md-12 col-lg-12 mt-3\">\n        <mat-card-header>\n            <div mat-card-avatar class=\"example-header-image\">\n                <mat-icon>local_parking</mat-icon>\n            </div>\n            <div style=\"min-width: 70%;\">\n                <div>\n                    <h5>\n                        <b>\n                            <i>Address: </i>\n                        </b>{{parking.address}}</h5>\n                    <mat-card-subtitle>Provider: {{parking.providerName}}</mat-card-subtitle>\n                </div>\n            </div>\n            <div style=\"width: 100%\"></div>\n            <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n            <p style=\"font-size: 18px;\">{{parking.price}}</p>\n        </mat-card-header>\n\n        <mat-card-content>\n            <mat-list>\n                <mat-list-item>\n                    <mat-icon color=\"warn\" style=\"margin-right: 15px\" (click)=\"showOnMap(parking.latitude, parking.longitude)\">place\n                    </mat-icon>\n                    <span> {{parking.latitude}}, {{parking.longitude}}</span>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item *ngIf=\"hasToken()\">\n                    <div class=\"col-4\" *ngIf=\"!parking.isFavorite\">\n                        <span style=\"font-size:18px;\" ><b><i>Add to favorites</i></b></span>\n                        <button mat-icon-button color=\"warn\" (click)=\"onParkingAddToFavoritesClick()\">\n                        <mat-icon>star_rate</mat-icon>\n                    </button>\n                </div>\n                <div class=\"col-10\" *ngIf=\"parking.isFavorite\">\n                    <span style=\"font-size:18px;\" ><b>Parking is in your favorites as:</b> <b><i>{{parking.favoriteName}}</i></b></span>\n                    <!-- <button mat-icon-button color=\"warn\" (click)=\"onParkingAddToFavoritesClick()\">\n                    <mat-icon>star_rate</mat-icon>\n                </button> -->\n            </div>\n                \n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item>\n                    <div class=\"col-8\">\n                        <h5>\n                            <b>\n                                <i>Spots: </i>\n                            </b> General: {{parking.spotsCount}} / Available: {{parking.availableSpotsCount}}\n                        </h5>\n                    </div>\n                    <div class=\"col-2 ml-auto\">\n                        <button mat-raised-button color=\"primary\" (click)=\"refresh()\">Refresh\n                            <i class=\"material-icons\">&#xE863;</i>\n                        </button>\n                    </div>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item>\n                    <div class=\"col-8\">\n                        <h5>\n                            <b>\n                                <i>Fullness: </i>\n                            </b>\n                        </h5>\n                    </div>\n                </mat-list-item>\n                <mat-list-item>\n                    <ngb-progressbar [type]=\"type\" [value]=\"value\" [max]=\"max\" style=\"width:100%; height:0.7em;\">\n                        <b>{{fullnessBarMessage}} {{parking.availableSpotsCount}} spot(s) left!</b>\n                    </ngb-progressbar>\n                </mat-list-item>\n\n\n                <mat-divider></mat-divider>\n            </mat-list>\n        </mat-card-content>\n        <mat-card-actions align=\"center\">\n            <ngb-accordion>\n                <ngb-panel id=\"preventchange-1\">\n                    <ng-template ngbPanelTitle>\n                        <div>\n                            <h5>\n                                <b> Show all spots</b>\n                            </h5>\n                        </div>\n                    </ng-template>\n                    <ng-template ngbPanelContent>\n                        <ngb-tabset justify=\"justified\">\n                            <ngb-tab>\n                                <ng-template ngbTabTitle>\n                                    <div>\n                                        <b>Show all spots</b>\n                                    </div>\n                                </ng-template>\n                                <ng-template ngbTabContent>\n                                    <table class=\"table table-hover\">\n                                        <thead>\n                                            <tr class=\"text-center\">\n                                                <th scope=\"col\">Spot number #</th>\n                                                <th scope=\"col\">Availability</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr *ngFor=\"let spot of spots\" class=\"text-center\">\n                                                <th scope=\"row\">{{spot.id}}</th>\n\n                                                <td scope=\"row\" *ngIf=\"!!spot.isFree; else busy\">\n                                                    <button type=\"button\" class=\"btn btn-sm btn-success\" disabled>\n                                                        Available\n                                                    </button>\n                                                </td>\n\n                                                <ng-template #busy>\n                                                    <td scope=\"row\">\n                                                        <button type=\"button\" class=\"btn btn-sm btn-secondary\" disabled>\n                                                            Not Available\n                                                        </button>\n                                                    </td>\n                                                </ng-template>\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                </ng-template>\n                            </ngb-tab>\n                            <ngb-tab>\n                                <ng-template ngbTabTitle>\n                                    <div>\n                                        <b>Show only available spots</b>\n                                    </div>\n                                </ng-template>\n                                <ng-template ngbTabContent>\n                                    <table class=\"table table-hover\">\n                                        <thead>\n                                            <tr class=\"text-center\">\n                                                <th scope=\"col\">Spot number #</th>\n                                                <th scope=\"col\">Availability</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr *ngFor=\"let spot of freeSpots\" class=\"text-center\">\n                                                <th scope=\"row\">{{spot.id}}</th>\n\n                                                <td scope=\"row\">\n                                                    <button type=\"button\" class=\"btn btn-sm btn-success\" disabled>\n                                                        Available\n                                                    </button>\n                                                </td>\n\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                </ng-template>\n                            </ngb-tab>\n                        </ngb-tabset>\n\n                    </ng-template>\n                </ngb-panel>\n            </ngb-accordion>\n        </mat-card-actions>\n    </mat-card>\n\n\n</div>"
+module.exports = "<div class=\"container-fluid\" *ngIf=\"!parking\" class=\"text-center\">\n    <div class=\"row mx-auto mt-3 center-block\">\n        <div class=\"col-6 mx-auto my-auto text-center\">\n            <mat-spinner mode=\"indeterminate\" style=\"margin-left: 35%;\"></mat-spinner>\n        </div>\n    </div>\n</div>\n\n<div *ngIf=\"parking\">\n    <mat-card class=\"card col-sm-12 col-md-12 col-lg-12 mt-3\">\n        <mat-card-header>\n            <div mat-card-avatar class=\"example-header-image\">\n                <mat-icon>local_parking</mat-icon>\n            </div>\n            <div style=\"min-width: 70%;\">\n                <div>\n                    <h5>\n                        <b>\n                            <i>Address: </i>\n                        </b>{{parking.address}}</h5>\n                    <mat-card-subtitle>Provider: {{parking.providerName}}</mat-card-subtitle>\n                </div>\n            </div>\n            <div style=\"width: 100%\"></div>\n            <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n            <p style=\"font-size: 18px;\">{{parking.price}}</p>\n        </mat-card-header>\n\n        <mat-card-content>\n            <mat-list>\n                <mat-list-item>\n                    <mat-icon color=\"warn\" style=\"margin-right: 15px\" (click)=\"showOnMap(parking.latitude, parking.longitude)\">place\n                    </mat-icon>\n                    <span> {{parking.latitude}}, {{parking.longitude}}</span>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item *ngIf=\"hasToken()\">\n                    <div class=\"col-4\" *ngIf=\"!parking.isFavorite\">\n                        <span style=\"font-size:18px;\" ><b><i>Add to favorites</i></b></span>\n                        <button mat-icon-button color=\"warn\" (click)=\"onParkingAddToFavoritesClick()\">\n                        <mat-icon>star_rate</mat-icon>\n                    </button>\n                </div>\n                <div class=\"col-10\" *ngIf=\"parking.isFavorite\">\n                    <span style=\"font-size:18px;\" ><b>Parking is in your favorites as:</b> <b><i>{{parking.favoriteName}}</i></b></span>\n                    <button mat-icon-button color=\"warn\" (click)=\"onParkingDeleteClick()\">\n                    <mat-icon>delete_forever</mat-icon>\n                </button>\n            </div>\n                \n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item>\n                    <div class=\"col-8\">\n                        <h5>\n                            <b>\n                                <i>Spots: </i>\n                            </b> General: {{parking.spotsCount}} / Available: {{parking.availableSpotsCount}}\n                        </h5>\n                    </div>\n                    <div class=\"col-2 ml-auto\">\n                        <button mat-raised-button color=\"primary\" (click)=\"refresh()\">Refresh\n                            <i class=\"material-icons\">&#xE863;</i>\n                        </button>\n                    </div>\n                </mat-list-item>\n                <mat-divider></mat-divider>\n                <mat-list-item>\n                    <div class=\"col-8\">\n                        <h5>\n                            <b>\n                                <i>Fullness: </i>\n                            </b>\n                        </h5>\n                    </div>\n                </mat-list-item>\n                <mat-list-item>\n                    <ngb-progressbar [type]=\"type\" [value]=\"value\" [max]=\"max\" style=\"width:100%; height:0.7em;\">\n                        <b>{{fullnessBarMessage}} {{parking.availableSpotsCount}} spot(s) left!</b>\n                    </ngb-progressbar>\n                </mat-list-item>\n\n\n                <mat-divider></mat-divider>\n            </mat-list>\n        </mat-card-content>\n        <button mat-raised-button color=\"primary\"   (click)=\"sendToSpotStatistic()\">Show spots statistic of this parking\n              \n        </button>\n        <mat-card-actions align=\"center\">\n            <ngb-accordion>\n                <ngb-panel id=\"preventchange-1\">\n                    <ng-template ngbPanelTitle>\n                        <div>\n                            <h5>\n                                <b> Show all spots</b>\n                            </h5>\n                        </div>\n                    </ng-template>\n                    <ng-template ngbPanelContent>\n                        <ngb-tabset justify=\"justified\">\n                            <ngb-tab>\n                                <ng-template ngbTabTitle>\n                                    <div>\n                                        <b>Show all spots</b>\n                                    </div>\n                                </ng-template>\n                                <ng-template ngbTabContent>\n                                    <table class=\"table table-hover\">\n                                        <thead>\n                                            <tr class=\"text-center\">\n                                                <th scope=\"col\">Spot number #</th>\n                                                <th scope=\"col\">Availability</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr *ngFor=\"let spot of spots\" class=\"text-center\">\n                                                <th scope=\"row\">{{spot.id}}</th>\n\n                                                <td scope=\"row\" *ngIf=\"!!spot.isFree; else busy\">\n                                                    <button type=\"button\" class=\"btn btn-sm btn-success\" disabled>\n                                                        Available\n                                                    </button>\n                                                </td>\n\n                                                <ng-template #busy>\n                                                    <td scope=\"row\">\n                                                        <button type=\"button\" class=\"btn btn-sm btn-secondary\" disabled>\n                                                            Not Available\n                                                        </button>\n                                                    </td>\n                                                </ng-template>\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                </ng-template>\n                            </ngb-tab>\n                            <ngb-tab>\n                                <ng-template ngbTabTitle>\n                                    <div>\n                                        <b>Show only available spots</b>\n                                    </div>\n                                </ng-template>\n                                <ng-template ngbTabContent>\n                                    <table class=\"table table-hover\">\n                                        <thead>\n                                            <tr class=\"text-center\">\n                                                <th scope=\"col\">Spot number #</th>\n                                                <th scope=\"col\">Availability</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                            <tr *ngFor=\"let spot of freeSpots\" class=\"text-center\">\n                                                <th scope=\"row\">{{spot.id}}</th>\n\n                                                <td scope=\"row\">\n                                                    <button type=\"button\" class=\"btn btn-sm btn-success\" disabled>\n                                                        Available\n                                                    </button>\n                                                </td>\n\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                </ng-template>\n                            </ngb-tab>\n                        </ngb-tabset>\n\n                    </ng-template>\n                </ngb-panel>\n            </ngb-accordion>\n        </mat-card-actions>\n    </mat-card>\n\n\n</div>"
 
 /***/ }),
 
@@ -3426,6 +4132,7 @@ module.exports = "<div class=\"container-fluid\" *ngIf=\"!parking\" class=\"text
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__favorites_add_configm_dialog_favorites_add_configm_dialog_component__ = __webpack_require__("./src/app/parking-detail/favorites-add-configm-dialog/favorites-add-configm-dialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__model_view_favorite__ = __webpack_require__("./src/app/model/view/favorite.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__ = __webpack_require__("./src/app/manager/manager-parking-list/delete-confirmation-dialog/delete-confirmation-dialog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3443,16 +4150,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ParkingDetailComponent = /** @class */ (function () {
-    function ParkingDetailComponent(route, parkingService, location, snackBar, dialog, tokenStorage) {
+    function ParkingDetailComponent(route, parkingService, location, snackBar, dialog, router, tokenStorage) {
         this.route = route;
         this.parkingService = parkingService;
         this.location = location;
         this.snackBar = snackBar;
         this.dialog = dialog;
+        this.router = router;
         this.tokenStorage = tokenStorage;
-        this.thirtySecInterval = 30000;
-        this.favoriteNameInputHide = true;
+        this.fiveSecInterval = 5000;
     }
     ParkingDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -3461,7 +4170,10 @@ var ParkingDetailComponent = /** @class */ (function () {
         });
         this.getSpots();
         this.getAvailableSpots();
-        setInterval(this.refresh(), this.thirtySecInterval);
+        this.setIntervalNumber = setInterval(function () { return _this.refresh(); }, this.fiveSecInterval);
+    };
+    ParkingDetailComponent.prototype.ngOnDestroy = function () {
+        clearInterval(this.setIntervalNumber);
     };
     ParkingDetailComponent.prototype.refresh = function () {
         var _this = this;
@@ -3472,7 +4184,6 @@ var ParkingDetailComponent = /** @class */ (function () {
         this.getAvailableSpots();
     };
     ParkingDetailComponent.prototype.fullnessBarCount = function () {
-        console.log('isFavorite ->' + this.parking.isFavorite);
         this.max = this.parking.spotsCount;
         this.value = this.parking.spotsCount - this.parking.availableSpotsCount;
         if (this.value < (this.max * 0.6)) {
@@ -3531,7 +4242,22 @@ var ParkingDetailComponent = /** @class */ (function () {
                         duration: 2000
                     });
                 });
-                _this.ngOnInit();
+            }
+        });
+    };
+    ParkingDetailComponent.prototype.onParkingDeleteClick = function () {
+        var _this = this;
+        var id = parseInt(this.route.snapshot.paramMap.get('id'));
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_8__manager_manager_parking_list_delete_confirmation_dialog_delete_confirmation_dialog_component__["a" /* DeleteConfirmationDialogComponent */], {
+            data: { confirmed: false }
+        });
+        dialogRef.afterClosed().subscribe(function (data) {
+            if (data.confirmed) {
+                _this.parkingService.deleteFromFavorite(id).subscribe(function (response) {
+                    _this.snackBar.open('Parking delete from favorite sucsessfully.', null, {
+                        duration: 2000
+                    });
+                });
             }
         });
     };
@@ -3544,6 +4270,10 @@ var ParkingDetailComponent = /** @class */ (function () {
     ParkingDetailComponent.prototype.logOut = function () {
         this.tokenStorage.signOut();
     };
+    ParkingDetailComponent.prototype.sendToSpotStatistic = function () {
+        var id = parseInt(this.route.snapshot.paramMap.get('id'));
+        this.router.navigate(['parkingdetail/' + id + '/spotstatistic']);
+    };
     ParkingDetailComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-parking-detail',
@@ -3552,9 +4282,10 @@ var ParkingDetailComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_5__parking_service__["a" /* ParkingService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_common__["f" /* Location */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_common__["Location"],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MatDialog */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__auth_token_token_storage__["a" /* TokenStorage */]])
     ], ParkingDetailComponent);
     return ParkingDetailComponent;
@@ -3585,11 +4316,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ParkingService = /** @class */ (function () {
+    // private spotstatistic = environment.apiUrl + '/spotstatistic/';
     function ParkingService(http) {
         this.http = http;
         this.parkingNearbyUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].apiUrl + '/parkings-nearby/';
         this.parkingDetailUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].apiUrl + '/parkingdetail/';
-        this.spotstatistic = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].apiUrl + '/spotstatistic/';
     }
     ParkingService.prototype.getParkingsNearby = function (latitude, longitude, radius) {
         return this.http.get(this.parkingNearbyUrl, {
@@ -3613,8 +4344,11 @@ var ParkingService = /** @class */ (function () {
     ParkingService.prototype.saveToFavorite = function (id, favorite) {
         return this.http.post(this.parkingDetailUrl + id + '/savetofavorites', favorite, { observe: 'response' });
     };
+    ParkingService.prototype.deleteFromFavorite = function (id) {
+        return this.http.post(this.parkingDetailUrl + id + '/deletefromfavorites', { observe: 'response' });
+    };
     ParkingService.prototype.getSpotStatistic = function (id, start_time, end_time) {
-        return this.http.get(this.spotstatistic + id, {
+        return this.http.get(this.parkingDetailUrl + id + '/spotstatistic', {
             params: {
                 start_time: start_time,
                 end_time: end_time
@@ -3706,105 +4440,17 @@ var IpLocationError = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/spotstatistic/spotstatistic.component.css":
-/***/ (function(module, exports) {
-
-module.exports = "/* .bs-datepicker */\n.bs-datepicker {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: stretch;\n        -ms-flex-align: stretch;\n            align-items: stretch;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n    background: #fff;\n    -webkit-box-shadow: 0 0 10px 0 #aaa;\n            box-shadow: 0 0 10px 0 #aaa;\n    position: relative;\n    z-index: 1;\n    /* button */\n    /* .bs-datepicker-head */\n    /* .bs-datepicker-body */\n    /* .current-timedate */\n    /* .bs-datepicker-multiple */\n    /* .bs-datepicker-btns */\n    /*.bs-datepicker-custom-range */\n    /* .bs-datepicker-predefined-btns */\n    /* .is-other-month */\n    /* .bs-datepicker-buttons */ }\n.bs-datepicker:after {\n      clear: both;\n      content: '';\n      display: block; }\n.bs-datepicker bs-day-picker {\n      float: left; }\n.bs-datepicker button:hover,\n    .bs-datepicker button:focus,\n    .bs-datepicker button:active,\n    .bs-datepicker input:hover,\n    .bs-datepicker input:focus,\n    .bs-datepicker input:active,\n    .bs-datepicker-btns button:hover,\n    .bs-datepicker-btns button:focus,\n    .bs-datepicker-btns button:active,\n    .bs-datepicker-predefined-btns button:active,\n    .bs-datepicker-predefined-btns button:focus {\n      outline: none; }\n.bs-datepicker-head {\n      min-width: 270px;\n      height: 50px;\n      padding: 10px;\n      border-radius: 3px 3px 0 0;\n      text-align: justify;\n      /* .bs-datepicker-head button */ }\n.bs-datepicker-head:after {\n        content: \"\";\n        display: inline-block;\n        vertical-align: top;\n        width: 100%; }\n.bs-datepicker-head button {\n        display: inline-block;\n        vertical-align: top;\n        padding: 0;\n        height: 30px;\n        line-height: 30px;\n        border: 0;\n        background: transparent;\n        text-align: center;\n        cursor: pointer;\n        color: #fff;\n        -webkit-transition: 0.3s;\n        transition: 0.3s; }\n.bs-datepicker-head button[disabled], .bs-datepicker-head button[disabled]:hover, .bs-datepicker-head button[disabled]:active {\n          background: rgba(221, 221, 221, 0.3);\n          color: #f5f5f5;\n          cursor: not-allowed; }\n.bs-datepicker-head button.next, .bs-datepicker-head button.previous {\n          border-radius: 50%;\n          width: 30px;\n          height: 30px; }\n.bs-datepicker-head button.next span, .bs-datepicker-head button.previous span {\n            font-size: 28px;\n            line-height: 1;\n            display: inline-block;\n            position: relative;\n            height: 100%;\n            width: 100%;\n            border-radius: 50%; }\n.bs-datepicker-head button.current {\n          border-radius: 15px;\n          max-width: 155px;\n          padding: 0 13px; }\n.bs-datepicker-head button:hover {\n      background-color: rgba(0, 0, 0, 0.1); }\n.bs-datepicker-head button:active {\n      background-color: rgba(0, 0, 0, 0.2); }\n.bs-datepicker-body {\n      padding: 10px;\n      border-radius: 0 0 3px 3px;\n      min-height: 232px;\n      min-width: 278px;\n      border: 1px solid #e9edf0;\n      /* .bs-datepicker-body table */ }\n.bs-datepicker-body .days.weeks {\n        position: relative;\n        z-index: 1; }\n.bs-datepicker-body table {\n        width: 100%;\n        border-collapse: separate;\n        border-spacing: 0;\n        /* .bs-datepicker-body table.days */\n        /* .bs-datepicker-body table.weeks */ }\n.bs-datepicker-body table th {\n          font-size: 13px;\n          color: #9aaec1;\n          font-weight: 400;\n          text-align: center; }\n.bs-datepicker-body table td {\n          color: #54708b;\n          text-align: center;\n          position: relative;\n          padding: 0; }\n.bs-datepicker-body table td span {\n            display: block;\n            margin: 0 auto;\n            font-size: 13px;\n            border-radius: 50%;\n            position: relative;\n            /*z-index: 1;*/\n            -moz-user-select: none;\n            -webkit-user-select: none;\n            -ms-user-select: none; }\n.bs-datepicker-body table td:not(.disabled) span {\n            cursor: pointer; }\n.bs-datepicker-body table td.is-highlighted:not(.disabled):not(.selected) span,\n          .bs-datepicker-body table td span.is-highlighted:not(.disabled):not(.selected) {\n            background-color: #e9edf0;\n            -webkit-transition: 0s;\n            transition: 0s; }\n.bs-datepicker-body table td span.disabled,\n          .bs-datepicker-body table td.disabled span {\n            color: #9aaec1; }\n.bs-datepicker-body table td span.selected,\n          .bs-datepicker-body table td.selected span {\n            color: #fff; }\n.bs-datepicker-body table td.active {\n            position: relative; }\n.bs-datepicker-body table td.active.select-start:before {\n              left: 35%; }\n.bs-datepicker-body table td.active.select-end:before {\n              left: -85%; }\n.bs-datepicker-body table td span.active.select-start:after,\n          .bs-datepicker-body table td span.active.select-end:after,\n          .bs-datepicker-body table td.active.select-start span:after,\n          .bs-datepicker-body table td.active.select-end span:after {\n            content: \"\";\n            display: block;\n            position: absolute;\n            z-index: -1;\n            width: 100%;\n            height: 100%;\n            -webkit-transition: 0.3s;\n            transition: 0.3s;\n            top: 0;\n            border-radius: 50%; }\n.bs-datepicker-body table td:before,\n          .bs-datepicker-body table td span:before {\n            content: \"\";\n            display: block;\n            position: absolute;\n            z-index: -1;\n            top: 6px;\n            bottom: 6px;\n            left: -2px;\n            right: -2px;\n            -webkit-box-sizing: content-box;\n                    box-sizing: content-box;\n            background: transparent; }\n.bs-datepicker-body table td.active.select-start + td.active:before {\n            left: -20%; }\n.bs-datepicker-body table td:last-child.active:before {\n            border-radius: 0 3px 3px 0;\n            width: 125%;\n            left: -25%; }\n.bs-datepicker-body table td span[class*=\"select-\"],\n          .bs-datepicker-body table td[class*=\"select-\"] span {\n            border-radius: 50%;\n            color: #fff; }\n.bs-datepicker-body table.days td.active:not(.select-start):before, .bs-datepicker-body table.days td.in-range:not(.select-start):before,\n        .bs-datepicker-body table.days span.active:not(.select-start):before,\n        .bs-datepicker-body table.days span.in-range:not(.select-start):before {\n          background: #e9edf0; }\n.bs-datepicker-body table.days span {\n          width: 32px;\n          height: 32px;\n          line-height: 32px; }\n.bs-datepicker-body table.days span.select-start {\n            z-index: 2; }\n.bs-datepicker-body table.days span.is-highlighted.in-range:before, .bs-datepicker-body table.days span.in-range.select-end:before {\n            background: none;\n            right: 0;\n            left: 0; }\n.bs-datepicker-body table.days td.select-start + td.select-end:before,\n        .bs-datepicker-body table.days td.select-start + td.is-highlighted:before,\n        .bs-datepicker-body table.days td.active + td.is-highlighted:before,\n        .bs-datepicker-body table.days td.active + td.select-end:before,\n        .bs-datepicker-body table.days td.in-range + td.is-highlighted:before,\n        .bs-datepicker-body table.days td.in-range + td.select-end:before {\n          background: #e9edf0;\n          width: 100%; }\n.bs-datepicker-body table.weeks tr td:nth-child(2).active:before {\n          border-radius: 3px 0 0 3px;\n          left: 0;\n          width: 100%; }\n.bs-datepicker-body table:not(.weeks) tr td:first-child:before {\n          border-radius: 3px 0 0 3px; }\n.bs-datepicker-body table.years td span {\n          width: 46px;\n          height: 46px;\n          line-height: 45px;\n          margin: 0 auto; }\n.bs-datepicker-body table.years tr:not(:last-child) td span {\n          margin-bottom: 8px; }\n.bs-datepicker-body table.months td {\n          height: 52px; }\n.bs-datepicker-body table.months td span {\n            padding: 6px;\n            border-radius: 15px; }\n.bs-datepicker .current-timedate {\n      color: #54708b;\n      font-size: 15px;\n      text-align: center;\n      height: 30px;\n      line-height: 30px;\n      border-radius: 20px;\n      border: 1px solid #e9edf0;\n      margin-bottom: 10px;\n      cursor: pointer;\n      text-transform: uppercase;\n      -moz-user-select: none;\n      -webkit-user-select: none;\n      -ms-user-select: none; }\n.bs-datepicker .current-timedate span:not(:empty):before {\n        content: \"\";\n        width: 15px;\n        height: 16px;\n        display: inline-block;\n        margin-right: 4px;\n        vertical-align: text-bottom;\n        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAABMklEQVQoU9VTwW3CQBCcOUgBtEBKSAukAnBKME+wFCAlYIhk8sQlxFABtJAScAsuAPBEewYcxCP8ouxrPDsza61uiVN1o6RNHD4htSCmq49RfO71BvMJqBBkITRf1kmUW49nQRC9h1I5AZlBClaL8aP1fKgOOxCx8aSLs+Q19eZuNO8QmPqJRtDFguy7OAcDbJPs+/BKVPDIPrvD2ZJgWAmVe7O0rI0Vqs1seyWUXpuJoppYCa5L+U++NpNPkr5OE2oMdARsb3gykJT5ydZcL8Z9Ww60nxg2LhjON9li9OwXZzo+xLbp3nC2s9CL2RrueGyVrgwNm8HpsCzZ9EEW6kqXlo1GQe03FzP/7W8Hl0dBtu7Bf7zt6mIwvX1RvzDCm7+q3mAW0Dl/GPdUCeXrZLT9BrDrGkm4qlPvAAAAAElFTkSuQmCC); }\n.bs-datepicker-multiple {\n      display: inline-block;\n      border-radius: 4px 0 0 4px; }\n.bs-datepicker-multiple + .bs-datepicker-multiple {\n        margin-left: 10px; }\n.bs-datepicker-multiple .bs-datepicker {\n        -webkit-box-shadow: none;\n                box-shadow: none;\n        position: relative; }\n.bs-datepicker-multiple .bs-datepicker:not(:last-child) {\n          padding-right: 10px; }\n.bs-datepicker-multiple .bs-datepicker + .bs-datepicker:after {\n          content: \"\";\n          display: block;\n          width: 14px;\n          height: 10px;\n          background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAKCAYAAABrGwT5AAAA1ElEQVQoU42RsQrCUAxF77VuDu7O4oMWW//BURBBpZvgKk4uIrjoqKOTf+DopIO4uYggtFTfw3+pkQqCW1/G5J7kJiFy4m5MxUlxAzgIPHX+lzMPzupRYlYgxiR7vqsOP8YKzsTx0yxFMCUZ+q7aZzlr+OvgoWcAFyAHgat2jLWu48252DdqAihDJGSSJNUUxYmQjs3+hPQBlAh2rG2LCOPnaw3IiGDX99TRCs7ASJsNhUOA7d/LcuHvRG22FIZvsNXw1MX6VZExCilOQKEfeLXr/10+aC9Ho7arh7oAAAAASUVORK5CYII=);\n          position: absolute;\n          top: 25px;\n          left: -8px; }\n.bs-datepicker-multiple .bs-datepicker .left {\n          float: left; }\n.bs-datepicker-multiple .bs-datepicker .right {\n          float: right; }\n.bs-datepicker-container {\n      padding: 15px; }\n.bs-datepicker-custom-range {\n      padding: 15px;\n      background: #eee; }\n.bs-datepicker-predefined-btns button {\n      width: 100%;\n      display: block;\n      height: 30px;\n      background-color: #9aaec1;\n      border-radius: 4px;\n      color: #fff;\n      border: 0;\n      margin-bottom: 10px;\n      padding: 0 18px;\n      text-align: left;\n      -webkit-transition: 0.3s;\n      transition: 0.3s; }\n.bs-datepicker-predefined-btns button:active, .bs-datepicker-predefined-btns button:hover {\n        background-color: #54708b; }\n.bs-datepicker .is-other-month {\n      color: rgba(0, 0, 0, 0.25); }\n.bs-datepicker-buttons {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: row wrap;\n              flex-flow: row wrap;\n      -webkit-box-pack: end;\n          -ms-flex-pack: end;\n              justify-content: flex-end;\n      padding-top: 10px;\n      border-top: 1px solid #e9edf0; }\n.bs-datepicker-buttons .btn-default {\n        margin-left: 10px; }\n/* .bs-timepicker */\n.bs-timepicker-container {\n    padding: 10px 0; }\n.bs-timepicker-label {\n    color: #54708b;\n    margin-bottom: 10px; }\n.bs-timepicker-controls {\n    display: inline-block;\n    vertical-align: top;\n    margin-right: 10px; }\n.bs-timepicker-controls button {\n      width: 20px;\n      height: 20px;\n      border-radius: 50%;\n      border: 0;\n      background-color: #e9edf0;\n      color: #54708b;\n      font-size: 16px;\n      font-weight: 700;\n      vertical-align: middle;\n      line-height: 0;\n      padding: 0;\n      -webkit-transition: 0.3s;\n      transition: 0.3s; }\n.bs-timepicker-controls button:hover {\n        background-color: #d5dadd; }\n.bs-timepicker-controls input {\n      width: 35px;\n      height: 25px;\n      border-radius: 13px;\n      text-align: center;\n      border: 1px solid #e9edf0; }\n.bs-timepicker .switch-time-format {\n    text-transform: uppercase;\n    min-width: 54px;\n    height: 25px;\n    border-radius: 20px;\n    border: 1px solid #e9edf0;\n    background: #fff;\n    color: #54708b;\n    font-size: 13px; }\n.bs-timepicker .switch-time-format img {\n      vertical-align: initial;\n      margin-left: 4px; }\nbs-datepicker-container,\n  bs-daterangepicker-container {\n    z-index: 1080; }\n/* screen size < 1024px */\n@media (max-width: 768px) {\n    .bs-datepicker-multiple {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex; }\n      .bs-datepicker-multiple + .bs-datepicker-multiple {\n        margin-top: 10px;\n        margin-left: 0; } }\n/* theming */\n.theme-default .bs-datepicker-head {\n    background-color: #777; }\n.theme-default .bs-datepicker-body table td span.selected,\n  .theme-default .bs-datepicker-body table td.selected span,\n  .theme-default .bs-datepicker-body table td span[class*=\"select-\"]:after,\n  .theme-default .bs-datepicker-body table td[class*=\"select-\"] span:after {\n    background-color: #777; }\n.theme-default .bs-datepicker-body table td.week span {\n    color: #777; }\n.theme-green .bs-datepicker-head {\n    background-color: #5cb85c; }\n.theme-green .bs-datepicker-body table td span.selected,\n  .theme-green .bs-datepicker-body table td.selected span,\n  .theme-green .bs-datepicker-body table td span[class*=\"select-\"]:after,\n  .theme-green .bs-datepicker-body table td[class*=\"select-\"] span:after {\n    background-color: #5cb85c; }\n.theme-green .bs-datepicker-body table td.week span {\n    color: #5cb85c; }\n.theme-blue .bs-datepicker-head {\n    background-color: #5bc0de; }\n.theme-blue .bs-datepicker-body table td span.selected,\n  .theme-blue .bs-datepicker-body table td.selected span,\n  .theme-blue .bs-datepicker-body table td span[class*=\"select-\"]:after,\n  .theme-blue .bs-datepicker-body table td[class*=\"select-\"] span:after {\n    background-color: #5bc0de; }\n.theme-blue .bs-datepicker-body table td.week span {\n    color: #5bc0de; }\n.theme-dark-blue .bs-datepicker-head {\n    background-color: #337ab7; }\n.theme-dark-blue .bs-datepicker-body table td span.selected,\n  .theme-dark-blue .bs-datepicker-body table td.selected span,\n  .theme-dark-blue .bs-datepicker-body table td span[class*=\"select-\"]:after,\n  .theme-dark-blue .bs-datepicker-body table td[class*=\"select-\"] span:after {\n    background-color: #337ab7; }\n.theme-dark-blue .bs-datepicker-body table td.week span {\n    color: #337ab7; }\n.theme-red .bs-datepicker-head {\n    background-color: #d9534f; }\n.theme-red .bs-datepicker-body table td span.selected,\n  .theme-red .bs-datepicker-body table td.selected span,\n  .theme-red .bs-datepicker-body table td span[class*=\"select-\"]:after,\n  .theme-red .bs-datepicker-body table td[class*=\"select-\"] span:after {\n    background-color: #d9534f; }\n.theme-red .bs-datepicker-body table td.week span {\n    color: #d9534f; }\n.theme-orange .bs-datepicker-head {\n    background-color: #f0ad4e; }\n.theme-orange .bs-datepicker-body table td span.selected,\n  .theme-orange .bs-datepicker-body table td.selected span,\n  .theme-orange .bs-datepicker-body table td span[class*=\"select-\"]:after,\n  .theme-orange .bs-datepicker-body table td[class*=\"select-\"] span:after {\n    background-color: #f0ad4e; }\n.theme-orange .bs-datepicker-body table td.week span {\n    color: #f0ad4e; }\n/*# sourceMappingURL=bs-datepicker.css.map */"
-
-/***/ }),
-
-/***/ "./src/app/spotstatistic/spotstatistic.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n  <mat-card-header>\n\n<table class=\"table table-hover\">\n  <thead>\n      <tr class=\"text-center\">\n          <th scope=\"col\">Spot number #</th>\n          <th scope=\"col\">Hours have been taken</th>\n          <th scope=\"col\">Popularity(How many times was busy)</th>\n      </tr>\n  </thead>\n  <tbody>\n      <tr *ngFor=\"let spotstatistic of statistic\" class=\"text-center\">\n          <th scope=\"row\">{{spotstatistic.id}}</th>\n          <th scope=\"row\">{{spotstatistic.numberOfHours}}</th>\n          <th scope=\"row\">{{spotstatistic.numberOfEvent}}</th>\n\n        \n          \n      </tr>\n  </tbody>\n</table>\n</mat-card-header> \n</mat-card> \n\n<div class=\"row\">\n\n        <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n                <label>Set min data</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"Datepicker\" #dp=\"bsDatepicker\" bsDatepicker  [(ngModel)]=\"minDate\">                    \n              </div>\n\n              <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n                    <label>Set max data</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Datepicker\" #dp=\"bsDatepicker\" bsDatepicker  [(ngModel)]=\"maxDate\">                                 \n              </div>\n\n\n\n\n    <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n        <div>\n      <label>Display statistic of spots</label>\n    </div>\n    <div>\n     <button class=\"btn btn-success\" (click)=\"addItem()\">Display</button>\n    </div>  \n    </div>\n    \n  </div>\n\n\n  <p class=\"life-container\" *ngFor=\"let goal of goals\">\n    {{ goal }}\n  </p>\n  \n\n"
-
-/***/ }),
-
-/***/ "./src/app/spotstatistic/spotstatistic.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpotstatisticComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var SpotstatisticComponent = /** @class */ (function () {
-    function SpotstatisticComponent(route, parkingService) {
-        this.route = route;
-        this.parkingService = parkingService;
-        this.thirtySecInterval = 30000;
-        this.favoriteNameInputHide = true;
-        this.goals = [];
-        this.minDate = new Date();
-        this.minDate.setDate(this.minDate.getDate() - 7);
-        this.maxDate = new Date();
-        this.minMonth = this.minDate.getMonth() + 1;
-        this.maxMonth = this.maxDate.getMonth() + 1;
-        this.start_date = this.minDate.getDate() + "/" + this.minMonth + "/" + this.minDate.getFullYear();
-        this.end_date = this.maxDate.getDate() + "/" + this.maxMonth + "/" + this.maxDate.getFullYear();
-    }
-    SpotstatisticComponent.prototype.ngOnInit = function () {
-        this.getSpotStatistic();
-        setInterval(this.refresh(), this.thirtySecInterval);
-    };
-    SpotstatisticComponent.prototype.refresh = function () {
-        this.getSpotStatistic();
-    };
-    SpotstatisticComponent.prototype.getSpotStatistic = function () {
-        var _this = this;
-        var id = parseInt(this.route.snapshot.paramMap.get('id'));
-        this.minDate.getMilliseconds();
-        this.parkingService.getSpotStatistic(id, this.minDate.getTime().toString(), this.maxDate.getTime().toString())
-            .subscribe(function (statistic) { return _this.statistic = statistic; });
-    };
-    SpotstatisticComponent.prototype.addItem = function () {
-        if (this.minDate > this.maxDate) {
-            this.tempDate = this.minDate;
-            this.minDate = this.maxDate;
-            this.maxDate = this.tempDate;
-        }
-        this.getSpotStatistic();
-        setInterval(this.refresh(), this.thirtySecInterval);
-    };
-    SpotstatisticComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-spotstatistic',
-            template: __webpack_require__("./src/app/spotstatistic/spotstatistic.component.html"),
-            styles: [__webpack_require__("./src/app/spotstatistic/spotstatistic.component.css")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__parking_service__["a" /* ParkingService */]])
-    ], SpotstatisticComponent);
-    return SpotstatisticComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/statistic/parking-statistic/parking-statistic.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "h6 {\n    text-align: center;\n}\n\n.mat-form-field {\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n    text-align: center;\n}\n\nspan {\n    color: darkred;\n}\n"
+module.exports = "h6 {\n    text-align: center;\n}\n\n.mat-form-field {\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n    text-align: center;\n}\n\nspan {\n    color: darkred;\n}\n\n.mat-option {\n    color: darkblue;\n\n}\n\nmat-select {\n    font-size: 0.9em;\n}\n\n\n"
 
 /***/ }),
 
 /***/ "./src/app/statistic/parking-statistic/parking-statistic.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h3 class=\"text-center\">The most popular parkings </h3>\n<div class=\"parent row\">\n\n    <div class=\"col-md-12\">\n        <ul>\n            <div *ngFor=\"let parking of parkings\">\n                <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n                    <mat-card-header>\n                        <div mat-card-avatar class=\"example-header-image\">\n                            <mat-icon>local_parking</mat-icon>\n                        </div>\n                        <div style=\"min-width: 70%;\">\n                            <div>\n                                <mat-card-title>{{parking.city}}, {{parking.street}} street</mat-card-title>\n                                <mat-card-subtitle>{{parking.providerName}}</mat-card-subtitle>\n                            </div>\n                        </div>\n                        <div style=\"width: 100%\"></div>\n                        <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n                        <p style=\"font-size: 18px;\">{{parking.price}}</p>\n                    </mat-card-header>\n\n                    <mat-card-actions align=\"right\">\n                        <button mat-button routerLink='parkingdetail/2' color=\"primary\">MORE INFO</button>\n                    </mat-card-actions>\n                </mat-card>\n                <hr/>\n            </div>\n        </ul>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"filter offset-1 col-md-10\" id=\"cont\">\n        <mat-divider style=\"border-color: purple;\"></mat-divider>\n        <mat-card class=\"card\">\n            <h6 [(ngModel)]=\"selectedStreet\" [(ngModel)]=\"selectedCity\" ngDefaultControl>Find the most popular parking\n                in <span>{{selectedCity}}</span> on the street: <span *ngIf=\"selectedStreet ==null\">--not selected--</span><span>{{selectedStreet}}</span> for the last <span>{{selectedNumberOfDays}}</span></h6>\n            <div class=\"row\">\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedCity\" placeholder=\"change city\">\n                        <mat-option *ngFor=\"let parkingsCity of parkingsCities\" [value]=\"parkingsCity\"\n                                    (click)=\"theCityWasSelected()\">\n                            {{ parkingsCity }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n\n                <mat-form-field class=\"col-md-3\">\n                    <input matInput placeholder=\"find street\" #streetSearchBox id=\"street-box\"\n                           (keyup)=\"findParkingsStreets(streetSearchBox.value)\"\n                           [matAutocomplete]=\"auto2\">\n                    <mat-autocomplete #auto2=\"matAutocomplete\">\n                        <mat-option *ngFor=\"let parkingsStreet of parkingsStreets\"\n                                    [value]=\"selectedStreet\"\n                                    (click)=\"theStreetWasSelected(parkingsStreet)\"\n                                    (click)=\"findBestParkingsByStreet(parkingsStreet)\">\n                            {{parkingsStreet}}\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedNumberOfDays\" placeholder=\"for the last days\">\n                        <mat-option *ngFor=\"let day of days\" [value]=\"day\"\n                                    (click)=\"calculateDate()\"\n                        >\n                            {{ day }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n            </div>\n        </mat-card>\n    </div>\n</div>\n"
+module.exports = "<h3 class=\"text-center\">The most popular parkings in <span>{{selectedCity}}</span> on the street <span\n        *ngIf=\"selectedStreet ==null\">--not selected--</span><span>{{selectedStreet}}</span></h3>\n<div class=\"parent row\">\n\n    <div class=\"col-md-12\">\n        <ul>\n            <div *ngFor=\"let parking of parkings\">\n                <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n                    <mat-card-header>\n                        <div mat-card-avatar class=\"example-header-image\">\n                            <mat-icon>local_parking</mat-icon>\n                        </div>\n                        <div style=\"min-width: 70%;\">\n                            <div>\n                                <mat-card-title>Parking address: {{parking.city}}, {{parking.street}} street / {{parking.building}}\n                                </mat-card-title>\n                                <mat-card-subtitle>Provider name: {{parking.providerName}}</mat-card-subtitle>\n                            </div>\n                        </div>\n                        <div style=\"width: 100%\"></div>\n                        <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n                        <p style=\"font-size: 18px;\">{{parking.price}}</p>\n                    </mat-card-header>\n\n                    <mat-card-actions align=\"right\">\n                        <button mat-button routerLink='parkingdetail/2' color=\"primary\">MORE INFO</button>\n                    </mat-card-actions>\n                </mat-card>\n                <hr/>\n            </div>\n        </ul>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"filter offset-1 col-md-10\" id=\"cont\">\n        <mat-divider style=\"border-color: purple;\"></mat-divider>\n        <mat-card class=\"card\">\n            <h6 [(ngModel)]=\"selectedStreet\" [(ngModel)]=\"selectedCity\" ngDefaultControl>Find the most popular parking\n                in <span>{{selectedCity}}</span> on the street: <span\n                        *ngIf=\"selectedStreet ==null\">--not selected--</span><span>{{selectedStreet}}</span> for the\n                last <span>{{selectedNumberOfDays}}</span></h6>\n            <div class=\"row\">\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedCity\" placeholder=\"change city\">\n                        <mat-option *ngFor=\"let parkingsCity of parkingsCities\" [value]=\"parkingsCity\"\n                                    (click)=\"clearCurrentData()\">\n                            {{ parkingsCity }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n\n                <mat-form-field class=\"col-md-3\">\n                    <input matInput placeholder=\"find street\" #streetSearchBox id=\"street-box\"\n                           (keyup)=\"findParkingsStreetsFromInput(streetSearchBox.value)\"\n                           [matAutocomplete]=\"auto2\">\n                    <mat-autocomplete #auto2=\"matAutocomplete\">\n                        <mat-option *ngFor=\"let parkingsStreet of parkingsStreets\"\n                                    [value]=\"parkingsStreet\"\n                                    (click)=\"selectStreet(parkingsStreet)\"\n                                    (click)=\"findBestParkings()\">\n                            {{parkingsStreet}}\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedNumberOfDays\" placeholder=\"for the last days\">\n                        <mat-option *ngFor=\"let day of days\" [value]=\"day\"\n                                    (click)=\"findBestParkings()\"\n                        >\n                            {{ day }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n            </div>\n        </mat-card>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3815,7 +4461,6 @@ module.exports = "<h3 class=\"text-center\">The most popular parkings </h3>\n<di
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParkingStatisticComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__statistics_service__ = __webpack_require__("./src/app/statistic/statistics.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3827,11 +4472,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var ParkingStatisticComponent = /** @class */ (function () {
-    function ParkingStatisticComponent(statisticService, router) {
+    function ParkingStatisticComponent(statisticService) {
         this.statisticService = statisticService;
-        this.router = router;
         this.selectedCity = 'Lviv';
         this.selectedNumberOfDays = 7;
         this.days = [7, 14, 30, 365];
@@ -3840,17 +4483,18 @@ var ParkingStatisticComponent = /** @class */ (function () {
     ParkingStatisticComponent.prototype.ngOnInit = function () {
         this.findAllParkingsCities();
     };
-    ParkingStatisticComponent.prototype.findBestParkingsByStreet = function (inputStreet) {
+    ParkingStatisticComponent.prototype.findBestParkings = function () {
         var _this = this;
-        this.statisticService.getBestParkingsByCityAndStreet(this.selectedCity, inputStreet, this.calculatedDate.getTime())
+        this.calculateDate();
+        this.statisticService.getBestParkingsByCityStreetDate(this.selectedCity, this.selectedStreet, this.calculatedDate.getTime())
             .subscribe(function (parkings) {
             _this.parkings = parkings;
         });
         this.refreshDate();
     };
-    ParkingStatisticComponent.prototype.findParkingsStreets = function (input) {
+    ParkingStatisticComponent.prototype.findParkingsStreetsFromInput = function (input) {
         var _this = this;
-        this.statisticService.getParkingsStreet(this.selectedCity, input)
+        this.statisticService.getParkingsStreetsByAnyMatching(this.selectedCity, input)
             .subscribe(function (parkingsStreets) {
             _this.parkingsStreets = parkingsStreets;
         });
@@ -3869,10 +4513,11 @@ var ParkingStatisticComponent = /** @class */ (function () {
             _this.parkingsCities = parkingsCities;
         });
     };
-    ParkingStatisticComponent.prototype.theCityWasSelected = function () {
-        this.selectedStreet = "";
+    ParkingStatisticComponent.prototype.clearCurrentData = function () {
+        this.selectedStreet = null;
+        this.parkings = null;
     };
-    ParkingStatisticComponent.prototype.theStreetWasSelected = function (street) {
+    ParkingStatisticComponent.prototype.selectStreet = function (street) {
         this.selectedStreet = street;
     };
     ParkingStatisticComponent.prototype.calculateDate = function () {
@@ -3887,9 +4532,216 @@ var ParkingStatisticComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.html"),
             styles: [__webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__statistics_service__["a" /* StatisticsService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__statistics_service__["a" /* StatisticsService */]])
     ], ParkingStatisticComponent);
     return ParkingStatisticComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/statistic/spotstatistic/spotstatistic.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "nav a:visited, a:link {\n  color: #607D8B;\n  }\n  nav a:hover {\n  color: #039be5;\n  background-color: #CFD8DC;\n  }\n  nav a.active {\n  color: #039be5;\n  }"
+
+/***/ }),
+
+/***/ "./src/app/statistic/spotstatistic/spotstatistic.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n  <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n    <button class=\"btn btn-success\" (click)=\"returnToParkingDetail()\">Return to parking detail</button>\n   </div>  \n <h1>Spot statistic of this parking</h1>\n \n<mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n  \n  <mat-card-header>\n   \n<table class=\"table table-hover\">\n  <thead>\n      <tr class=\"text-center\">\n          <th scope=\"col\">Spot number #</th>\n          <th scope=\"col\">Hours have been taken</th>\n          <th scope=\"col\">Popularity(How many times was busy)</th>\n      </tr>\n  </thead>\n  <tbody>\n      <tr *ngFor=\"let spotstatistic of statistic\" class=\"text-center\">\n          <th scope=\"row\">{{spotstatistic.id}}</th>\n          <th scope=\"row\">{{spotstatistic.numberOfHours}}</th>\n          <th scope=\"row\">{{spotstatistic.numberOfEvents}}</th>\n                                            \n        \n          \n      </tr>\n  </tbody>\n</table>\n</mat-card-header> \n</mat-card> \n\n<div class=\"row\">\n\n        <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n                <label>Set start data period</label>\n                <input type=\"text\" class=\"form-control\" placeholder=\"Datepicker\" #dp=\"bsDatepicker\" bsDatepicker  [(ngModel)]=\"minDate\">                    \n              </div>\n\n              <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n                    <label>Set finish data period</label>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Datepicker\" #dp=\"bsDatepicker\" bsDatepicker  [(ngModel)]=\"maxDate\">                                 \n              </div>\n\n\n\n\n    <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n        <div>\n      <label>Display statistic table of spots</label>\n    </div>\n    <div>\n     <button class=\"btn btn-success\" (click)=\"addItem()\">Display</button>\n    </div>  \n    </div>\n    <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n     <button class=\"btn btn-success\" (click)=\"showHoursGraphic()\">Display statistic hour graphic</button>\n     </div> \n    \n     <div class=\"col-xs-12 col-12 col-md-4 form-group\">\n      <button class=\"btn btn-success\" (click)=\"showEventsGraphic()\">Display graphic of popularity spots</button>\n     </div> \n    \n\n  \n\n  \n</div>\n\n\n\n\n<div >\n  <canvas id=\"canvas\">{{ hoursChart }}</canvas>\n</div>\n\n\n\n <div >\n  <canvas id=\"canvas\">{{ eventsChart }}</canvas>\n</div>\n\n\n\n\n\n  \n\n"
+
+/***/ }),
+
+/***/ "./src/app/statistic/spotstatistic/spotstatistic.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpotstatisticComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__("./node_modules/chart.js/src/chart.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chart_js__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var SpotstatisticComponent = /** @class */ (function () {
+    function SpotstatisticComponent(route, router, parkingService) {
+        var _this = this;
+        this.route = route;
+        this.router = router;
+        this.parkingService = parkingService;
+        this.thirtySecInterval = 3000;
+        this.favoriteNameInputHide = true;
+        this.hoursChart = [];
+        this.eventsChart = [];
+        this.minDate = new Date();
+        this.minDate.setDate(this.minDate.getDate() - 7);
+        this.maxDate = new Date();
+        this.minMonth = this.minDate.getMonth() + 1;
+        this.maxMonth = this.maxDate.getMonth() + 1;
+        this.route.queryParams.subscribe(function (params) {
+            _this.start_date = params[_this.minDate.getDate() + "/" + _this.minMonth + "/" + _this.minDate.getFullYear()];
+            _this.end_date = params[_this.maxDate.getDate() + "/" + _this.maxMonth + "/" + _this.maxDate.getFullYear()];
+        });
+        /* this.param1 = params['param1'];
+         this.param2 = params['param2'];*/
+    }
+    SpotstatisticComponent.prototype.ngOnInit = function () {
+        this.getSpotStatistic();
+        this.fillArraysToGraphic();
+        setInterval(this.refresh(), this.thirtySecInterval);
+        // this.drawGraphic();
+    };
+    SpotstatisticComponent.prototype.refresh = function () {
+        this.getSpotStatistic();
+    };
+    SpotstatisticComponent.prototype.fillArraysToGraphic = function () {
+        var _this = this;
+        this.numbers = [];
+        this.statistic.forEach(function (element) {
+            console.log(element.id);
+            _this.numbers.push(element.id);
+        });
+        this.hours = [];
+        this.statistic.forEach(function (element) {
+            console.log(element.numberOfHours);
+            _this.hours.push(element.numberOfHours);
+        });
+        this.hours.push(0);
+        this.events = [];
+        this.statistic.forEach(function (element) {
+            console.log(element.numberOfEvents);
+            _this.events.push(element.numberOfEvents);
+        });
+        this.events.push(0);
+    };
+    SpotstatisticComponent.prototype.drawHourGraphic = function () {
+        var densityData = {
+            label: 'Spots',
+            data: this.hours
+        };
+        this.hoursChart = new __WEBPACK_IMPORTED_MODULE_3_chart_js__["Chart"]('canvas', {
+            type: 'bar',
+            data: {
+                labels: this.numbers,
+                datasets: [densityData]
+            },
+            options: {
+                legend: {
+                    display: true
+                },
+                title: {
+                    display: true,
+                    text: 'How many hours spots of this parking have been taken'
+                },
+                scales: {
+                    xAxes: [{
+                            display: true
+                        }],
+                    yAxes: [{
+                            display: true
+                        }],
+                }
+            }
+        });
+        this.numbers = null;
+        this.hours = null;
+        this.events = null;
+    };
+    SpotstatisticComponent.prototype.drawEventGraphic = function () {
+        var densityData = {
+            label: 'Spots',
+            data: this.events
+        };
+        this.eventsChart = new __WEBPACK_IMPORTED_MODULE_3_chart_js__["Chart"]('canvas', {
+            type: 'bar',
+            data: {
+                labels: this.numbers,
+                datasets: [densityData]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    text: 'Whi'
+                },
+                title: {
+                    display: true,
+                    text: 'Which spots are most popular'
+                },
+                scales: {
+                    xAxes: [{
+                            display: true
+                        }],
+                    yAxes: [{
+                            display: true
+                        }],
+                }
+            }
+        });
+        this.numbers = null;
+        this.hours = null;
+        this.events = null;
+    };
+    SpotstatisticComponent.prototype.getSpotStatistic = function () {
+        var _this = this;
+        var id = parseInt(this.route.snapshot.paramMap.get('id'));
+        this.minDate.getMilliseconds();
+        this.parkingService.getSpotStatistic(id, this.minDate.getTime().toString(), this.maxDate.getTime().toString())
+            .subscribe(function (statistic) { return _this.statistic = statistic; });
+    };
+    SpotstatisticComponent.prototype.addItem = function () {
+        var _this = this;
+        this.route.queryParams.subscribe(function (params) {
+            _this.start_date = _this.minDate.getDate() + "/" + _this.minMonth + "/" + _this.minDate.getFullYear();
+            _this.end_date = _this.maxDate.getDate() + "/" + _this.maxMonth + "/" + _this.maxDate.getFullYear();
+            //   this.start_date = params['param1'];//"[this.minDate.getDate()+"/"+ this.minMonth+"/"+this.minDate.getFullYear()]";
+            //this.end_date = params['param2'];//[this.maxDate.getDate()+"/"+this.maxMonth+"/"+this.maxDate.getFullYear()];
+        });
+        if (this.minDate > this.maxDate) {
+            this.tempDate = this.minDate;
+            this.minDate = this.maxDate;
+            this.maxDate = this.tempDate;
+        }
+        this.getSpotStatistic();
+    };
+    SpotstatisticComponent.prototype.showHoursGraphic = function () {
+        this.fillArraysToGraphic();
+        this.drawHourGraphic();
+    };
+    SpotstatisticComponent.prototype.showEventsGraphic = function () {
+        this.fillArraysToGraphic();
+        this.drawEventGraphic();
+    };
+    SpotstatisticComponent.prototype.returnToParkingDetail = function () {
+        var id = parseInt(this.route.snapshot.paramMap.get('id'));
+        this.router.navigate(['parkingdetail/' + id]);
+    };
+    SpotstatisticComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-spotstatistic',
+            template: __webpack_require__("./src/app/statistic/spotstatistic/spotstatistic.component.html"),
+            styles: [__webpack_require__("./src/app/statistic/spotstatistic/spotstatistic.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__parking_service__["a" /* ParkingService */]])
+    ], SpotstatisticComponent);
+    return SpotstatisticComponent;
 }());
 
 
@@ -3906,7 +4758,7 @@ module.exports = ""
 /***/ "./src/app/statistic/statistic.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h3 class=\"text-center font-weight-bold\">Choose what statistic you wont to see:</h3>\n<div class=\"container text-center\">\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <hr>\n      <h4 class=\"mb-4\">Parking statistic</h4>\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <mat-icon>arrow_downward</mat-icon>\n        </div>\n      </div>\n      <div>\n      <button mat-raised-button [routerLink]=\"['parkingstatistic']\"\n              color=\"primary\" class=\"mb-4\" style=\"width:60%;\">Parking statistic\n      </button>\n      </div>\n\n    </div>\n  </div>\n\n\n</div>\n"
+module.exports = "<h3 class=\"text-center font-weight-bold\">Choose what statistic you wont to see:</h3>\n<div class=\"container text-center\">\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <hr>\n      <h4 class=\"mb-4\">Parking statistic</h4>\n\n      <div>\n      <button mat-raised-button [routerLink]=\"['parkingstatistic']\"\n              color=\"primary\" class=\"mb-4\" style=\"width:60%;\">Parking statistic\n      </button>\n      </div>\n\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -3971,7 +4823,7 @@ var StatisticsService = /** @class */ (function () {
         this.http = http;
         this.statisticUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].apiUrl + '/statistic';
     }
-    StatisticsService.prototype.getParkingsStreet = function (city, street) {
+    StatisticsService.prototype.getParkingsStreetsByAnyMatching = function (city, street) {
         return this.http.get(this.statisticUrl + '/findparkingstreets', {
             params: {
                 city: city,
@@ -3983,10 +4835,10 @@ var StatisticsService = /** @class */ (function () {
         return this.http.get(this.statisticUrl + '/findparkingscities/' + input);
     };
     StatisticsService.prototype.getAllParkingsCities = function () {
-        return this.http.get(this.statisticUrl + '/findAllparkingscities');
+        return this.http.get(this.statisticUrl + '/findallparkingscities');
     };
-    StatisticsService.prototype.getBestParkingsByCityAndStreet = function (city, street, date) {
-        return this.http.get(this.statisticUrl + '/findbestparkingsbystreetandcity', {
+    StatisticsService.prototype.getBestParkingsByCityStreetDate = function (city, street, date) {
+        return this.http.get(this.statisticUrl + '/findbestparkings', {
             params: {
                 city: city,
                 street: street,
@@ -4435,6 +5287,10 @@ var SuperuserConfigurationComponent = /** @class */ (function () {
 var environment = {
     production: false,
     apiUrl: 'https://ec2-18-184-26-219.eu-central-1.compute.amazonaws.com',
+    //    apiUrl: 'https://localhost',
+    //    angularUrl: 'http://localhost:4200/',
+    accessTokenHeader: 'Access-token',
+    refreshTokenHeader: 'Refresh-token'
 };
 
 
@@ -4470,6 +5326,27 @@ Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* pl
 
 module.exports = __webpack_require__("./src/main.ts");
 
+
+/***/ }),
+
+/***/ 1:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 3:
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 
