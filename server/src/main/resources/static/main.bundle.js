@@ -333,7 +333,7 @@ var PagerService = /** @class */ (function () {
     }
     PagerService.prototype.getPager = function (totalItems, currentPage, pageSize) {
         if (currentPage === void 0) { currentPage = 1; }
-        if (pageSize === void 0) { pageSize = 6; }
+        if (pageSize === void 0) { pageSize = 5; }
         // calculate total pages
         var totalPages = Math.ceil(totalItems / pageSize);
         var startPage, endPage;
@@ -876,7 +876,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_60__errors_internal_server_error_internal_server_error_component__["a" /* InternalServerErrorComponent */],
                 __WEBPACK_IMPORTED_MODULE_61__errors_forbidden_forbidden_component__["a" /* ForbiddenComponent */],
                 __WEBPACK_IMPORTED_MODULE_54__statistic_spotstatistic_spotstatistic_component__["a" /* SpotstatisticComponent */],
-                __WEBPACK_IMPORTED_MODULE_57__client_profile_client_password_change_confirmation_client_password_change_confirmation_component__["a" /* ClientPasswordChangeConfirmationComponent */]
+                __WEBPACK_IMPORTED_MODULE_57__client_profile_client_password_change_confirmation_client_password_change_confirmation_component__["a" /* ClientPasswordChangeConfirmationComponent */],
+                __WEBPACK_IMPORTED_MODULE_51__index_parking_map_parking_map_component__["a" /* ParkingMapComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_35__agm_core__["AgmCoreModule"].forRoot({
@@ -986,14 +987,14 @@ var CustomAuthService = /** @class */ (function () {
 /***/ "./src/app/auth/login/login.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".container-style {\n    font-family: -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n    margin-top: 15%;\n}\n.heading {\n    margin-bottom: 5%;\n}\n.submit {\n    margin-top: 2%;\n}\n.registration {\n    margin-top: 10%;\n}\n.customwidth {\n    width: 100%;\n}\n.cursor {\n    cursor: pointer;\n}\n"
+module.exports = ".container-style {\n    font-family: -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n    margin-top: 10%;\n}\n.heading {\n    margin-bottom: 5%;\n}\n.submit {\n    margin-top: 2%;\n}\n.registration {\n    margin-top: 10%;\n}\n.customwidth {\n    width: 100%;\n}\n.cursor {\n    cursor: pointer;\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/auth/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"container-fluid container-style\">\n    <form [formGroup]=\"loginForm\" (ngSubmit)=\"login()\" class = \"formstyle offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6\">\n        <h3 class=\"heading row offset-4\">Authorization</h3>\n        <div class = \"row\">\n            <mat-form-field class = \"customwidth\">\n                <input matInput placeholder=\"Enter email address\" formControlName=\"email\">\n                <mat-error *ngIf=\"emailControl.hasError('email') && !emailControl.hasError('required')\">\n                    Please enter a valid email address\n                </mat-error>\n                <mat-error *ngIf=\"emailControl.hasError('required')\">\n                    Email is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class = \"row\">\n            <mat-form-field class = \"customwidth\">\n                <input matInput placeholder=\"Enter your password\" formControlName=\"password\" [type]=\"hide ? 'password' : 'text'\">\n                <mat-icon matSuffix (click)=\"hide = !hide\" class=\"cursor\">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>\n                <mat-error *ngIf=\"passwordControl.hasError('minlength') && !passwordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('maxlength') && !passwordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class = \"row offset-5 submit\">\n            <button mat-button class=\"btn btn-success\" [disabled]=\"!loginForm.valid\">Submit</button>\n        </div>\n        <span class=\"registration row offset-3\">Do not have an account ? <a routerLink=\"/registration\"> Sign up!</a></span>\n    </form>\n    <button (click)=\"socialSignIn('facebook')\">Sign in with Facebook</button>\n    <button (click)=\"socialSignIn('google')\">Sign in with Google</button>\n    <button (click)=\"socialSignIn('linkedin')\">Sign in with Linkedin</button>\n</div>\n\n\n"
+module.exports = "<div class = \"container-fluid container-style\">\n    <form [formGroup]=\"loginForm\" (ngSubmit)=\"login()\" class = \"formstyle offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6\">\n        <h3 class=\"heading row offset-4\">Authorization</h3>\n        <div class = \"row\">\n            <mat-form-field class = \"customwidth\">\n                <input matInput placeholder=\"Enter email address\" formControlName=\"email\">\n                <mat-error *ngIf=\"emailControl.hasError('email') && !emailControl.hasError('required')\">\n                    Please enter a valid email address\n                </mat-error>\n                <mat-error *ngIf=\"emailControl.hasError('required')\">\n                    Email is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class = \"row\">\n            <mat-form-field class = \"customwidth\">\n                <input matInput placeholder=\"Enter your password\" formControlName=\"password\" [type]=\"hide ? 'password' : 'text'\">\n                <mat-icon matSuffix (click)=\"hide = !hide\" class=\"cursor\">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>\n                <mat-error *ngIf=\"passwordControl.hasError('minlength') && !passwordControl.hasError('required')\">\n                    Password must contain more than 6 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('maxlength') && !passwordControl.hasError('required')\">\n                    Password must contain less than 16 characters\n                </mat-error>\n                <mat-error *ngIf=\"passwordControl.hasError('required')\">\n                    Password is <strong>required</strong>\n                </mat-error>\n            </mat-form-field>\n        </div>\n        <div class = \"row offset-5 submit\">\n            <button mat-button class=\"btn btn-success\" [disabled]=\"!loginForm.valid\">Submit</button>\n        </div>\n        <span class=\"registration row offset-3\">Do not have an account ? <a routerLink=\"/registration\"> Sign up!</a></span>\n    </form>\n    <div class = \"row text-ceter mt-3\">\n        <div class=\"col-3 ml-auto\">\n            <button (click)=\"socialSignIn('facebook')\" style=\"background-color:#4267b2;\" class=\"btn\">Sign in with Facebook</button>\n        </div>\n        <div class=\"col-3 ml-auto\">\n            <button (click)=\"socialSignIn('google')\" style=\"background-color:#ea4335;\" class=\"btn\">Sign in with Google</button>\n        </div>\n        <div class=\"col-3 ml-auto\">\n            <button (click)=\"socialSignIn('linkedin')\" style=\"background-color:#0077b5\" class=\"btn\">Sign in with Linkedin</button>\n        </div>\n    </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -2018,7 +2019,7 @@ var ClientEditComponent = /** @class */ (function () {
 /***/ "./src/app/clients/client-list/client-item/client-item.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".button {\n    display: block;\n    margin: 2%;\n    color: #54456f;\n}\n\n#clientItem {\n    margin: 1%;\n}\n\n.mat-button {\n    font-size: 12px;\n}\n"
+module.exports = ".button {\n    display: block;\n    margin: 2%;\n    color: #54456f;\n}\n\n#clientItem {\n    margin: 2%;\n}\n\n.mat-button {\n    font-size: 12px;\n}\n"
 
 /***/ }),
 
@@ -2655,12 +2656,10 @@ var IndexComponent = /** @class */ (function () {
                             var destination = distances.destination_addresses[j];
                             if (distances.rows[0].elements[j].status == 'OK') {
                                 var distance_1 = distances.rows[i].elements[j].distance.text;
-                                console.log(distance_1);
                                 distance_1 = distance_1.substr(0, distance_1.indexOf(' '));
                                 Number.parseInt(distance_1);
                                 distance_1 *= MiToKm;
                                 parking.distance = Math.floor(distance_1 * 10) / 10;
-                                console.log(parking.distance);
                             }
                             else {
                                 console.log(destination + ' is not reachable by land from ' + origin);
@@ -2675,14 +2674,6 @@ var IndexComponent = /** @class */ (function () {
         });
         this.refreshComponentView();
     };
-    /*  revertMileToKm(distance: any): number {
-          var distance = distance.toString();
-          distance = distance.substr(0, distance.indexOf(' '));
-          Number.parseInt(distance);
-          distance *= MiToKm;
-          console.log(Math.floor(distance * 10) / 10);
-          return Math.floor(distance * 10) / 10;
-      }*/
     IndexComponent.prototype.refreshComponentView = function () {
         var _this = this;
         this.changeDetector.detectChanges();
@@ -2726,7 +2717,7 @@ module.exports = "mat-form-field {\n    width: 100%;\n    padding-left: 5px;\n  
 /***/ "./src/app/index/parking-list-filter/location-field/location-field.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-form-field>\n    <input type=\"text\" placeholder=\"Location\" aria-label=\"Number\" matInput [formControl]=\"control\"\n           [matAutocomplete]=\"autocomplete\" (blur)=\"onLocationInputBlur()\">\n    <mat-error *ngIf=\"control.hasError('locationAutocompleteItemNotSelected')\">\n        Location must be selected from <strong>autocomplete</strong>\n    </mat-error>\n    <mat-autocomplete #autocomplete\n                      [autoActiveFirstOption]=\"true\"\n                      [displayWith]=\"locationAutocompleteDisplayWith\">\n        <mat-option *ngFor=\"let autocompleteItem of predictionItems\"\n                    [value]=\"autocompleteItem\">\n            <mat-icon class=\"mat-18\">location_on</mat-icon>\n            {{autocompleteItem.label}}\n        </mat-option>\n        <mat-option *ngIf=\"geolocationItem\" [value]=\"geolocationItem\">\n            <mat-icon class=\"mat-18\">gps_fixed</mat-icon>\n            {{geolocationItem.label}}\n        </mat-option>\n        <mat-option *ngIf=\"ipLocationItem\" [value]=\"ipLocationItem\">\n            <mat-icon class=\"mat-18\">explore</mat-icon>\n            {{ipLocationItem.label}}\n        </mat-option>\n    </mat-autocomplete>\n</mat-form-field>"
+module.exports = "<mat-form-field>\n    <input type=\"text\" placeholder=\"Location\" matInput aria-label=\"Number\" [formControl]=\"control\"\n    [matAutocomplete]=\"autocomplete\" (blur)=\"onLocationInputBlur()\">\n    <mat-error *ngIf=\"control.hasError('locationAutocompleteItemNotSelected')\">\n        Location must be selected from <strong>autocomplete</strong>\n    </mat-error>\n    <mat-autocomplete #autocomplete\n                      [autoActiveFirstOption]=\"true\"\n                      [displayWith]=\"locationAutocompleteDisplayWith\">\n        <mat-option *ngFor=\"let autocompleteItem of predictionItems\"\n                    [value]=\"autocompleteItem\">\n            <mat-icon class=\"mat-18\">location_on</mat-icon>\n            {{autocompleteItem.label}}\n        </mat-option>\n        <mat-option *ngIf=\"geolocationItem\" [value]=\"geolocationItem\">\n            <mat-icon class=\"mat-18\">gps_fixed</mat-icon>\n            {{geolocationItem.label}}\n        </mat-option>\n        <mat-option *ngIf=\"ipLocationItem\" [value]=\"ipLocationItem\">\n            <mat-icon class=\"mat-18\">explore</mat-icon>\n            {{ipLocationItem.label}}\n        </mat-option>\n    </mat-autocomplete>\n\n</mat-form-field>"
 
 /***/ }),
 
@@ -2815,7 +2806,6 @@ var LocationFieldComponent = /** @class */ (function () {
         };
     };
     LocationFieldComponent.prototype.ngOnDestroy = function () {
-        //        this.controlChangesSubscription.unsubscribe();
         window.navigator.geolocation.clearWatch(this.geolocationDescriptor);
     };
     LocationFieldComponent.prototype.initMapsAPI = function () {
@@ -2830,7 +2820,7 @@ var LocationFieldComponent = /** @class */ (function () {
         var _this = this;
         if (window.navigator && window.navigator.geolocation) {
             this.geolocationDescriptor = window.navigator.geolocation.watchPosition(function (position) { return _this.onGeolocationSuccess(position); }, function (error) { return _this.onGeolocationError(error); }, {
-                timeout: 1000,
+                timeout: 10000,
                 enableHighAccuracy: false
             });
         }
@@ -3101,7 +3091,8 @@ var ParkingListFilterComponent = /** @class */ (function () {
         this.locationField.valueChanges.subscribe(function (location) {
             _this.internalValue = new ParkingListFilter(location, _this.priceRangeField.value, _this.radiusField.value);
             _this.valueChangesSubject.next(_this.internalValue);
-            localStorage.setItem('location', location.toLatLng().toString());
+            localStorage.setItem('locationLatitude', location.latitude.toString());
+            localStorage.setItem('locationLongtitude', location.longitude.toString());
         });
         this.priceRangeField.valueChanges.subscribe(function (priceRange) {
             if (_this.locationField.value) {
@@ -3476,6 +3467,7 @@ module.exports = "<agm-map [latitude]=\"49.83826\"\n         [longitude]=\"24.02
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParkingMapComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parking_service__ = __webpack_require__("./src/app/parking.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3486,11 +3478,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ParkingMapComponent = /** @class */ (function () {
-    function ParkingMapComponent() {
+    function ParkingMapComponent(parkingService) {
+        this.parkingService = parkingService;
+        this.lat = 49.843977;
+        this.lng = 24.026318;
         this.dir = undefined;
     }
     ParkingMapComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                _this.lat = position.coords.latitude;
+                _this.lng = position.coords.longitude;
+                _this.parkingService.getParkingsNearby(_this.lat, _this.lng, 7000).subscribe(function (response) {
+                    _this.parkings = response.body;
+                }, function (error) {
+                    console.log(error);
+                });
+            });
+        }
     };
     ParkingMapComponent.prototype.getDirection = function (lat, lng) {
         this.dir = {
@@ -3512,7 +3520,7 @@ var ParkingMapComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/index/parking-map/parking-map.component.html"),
             styles: [__webpack_require__("./src/app/index/parking-map/parking-map.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__parking_service__["a" /* ParkingService */]])
     ], ParkingMapComponent);
     return ParkingMapComponent;
 }());
@@ -4547,14 +4555,14 @@ var IpLocationError = /** @class */ (function () {
 /***/ "./src/app/statistic/parking-statistic/parking-statistic.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "h6 {\n    text-align: center;\n}\n\n.mat-form-field {\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n    text-align: center;\n}\n\nspan {\n    color: darkred;\n}\n\n.mat-option {\n    color: darkblue;\n}\n\nmat-select {\n    font-size: 0.9em;\n}\n\n#city {\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n/*#city:hover::after {*/\n\n/*color: #6610f2;*/\n\n/*content: \" (by all streets) \";*/\n\n/*}*/\n\n\n"
+module.exports = "h6 {\n    text-align: center;\n}\n\n.mat-form-field {\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n    text-align: center;\n}\n\nspan {\n    color: darkred;\n}\n\n.mat-option {\n    color: darkblue;\n}\n\nmat-select {\n    font-size: 0.9em;\n}\n\n#city {\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.pagination {\n    margin-left: auto;\n    margin-right: auto;\n}\n\n/*.filter {*/\n\n/*position: fixed;*/\n\n/*right: 0;*/\n\n/*bottom: 0;*/\n\n/*left: 0;*/\n\n/*!*max-height: 15%;*!*/\n\n/*}*/\n"
 
 /***/ }),
 
 /***/ "./src/app/statistic/parking-statistic/parking-statistic.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h3 class=\"text-center\">The most popular parkings in <span>{{selectedCity}}</span><span\n        *ngIf=\"selectedStreet !=''\"> on the street {{selectedStreet}}</span> for the last {{this.selectedNumberOfDays}}\n    days\n</h3>\n<div class=\"parent row\">\n\n    <div class=\"col-md-12\">\n        <ul>\n            <div *ngFor=\"let parking of parkings\">\n                <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n                    <mat-card-header>\n                        <div mat-card-avatar class=\"example-header-image\">\n                            <mat-icon>local_parking</mat-icon>\n                        </div>\n                        <div style=\"min-width: 70%;\">\n                            <div>\n                                <mat-card-title>Parking address: {{parking.city}}, {{parking.street}} street /\n                                    {{parking.building}}\n                                </mat-card-title>\n                                <mat-card-subtitle>Provider name: {{parking.providerName}}</mat-card-subtitle>\n                            </div>\n                        </div>\n                        <div style=\"width: 100%\"></div>\n                        <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n                        <p style=\"font-size: 18px;\">{{parking.price}}</p>\n                    </mat-card-header>\n\n                    <mat-card-actions align=\"right\">\n                        <button mat-button routerLink='parkingdetail/2' color=\"primary\">MORE INFO</button>\n                    </mat-card-actions>\n                </mat-card>\n                <hr/>\n            </div>\n        </ul>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"filter offset-1 col-md-10\" id=\"cont\">\n        <mat-divider style=\"border-color: purple;\"></mat-divider>\n        <mat-card class=\"card\">\n            <h6 [(ngModel)]=\"selectedStreet\" [(ngModel)]=\"selectedCity\" ngDefaultControl>Find the most popular parking\n                in <span matTooltip=\"Click to see the statistic by all streets!\" id=\"city\"\n                         (click)=\"clearStreetAndFindTheBestParkingsInTheCity()\">{{selectedCity}}</span> on the street:\n                <span\n                        *ngIf=\"selectedStreet ==''\">--not selected--</span><span>{{selectedStreet}}</span> for the\n                last <span>{{selectedNumberOfDays}}</span> days</h6>\n            <div class=\"row\">\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedCity\" placeholder=\"change city\">\n                        <mat-option *ngFor=\"let parkingsCity of parkingsCities\" [value]=\"parkingsCity\"\n                                    (click)=\"clearStreetAndFindTheBestParkingsInTheCity()\">\n                            {{ parkingsCity }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n\n                <mat-form-field class=\"col-md-3\">\n                    <input matInput placeholder=\"find street\" #streetSearchBox id=\"street-box\"\n                           (keyup)=\"findParkingsStreetsFromInput(streetSearchBox.value)\"\n                           [matAutocomplete]=\"auto2\">\n                    <mat-autocomplete #auto2=\"matAutocomplete\">\n                        <mat-option *ngFor=\"let parkingsStreet of parkingsStreets\"\n                                    (click)=\"selectStreet(parkingsStreet)\"\n                                    (click)=\"findBestParkings()\">\n                            {{parkingsStreet}}\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedNumberOfDays\" placeholder=\"for the last days\">\n                        <mat-option *ngFor=\"let day of days\" [value]=\"day\"\n                                    (click)=\"findBestParkings()\"\n                        >\n                            {{ day }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n            </div>\n        </mat-card>\n    </div>\n</div>\n"
+module.exports = "<h3 class=\"text-center\">The most popular parkings in <span>{{selectedCity}}</span><span\n        *ngIf=\"selectedStreet !=''\"> on the street {{selectedStreet}}</span> for the last {{this.selectedNumberOfDays}}\n    days\n</h3>\n<div class=\"parent row\">\n\n    <div class=\"col-md-12\">\n        <ul>\n            <div *ngFor=\"let parking of pagedParkingItems\">\n                <mat-card class=\"card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10\">\n                    <mat-card-header>\n                        <div mat-card-avatar class=\"example-header-image\">\n                            <mat-icon>local_parking</mat-icon>\n                        </div>\n                        <div style=\"min-width: 70%;\">\n                            <div>\n                                <mat-card-title>Parking address: {{parking.city}}, {{parking.street}} street /\n                                    {{parking.building}}\n                                </mat-card-title>\n                                <mat-card-subtitle>Provider name: {{parking.providerName}}</mat-card-subtitle>\n                            </div>\n                        </div>\n                        <div style=\"width: 100%\"></div>\n                        <mat-icon style=\"color: #1e7e34\">attach_money</mat-icon>\n                        <p style=\"font-size: 18px;\">{{parking.price}}</p>\n                    </mat-card-header>\n\n                    <mat-card-actions align=\"right\">\n                        <button mat-button routerLink='parkingdetail/2' color=\"primary\">MORE INFO</button>\n                    </mat-card-actions>\n                </mat-card>\n                <hr/>\n            </div>\n            <div class=\"pagination\" *ngIf=\"allParkings>5\">\n                <ul *ngIf=\"pager.pages && pager.pages.length\" class=\"pagination\">\n                    <li class=\"page-item\" [ngClass]=\"{disabled:pager.currentPage === 1}\">\n                        <a class=\"page-link\" (click)=\"setPage(1)\">First</a>\n                    </li>\n                    <li class=\"page-item\" *ngFor=\"let page of pager.pages\"\n                        [ngClass]=\"{active:pager.currentPage === page}\">\n                        <a class=\"page-link\" (click)=\"setPage(page)\">{{page}}</a>\n                    </li>\n                    <li class=\"page-item\" [ngClass]=\"{disabled:pager.currentPage === pager.totalPages}\">\n                        <a class=\"page-link\" (click)=\"setPage(pager.totalPages)\">Last</a>\n                    </li>\n                </ul>\n            </div>\n        </ul>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"filter offset-1 col-md-10\" id=\"cont\">\n        <mat-divider style=\"border-color: purple;\"></mat-divider>\n        <mat-card class=\"card\">\n            <h6 [(ngModel)]=\"selectedStreet\" [(ngModel)]=\"selectedCity\" ngDefaultControl>Find the most popular parking\n                in <span matTooltip=\"Click to see the statistic by all streets!\" id=\"city\"\n                         (click)=\"clearStreetAndFindTheBestParkingsInTheCity()\">{{selectedCity}}</span> on the street:\n                <span\n                        *ngIf=\"selectedStreet ==''\">--not selected--</span><span>{{selectedStreet}}</span> for the\n                last <span>{{selectedNumberOfDays}}</span> days</h6>\n            <div class=\"row\">\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedCity\" placeholder=\"change city\">\n                        <mat-option *ngFor=\"let parkingsCity of parkingsCities\" [value]=\"parkingsCity\"\n                                    (click)=\"clearStreetAndFindTheBestParkingsInTheCity()\">\n                            {{ parkingsCity }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n\n                <mat-form-field class=\"col-md-3\">\n                    <input matInput placeholder=\"find street\" #streetSearchBox id=\"street-box\"\n                           (keyup)=\"findParkingsStreetsFromInput(streetSearchBox.value)\"\n                           [matAutocomplete]=\"auto2\">\n                    <mat-autocomplete #auto2=\"matAutocomplete\">\n                        <mat-option *ngFor=\"let parkingsStreet of parkingsStreets\"\n                                    (click)=\"selectStreet(parkingsStreet)\"\n                                    (click)=\"findBestParkings()\">\n                            {{parkingsStreet}}\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n\n                <mat-form-field>\n                    <mat-select [(value)]=\"selectedNumberOfDays\" placeholder=\"for the last days\">\n                        <mat-option *ngFor=\"let day of days\" [value]=\"day\"\n                                    (click)=\"findBestParkings()\"\n                        >\n                            {{ day }}\n                        </mat-option>\n                    </mat-select>\n                </mat-form-field>\n            </div>\n        </mat-card>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -4566,6 +4574,7 @@ module.exports = "<h3 class=\"text-center\">The most popular parkings in <span>{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__statistics_service__ = __webpack_require__("./src/app/statistic/statistics.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pager_service__ = __webpack_require__("./src/app/_services/pager.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4578,20 +4587,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ParkingStatisticComponent = /** @class */ (function () {
-    function ParkingStatisticComponent(statisticService, snackBar) {
+    function ParkingStatisticComponent(statisticService, snackBar, pagerService) {
         this.statisticService = statisticService;
         this.snackBar = snackBar;
+        this.pagerService = pagerService;
         this.parkings = [];
         this.selectedCity = 'Lviv';
         this.selectedStreet = '';
         this.selectedNumberOfDays = 7;
         this.days = [7, 14, 30, 365];
         this.calculatedDate = new Date();
+        this.pager = {};
     }
     ParkingStatisticComponent.prototype.ngOnInit = function () {
         this.findAllParkingsCities();
         this.findBestParkingsInTheCity();
+    };
+    ParkingStatisticComponent.prototype.setPage = function (page) {
+        if (page < 1 || page > this.pager.totalPages) {
+            return;
+        }
+        if (this.parkings.length > 0) {
+            // get pager object from service
+            this.pager = this.pagerService.getPager(this.parkings.length, page);
+            // get current page of items
+            this.pagedParkingItems = this.parkings.slice(this.pager.startIndex, this.pager.endIndex + 1);
+        }
+        else {
+            this.pagedParkingItems = this.parkings;
+        }
+        this.allParkings = this.parkings.length;
     };
     ParkingStatisticComponent.prototype.findBestParkings = function () {
         var _this = this;
@@ -4600,6 +4627,7 @@ var ParkingStatisticComponent = /** @class */ (function () {
             this.statisticService.getBestParkingsByCityStreetDate(this.selectedCity, this.selectedStreet, this.calculatedDate.getTime())
                 .subscribe(function (parkings) {
                 _this.parkings = parkings;
+                _this.setPage(1);
             });
         }
         else {
@@ -4613,6 +4641,7 @@ var ParkingStatisticComponent = /** @class */ (function () {
         this.statisticService.getBestParkingsInTheCityByDate(this.selectedCity, this.calculatedDate.getTime())
             .subscribe(function (parkings) {
             _this.parkings = parkings;
+            _this.setPage(1);
         });
         this.refreshDate();
     };
@@ -4650,7 +4679,8 @@ var ParkingStatisticComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/statistic/parking-statistic/parking-statistic.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__statistics_service__["a" /* StatisticsService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */],
+            __WEBPACK_IMPORTED_MODULE_3__services_pager_service__["a" /* PagerService */]])
     ], ParkingStatisticComponent);
     return ParkingStatisticComponent;
 }());
@@ -5188,13 +5218,16 @@ var ProviderListComponent = /** @class */ (function () {
     };
     ProviderListComponent.prototype.getProviders = function () {
         var _this = this;
-        this.router.queryParams
-            .subscribe(function (params) {
-            _this.providerFilter = new __WEBPACK_IMPORTED_MODULE_2__model_filter_provider_list_filter_parameters__["a" /* ProviderListFilterParameters */]();
-            _this.providerFilter.active = params['active'];
-            _this.providerFilter.companyName = params['companyName'];
-        });
-        this.providerService.getAll(this.providerFilter)
+        if (this.router.queryParams) {
+            console.log("SSSSSSSSSSSSs");
+            this.router.queryParams
+                .subscribe(function (params) {
+                _this.providerFilter = new __WEBPACK_IMPORTED_MODULE_2__model_filter_provider_list_filter_parameters__["a" /* ProviderListFilterParameters */]();
+                _this.providerFilter.active = params['active'];
+                _this.providerFilter.companyName = params['companyName'];
+            });
+        }
+        this.providerService.getAllByFilter(this.providerFilter)
             .subscribe(function (providers) { return _this.providers = providers; });
     };
     ProviderListComponent = __decorate([
@@ -5237,10 +5270,20 @@ var ProviderService = /** @class */ (function () {
         this.http = http;
         this.providerUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].apiUrl + '/providers';
     }
-    ProviderService.prototype.getAll = function (providerFilter) {
-        var params = {
-            providerFilter: JSON.stringify(providerFilter)
-        };
+    ProviderService.prototype.getAllByFilter = function (providerFilter) {
+        var params;
+        if ((providerFilter.companyName && providerFilter.active) != undefined) {
+            params = {
+                providerFilter: JSON.stringify(providerFilter)
+            };
+        }
+        else {
+            providerFilter.active = '';
+            providerFilter.companyName = '';
+            params = {
+                providerFilter: JSON.stringify(providerFilter)
+            };
+        }
         return this.http.get(this.providerUrl, { params: JSON.parse(params.providerFilter) });
     };
     ProviderService.prototype.getDetail = function (id) {
