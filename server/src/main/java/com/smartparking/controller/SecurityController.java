@@ -1,19 +1,16 @@
 package com.smartparking.controller;
 
-import com.smartparking.model.request.SocialSignInRequest;
-import com.smartparking.security.exception.*;
-import com.smartparking.model.request.RegistrationRequest;
-import com.smartparking.model.response.AuthTokenResponse;
 import com.smartparking.model.request.LoginRequest;
+import com.smartparking.model.request.RegistrationRequest;
+import com.smartparking.model.request.SocialSignInRequest;
+import com.smartparking.model.response.AuthTokenResponse;
 import com.smartparking.model.response.InfoResponse;
+import com.smartparking.security.exception.AuthorizationEx;
 import com.smartparking.security.tokens.TokenPair;
-import com.smartparking.service.email.EmailService;
-import com.smartparking.service.impl.SpringSecurityUserService;
 import com.smartparking.security.tokens.TokenUtil;
-import com.smartparking.entity.SpringSecurityUser;
 import com.smartparking.security.utils.Validator;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.SignatureException;
+import com.smartparking.service.SecurityService;
+import com.smartparking.service.email.EmailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +24,11 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
@@ -49,15 +48,19 @@ public class SecurityController {
     private UserDetailsService userService;
 
     @Autowired
+    private SecurityService securityService;
+
+    @Autowired
     private PasswordEncoder bcryptEncoder;
 
     @Autowired
     EmailService emailService;
 
-    @RequestMapping(value = "/generate-token", method = RequestMethod.POST)
+    @PostMapping(value = "/generate-token")
     public ResponseEntity register(@RequestBody LoginRequest loginRequest) throws AuthenticationException {
         final String email;
         final String password;
+        final UserDetails user;
         try {
             email = validator.validateEmailOnLogin(loginRequest.getEmail());
             password = validator.validatePassword(loginRequest.getPassword());
@@ -65,10 +68,13 @@ public class SecurityController {
             LOGGER.warn(e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new InfoResponse(e.getMessage()));
         }
-        LOGGER.info("Search user with username " + email);
-        final UserDetails user = userService.loadUserByUsername(email);
+        try {
+            user = userService.loadUserByUsername(email);
+        } catch (AuthenticationException ex) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new InfoResponse("User is blocked."));
+        }
         LOGGER.info(email + " = " + user);
-        if(user != null && bcryptEncoder.matches(password, user.getPassword())) {
+        if (user != null && bcryptEncoder.matches(password, user.getPassword())) {
             final Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(email, password)
             );
@@ -76,59 +82,48 @@ public class SecurityController {
             final TokenPair tokenPair = tokenUtil.generateTokenPair(user);
             return ResponseEntity.ok(new AuthTokenResponse(tokenPair.getAccessToken(), tokenPair.getRefreshToken()));
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new InfoResponse("Password is incorrect"));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new InfoResponse("Email or password is incorrect."));
     }
 
-    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    @PostMapping("/signup")
     public ResponseEntity saveUser(@RequestBody RegistrationRequest regReq) {
         try {
-            ((SpringSecurityUserService)userService).saveClientFromRegistrationRequest(regReq);
+            securityService.saveClientFromRegistrationRequest(regReq);
         } catch (AuthorizationEx e) {
             LOGGER.warn(e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new InfoResponse(e.getMessage()));
         }
-        new Thread(() -> emailService.prepareAndSendWelcomeEmail(regReq.getEmail(),regReq.getFirstname())).start();
-        LOGGER.info("Registered successfull");
-        return ResponseEntity.status(HttpStatus.OK).body(new InfoResponse("You are successfull registered"));
+        new Thread(() -> emailService.prepareAndSendWelcomeEmail(regReq.getEmail(), regReq.getFirstname())).start();
+        return ResponseEntity.status(HttpStatus.OK).body(new InfoResponse("Please check your email"));
     }
 
-    @RequestMapping(value = "/social", method = RequestMethod.POST)
+    @PostMapping("/activate")
+    public ResponseEntity activateUser(@RequestBody String email) {
+        securityService.activateUserByEmail(email);
+        return ResponseEntity.status(HttpStatus.OK).body(new InfoResponse("Your account has been successfully activated"));
+    }
+
+    @PostMapping(value = "/social")
     public ResponseEntity socialSignIn(@RequestBody SocialSignInRequest request) {
-        LOGGER.info("Try to sign in with social");
         UserDetails user = null;
-        LOGGER.info("Now user = " + null);
-        String email = ((SpringSecurityUserService) userService).constructEmailForSocial(request.getEmail(), request.getProvider());
-        LOGGER.info("Created email = " + email);
-        while(user == null) {
-            LOGGER.info("Entry into loop");
-            try {
-                LOGGER.info("Loading user");
-                user = userService.loadUserByUsername(email);
-                LOGGER.info("Loaded user = " + user);
-            } catch (Exception e) {
-                LOGGER.info("Catch exception = " + e);
-                try {
-                    LOGGER.info("try to save client");
-                    ((SpringSecurityUserService) userService).saveClientFromSocialSignInRequest(request);
-                    LOGGER.info("Client saved");
-                } catch (AuthorizationEx ex) {
-                    LOGGER.warn(ex.getMessage());
-                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new InfoResponse(e.getMessage()));
-                }
-            }
+        try {
+            user = userService.loadUserByUsername(request.getEmail());
+        } catch (Exception e) {
+            e.getMessage();
         }
-        LOGGER.info("Try to authorize");
-        if(user != null && bcryptEncoder.matches(request.getId(), user.getPassword())) {
-            LOGGER.info("Start authorization");
-            final Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(email, request.getId())
-            );
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+        if (user == null) {
+            try {
+                securityService.saveClientFromSocialSignInRequest(request);
+            } catch (AuthorizationEx e) {
+                LOGGER.warn(e.getMessage());
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new InfoResponse(e.getMessage()));
+            }
+            user = userService.loadUserByUsername(request.getEmail());
+        }
+        if (user != null) {
             final TokenPair tokenPair = tokenUtil.generateTokenPair(user);
             return ResponseEntity.ok(new AuthTokenResponse(tokenPair.getAccessToken(), tokenPair.getRefreshToken()));
         }
-        return ResponseEntity.status(HttpStatus.OK).body(new InfoResponse("You are successfuly authorized"));
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new InfoResponse("Sorry, can`t authorize you now."));
     }
-
-
 }

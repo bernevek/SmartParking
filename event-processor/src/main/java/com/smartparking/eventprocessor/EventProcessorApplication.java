@@ -6,15 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 
 @Slf4j
-@SpringBootApplication
-@EnableWebMvc
 @EnableConfigurationProperties
+@SpringBootApplication
 public class EventProcessorApplication {
 
     @Autowired
@@ -36,5 +34,6 @@ public class EventProcessorApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(EventProcessorApplication.class, args);
+        log.info("Eventprocessor started");
     }
 }

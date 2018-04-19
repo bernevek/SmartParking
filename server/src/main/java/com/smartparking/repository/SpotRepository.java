@@ -6,8 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.time.Instant;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public interface SpotRepository extends JpaRepository<Spot, Long> {
@@ -32,5 +30,9 @@ public interface SpotRepository extends JpaRepository<Spot, Long> {
     @Query("SELECT p, count(s.id) FROM Parking p JOIN p.spots s JOIN s.events e where p.city=?1 and e.timestamp > ?2"
             + " group by p order by count(s.id) desc")
     List<Parking> findBestParkingsInTheCity(String city, Instant date);
+
+    @Query("SELECT p, count(s.id) FROM Parking p JOIN p.spots s JOIN s.events e where function('LOCATION_DISTANCE',?1, ?2,p.latitude, p.longitude) <= ?3 and e.timestamp > ?4"
+            + " group by p order by count(s.id) desc")
+    List<Parking> findBestParkingsByLocation(Double latitude, Double longitude, Double radius, Instant date);
 
 }

@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SpotResponse {
     private Long id;
+    private Long spotNumber;
 }

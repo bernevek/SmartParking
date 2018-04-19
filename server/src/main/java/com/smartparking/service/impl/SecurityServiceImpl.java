@@ -9,6 +9,7 @@ import com.smartparking.model.request.SocialSignInRequest;
 import com.smartparking.repository.ClientRepository;
 import com.smartparking.security.exception.*;
 import com.smartparking.security.utils.Validator;
+import com.smartparking.service.SecurityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +22,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.util.Optional;
 
 @Service
 @Qualifier("MyUserDetails")
-public class SpringSecurityUserService implements UserDetailsService {
+public class SecurityServiceImpl implements UserDetailsService, SecurityService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SpringSecurityUserService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SecurityServiceImpl.class);
 
     @Autowired
     private Validator validator;
@@ -56,7 +55,15 @@ public class SpringSecurityUserService implements UserDetailsService {
         springSecurityUser.setFirstname(client.getFirstName());
         springSecurityUser.setLastname(client.getLastName());
         springSecurityUser.setRole(client.getRole());
+        springSecurityUser.setEnabled(client.getActivated());
         return Optional.of(springSecurityUser);
+    }
+
+    @Override
+    public void activateUserByEmail(String email) {
+        Client client = clientRepository.findClientByEmail(email);
+        client.setActivated(true);
+        clientRepository.save(client);
     }
 
     public void saveClientFromRegistrationRequest(RegistrationRequest registrationRequest) throws EmailValidationEx, NonMatchingPasswordsEx, PasswordValidationEx, FirstnameValidationEx, LastnameValidationEx, DuplicateEmailEx {
@@ -66,6 +73,7 @@ public class SpringSecurityUserService implements UserDetailsService {
         client.setFirstName(validator.validateFirstname(registrationRequest.getFirstname()));
         client.setLastName(validator.validateLastname(registrationRequest.getLastname()));
         client.setRole(Role.DRIVER);
+        client.setActivated(false);
         clientRepository.save(client);
     }
 
@@ -75,26 +83,21 @@ public class SpringSecurityUserService implements UserDetailsService {
         clientRepository.save(client);
     }
 
-    public void saveClientFromSocialSignInRequest(SocialSignInRequest socialSignInRequest) throws EmailValidationEx, DuplicateEmailEx, PasswordValidationEx, FirstnameValidationEx, LastnameValidationEx {
-        String[] nameSurname = null;
-        try {
-            nameSurname = new String(socialSignInRequest.getName().getBytes(), "UTF-8").split(" ");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        LOGGER.info("Firstname = " + nameSurname[0]);
-        LOGGER.info("Lastname = " + nameSurname[1]);
-        Client client = new Client();
-        client.setEmail(validator.validateEmailOnRegistration(
-                constructEmailForSocial(socialSignInRequest.getEmail(), socialSignInRequest.getProvider())));
-        client.setPassword(bcryptEncoder.encode(validator.validatePassword(socialSignInRequest.getId())));
-        client.setFirstName(validator.validateFirstname(nameSurname[0]));
-        client.setLastName(validator.validateLastname(nameSurname[1]));
-        client.setRole(Role.DRIVER);
+    public void updateClientEncodedPassword(String newEncodedPassword) {
+        Client client = clientRepository.findClientByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
+        client.setPassword(newEncodedPassword);
         clientRepository.save(client);
     }
 
-    public String constructEmailForSocial(String email, String provider) {
-        return "$" + provider + "$" + email;
+    public void saveClientFromSocialSignInRequest(SocialSignInRequest socialSignInRequest) throws EmailValidationEx, DuplicateEmailEx, FirstnameValidationEx, LastnameValidationEx {
+        String[] nameSurname = socialSignInRequest.getName().trim().split("\\s+");
+        Client client = new Client();
+        client.setEmail(validator.validateEmailOnRegistration(socialSignInRequest.getEmail()));
+        client.setPassword(bcryptEncoder.encode("1234567"));
+        client.setFirstName(validator.validateFirstname(nameSurname[0]));
+        client.setLastName(validator.validateLastname(nameSurname[1]));
+        client.setRole(Role.DRIVER);
+        client.setActivated(true);
+        clientRepository.save(client);
     }
 }

@@ -8,11 +8,7 @@ import com.smartparking.model.response.ParkingWithSpotsResponse;
 import com.smartparking.model.response.SpotResponse;
 import com.smartparking.repository.FavoriteRepository;
 import com.smartparking.repository.ParkingRepository;
-import com.smartparking.service.AbstractService;
-import com.smartparking.service.FavoriteService;
-import com.smartparking.service.ParkingService;
-import com.smartparking.service.ProviderService;
-import com.smartparking.service.SpotService;
+import com.smartparking.service.*;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,12 +16,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.Tuple;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -72,17 +63,19 @@ public class ParkingServiceImpl extends AbstractService<Parking, Long, ParkingRe
     @Override
     public List<ParkingWithSpotsResponse> findAllWithSpotsResponse() {
         Map<Long, ParkingWithSpotsResponse> responses = new HashMap<>();
+        ParkingWithSpotsResponse parkingResponse;
+        for (Parking parking : getRepository().findAll()) {
+            parkingResponse = new ParkingWithSpotsResponse();
+            parkingResponse.setId(parking.getId());
+            parkingResponse.setToken(parking.getToken());
+            parkingResponse.setSpots(new ArrayList<>());
+            responses.put(parking.getId(), parkingResponse);
+        }
+
         for (Spot spot : spotService.findAll()) {
             Long parkingId = spot.getParking().getId();
-            ParkingWithSpotsResponse parkingResponse = responses.get(parkingId);
-            if (parkingResponse == null) {
-                parkingResponse = new ParkingWithSpotsResponse();
-                parkingResponse.setId(parkingId);
-                parkingResponse.setToken(spot.getParking().getToken());
-                parkingResponse.setSpots(new ArrayList<>());
-                responses.put(parkingId, parkingResponse);
-            }
-            parkingResponse.getSpots().add(new SpotResponse(spot.getId()));
+            parkingResponse = responses.get(parkingId);
+            parkingResponse.getSpots().add(new SpotResponse(spot.getId(), spot.getSpotNumber()));
         }
         return new ArrayList<>(responses.values());
     }

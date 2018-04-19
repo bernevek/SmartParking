@@ -11,11 +11,12 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class Event {
+
     private Long spotId;
     private EventType eventType;
     private Instant timestamp;
 
     public Event(UnverifiedEventRequest request) {
-        this(request.getSpotId(), request.getEventType(), Instant.ofEpochMilli(request.getTimestamp()));
+        this(request.getSpotId(), request.getEventType(), request.getTimestamp());
     }
 }

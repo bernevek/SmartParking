@@ -1,6 +1,5 @@
 package com.smartparking.eventprocessor.listener;
 
-import com.smartparking.eventprocessor.config.constants.RabbitConstants;
 import com.smartparking.eventprocessor.model.event.ParkingAddEvent;
 import com.smartparking.eventprocessor.model.event.ParkingDeleteEvent;
 import com.smartparking.eventprocessor.model.event.ParkingTokenChangeEvent;
@@ -17,18 +16,18 @@ public class ParkingEventListener {
     @Autowired
     private EntityViewService entityViewService;
 
-    @RabbitListener(queues = RabbitConstants.PARKING_DELETE_QUEUE)
+    @RabbitListener(queues = "${eventprocessor.rabbit.parking-delete-queue-name}")
     public void consumeDelete(ParkingDeleteEvent event) {
         try {
             entityViewService.deleteParking(event.getParkingId());
             log.info("Parking deleted from EntityViewService: parkingId={}", event.getParkingId());
-        } catch (IllegalStateException ex) {
+        } catch (IllegalArgumentException ex) {
             log.error("Parking does not deleted from EntityViewService: parkingId={}, exception={}",
                     event.getParkingId(), ex);
         }
     }
 
-    @RabbitListener(queues = RabbitConstants.PARKING_ADD_QUEUE)
+    @RabbitListener(queues = "${eventprocessor.rabbit.parking-add-queue-name}")
     public void consumeAdd(ParkingAddEvent event) {
         try {
             entityViewService.addParking(event.getParkingId(), event.getParkingToken());
@@ -39,7 +38,7 @@ public class ParkingEventListener {
         }
     }
 
-    @RabbitListener(queues = RabbitConstants.PARKING_TOKEN_CHANGE_QUEUE)
+    @RabbitListener(queues = "${eventprocessor.rabbit.parking-token-change-queue-name}")
     public void consumeTokenChange(ParkingTokenChangeEvent event) {
         log.info("Parking token changed: " + event.getParkingId());
         try {

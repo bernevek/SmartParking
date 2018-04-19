@@ -44,15 +44,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String accessToken = request.getHeader(accessTokenHeader);
         String refreshToken = request.getHeader(refreshTokenHeader);
 
-        LOGGER.info("AccessHeader header = " + accessToken);
-        LOGGER.info("RefreshHeader header = " + refreshToken);
-
         String username = null;
         if (accessToken != null) {
-            LOGGER.info("Go in access token filter");
             try {
                 username = tokenUtil.getUsernameFromToken(accessToken);
-                LOGGER.info("Find user with username " + username);
             } catch (IllegalArgumentException e) {
                 LOGGER.warn("Claims jws string is or empty or only whitespace");
             } catch (ExpiredJwtException e) {
@@ -62,7 +57,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
         }
         if (refreshToken != null) {
-            LOGGER.info("Go in refresh token filter");
             try {
                 username = tokenUtil.getUsernameFromToken(refreshToken);
                 TokenPair tokenPair = tokenUtil.generateTokenPair(userDetailsService.loadUserByUsername(username));
@@ -79,13 +73,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
         }
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            System.out.println(username);
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             LOGGER.info("Authenticated user " + username + ", setting security context");
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
-        if(!response.isCommitted()) {
+        if (!response.isCommitted()) {
             filterChain.doFilter(request, response);
         }
     }
