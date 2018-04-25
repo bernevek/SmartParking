@@ -18,6 +18,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+
+import java.util.Arrays;
+import java.util.Locale;
 
 
 @Configuration
@@ -60,7 +69,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/clients", "/clients/**", "/manager-configuration/**", "/providers", "/providers/**").hasAnyAuthority(Role.PROVIDER_MANAGER.toString(), Role.SUPERUSER.toString())
                 .antMatchers("parkings-with-spots", "events/save").hasAnyAuthority(Role.SUPERUSER.toString())
                 .anyRequest().permitAll();
-        http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(authenticationTokenFilterBean(), BasicAuthenticationFilter.class);
     }
 
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -84,4 +93,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        source.registerCorsConfiguration("/**", configuration);
 //        return source;
 //    }
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        SessionLocaleResolver slr = new SessionLocaleResolver();
+        slr.setDefaultLocale(Locale.US);
+        return slr;
+    }
 }

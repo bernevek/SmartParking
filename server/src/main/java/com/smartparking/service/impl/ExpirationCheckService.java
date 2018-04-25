@@ -1,13 +1,14 @@
 package com.smartparking.service.impl;
 
-import com.smartparking.entity.PasswordConfirmation;
-import com.smartparking.service.PasswordConfirmationService;
+import com.smartparking.entity.TemporaryDataConfirmation;
+import com.smartparking.service.TemporaryDataConfirmationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.util.Optional;
 
 @Service
 public class ExpirationCheckService {
@@ -16,15 +17,16 @@ public class ExpirationCheckService {
     Long passwordChangeExpiredTime;
 
     @Autowired
-    private PasswordConfirmationService passwordConfirmationService;
+    private TemporaryDataConfirmationService temporaryDataConfirmationService;
 
-    public PasswordConfirmation getPasswordConfirmationWithExpirationChecking(String uuidFromUrl) {
-        PasswordConfirmation uncheckedPasswordConfirmation = passwordConfirmationService.findByUuid(uuidFromUrl);
+    public Optional<TemporaryDataConfirmation> getTemporaryDataConfirmationWithExpirationChecking(String uuidFromUrl) {
+        Optional<TemporaryDataConfirmation> uncheckedTemporaryDataConfirmation =
+                Optional.of(temporaryDataConfirmationService.findByUuid(uuidFromUrl));
         if (LocalDateTime.now().toInstant(ZoneOffset.UTC).isAfter(
-                uncheckedPasswordConfirmation.getTimeStamp().plusSeconds(passwordChangeExpiredTime))) {
-            passwordConfirmationService.delete(uncheckedPasswordConfirmation);
-            return null;
+                uncheckedTemporaryDataConfirmation.get().getTimeStamp().plusSeconds(passwordChangeExpiredTime))) {
+            temporaryDataConfirmationService.delete(uncheckedTemporaryDataConfirmation.get());
+            return Optional.empty();
         }
-        return uncheckedPasswordConfirmation;
+        return uncheckedTemporaryDataConfirmation;
     }
 }
