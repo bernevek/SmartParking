@@ -1,5 +1,6 @@
 package com.smartparking.controller;
 
+import com.smartparking.entity.ConfirmationType;
 import com.smartparking.entity.TemporaryDataConfirmation;
 import com.smartparking.model.request.PasswordRequest;
 import com.smartparking.model.response.InfoResponse;
@@ -53,8 +54,11 @@ public class PasswordConfirmationController {
         Optional<TemporaryDataConfirmation> checkedTemporaryDataConfirmation =
                 expirationCheckService.getTemporaryDataConfirmationWithExpirationChecking(uuidFromUrl);
         if (checkedTemporaryDataConfirmation.isPresent()) {
-            if (uuidFromUrl.equals(checkedTemporaryDataConfirmation.get().getUuid())) {
-                securityServiceImpl.updateClientEncodedPassword(checkedTemporaryDataConfirmation.get().getNewPassword());
+            if ((uuidFromUrl.equals(checkedTemporaryDataConfirmation.get().getUuid()))
+                    && (checkedTemporaryDataConfirmation.get().getConfirmationType() == ConfirmationType.PASSWORD_CONFIRM)) {
+                String newPassword = checkedTemporaryDataConfirmation.get().getNewPassword();
+                String userEmail = checkedTemporaryDataConfirmation.get().getUserEmail();
+                securityServiceImpl.updateClientEncodedPassword(newPassword, userEmail);
                 temporaryDataConfirmationService.delete(checkedTemporaryDataConfirmation.get());
                 return ResponseEntity.status(HttpStatus.OK).body(new InfoResponse("You are successfully updated password"));
             }
@@ -71,16 +75,34 @@ public class PasswordConfirmationController {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
         String firstName = clientService.findOne(email).getFirstName();
         temporaryDataConfirmationService.save(
-                temporaryDataConfirmationService.makePasswordConfirmationEntity(uuid, passwordRequest.getPassword()));
+                temporaryDataConfirmationService
+                        .makePasswordConfirmationEntity(uuid, passwordRequest.getPassword(), email));
+        sendPasswordChangeConfirmationEmail(email, firstName, confirmUrl);
+        return ResponseEntity.status(HttpStatus.OK).body(new InfoResponse("Data saved successfully"));
+    }
+
+    @PostMapping("/profile/forget/password/confirm")
+    public ResponseEntity forgetPasswordSendConfirmation(@RequestBody PasswordRequest passwordRequest){
+        final String uuid = UUID.randomUUID().toString().replace("-", "");
+        final String confirmUrl = hostUrl + "/update/password/" + uuid;
+        String userEmail = passwordRequest.getEmail();
+        String firstName = clientService.findOne(userEmail).getFirstName();
+        temporaryDataConfirmationService.save(
+                temporaryDataConfirmationService
+                        .makePasswordConfirmationEntity(uuid, passwordRequest.getPassword(), userEmail));
+        sendPasswordChangeConfirmationEmail(userEmail, firstName, confirmUrl);
+        return ResponseEntity.status(HttpStatus.OK).body(new InfoResponse("Data saved successfully"));
+    }
+
+    private void sendPasswordChangeConfirmationEmail(String userEmail, String firstName, String confirmUrl){
         ExecutorService emailExecutor = Executors.newSingleThreadExecutor();
         emailExecutor.execute(() -> {
             try {
-                emailService.prepareAndSendConfirmPassEmail(email, firstName, confirmUrl);
+                emailService.prepareAndSendConfirmPassEmail(userEmail, firstName, confirmUrl);
             } catch (MailException e) {
-                LOGGER.error("Could not send email to : {} Error = {}", email, e.getMessage());
+                LOGGER.error("Could not send email to : {} Error = {}", userEmail, e.getMessage());
             }
         });
         emailExecutor.shutdown();
-        return ResponseEntity.status(HttpStatus.OK).body(new InfoResponse("Data saved successfully"));
     }
 }

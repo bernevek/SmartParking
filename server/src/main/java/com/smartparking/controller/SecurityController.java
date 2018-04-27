@@ -1,6 +1,7 @@
 package com.smartparking.controller;
 
 import com.smartparking.entity.Client;
+import com.smartparking.entity.ConfirmationType;
 import com.smartparking.entity.TemporaryDataConfirmation;
 import com.smartparking.model.request.LoginRequest;
 import com.smartparking.model.request.RegistrationRequest;
@@ -10,7 +11,7 @@ import com.smartparking.model.response.InfoResponse;
 import com.smartparking.security.exception.AuthorizationEx;
 import com.smartparking.security.tokens.TokenPair;
 import com.smartparking.security.tokens.TokenUtil;
-import com.smartparking.security.utils.Validator;
+import com.smartparking.security.utils.validation.ValidationUtil;
 import com.smartparking.service.ClientService;
 import com.smartparking.service.SecurityService;
 import com.smartparking.service.TemporaryDataConfirmationService;
@@ -47,7 +48,7 @@ import java.util.concurrent.Executors;
 public class SecurityController {
     private static final Logger LOGGER = LoggerFactory.getLogger(SecurityController.class);
     @Autowired
-    private Validator validator;
+    private ValidationUtil validationUtil;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -86,8 +87,8 @@ public class SecurityController {
         final String password;
         final UserDetails user;
         try {
-            email = validator.validateEmailOnLogin(loginRequest.getEmail());
-            password = validator.validatePassword(loginRequest.getPassword());
+            email = validationUtil.validateEmailOnLogin(loginRequest.getEmail());
+            password = validationUtil.validatePassword(loginRequest.getPassword());
         } catch (AuthorizationEx e) {
             LOGGER.warn(e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new InfoResponse(e.getMessage()));
@@ -137,7 +138,8 @@ public class SecurityController {
                 expirationCheckService.getTemporaryDataConfirmationWithExpirationChecking(uuidFromUrl);
         if (checkedTemporaryDataConfirmation.isPresent()) {
             Client client = clientService.findOne(checkedTemporaryDataConfirmation.get().getUserEmail());
-            if (uuidFromUrl.equals(checkedTemporaryDataConfirmation.get().getUuid())) {
+            if ((uuidFromUrl.equals(checkedTemporaryDataConfirmation.get().getUuid()))
+                    && (checkedTemporaryDataConfirmation.get().getConfirmationType() == ConfirmationType.REGISTRATION_CONFIRM)) {
                 securityService.activateUserByEmail(checkedTemporaryDataConfirmation.get().getUserEmail());
                 temporaryDataConfirmationService.delete(checkedTemporaryDataConfirmation.get());
                 ExecutorService emailExecutor = Executors.newSingleThreadExecutor();

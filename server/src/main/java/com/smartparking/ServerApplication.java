@@ -2,25 +2,15 @@ package com.smartparking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.io.IOException;
 
 @SpringBootApplication
 @EnableConfigurationProperties
-@Configuration
-@ComponentScan
-public class ServerApplication extends SpringBootServletInitializer {
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(ServerApplication.class);
-    }
+@EnableScheduling
+public class ServerApplication {
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(ServerApplication.class, args);

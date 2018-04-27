@@ -17,7 +17,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -64,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/auth/**", "/parkingdetail/**", "/parkings-nearby/**", "/statistic/**","/spotstatistic/**").permitAll()
+                .antMatchers("/auth/**", "/parkingdetail/**", "/parkings-nearby/**", "/statistic/**", "/spotstatistic/**", "/profile/update/password", "/profile/forget/password/confirm").permitAll()
                 .antMatchers("/profile", "/profile/**").hasAnyAuthority(Role.DRIVER.toString(), Role.PROVIDER_MANAGER.toString(), Role.SUPERUSER.toString())
                 .antMatchers("/clients", "/clients/**", "/manager-configuration/**", "/providers", "/providers/**").hasAnyAuthority(Role.PROVIDER_MANAGER.toString(), Role.SUPERUSER.toString())
                 .antMatchers("parkings-with-spots", "events/save").hasAnyAuthority(Role.SUPERUSER.toString())

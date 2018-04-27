@@ -93,12 +93,12 @@ public class SpotController {
                 spotId = spot.getId();
                 if (optional.isPresent()) {
                     if (optional.get().getId() != spotId) {
-                        return new ResponseEntity<>("This spot number is exist", HttpStatus.BAD_REQUEST);
+                        return new ResponseEntity<>("Spot number exist", HttpStatus.BAD_REQUEST);
                     }
                 }
             } else {
                 if (optional.isPresent()) {
-                    return new ResponseEntity<>("This spot number is exist", HttpStatus.BAD_REQUEST);
+                    return new ResponseEntity<>("Spot number exist", HttpStatus.BAD_REQUEST);
                 }
             }
             spotService.save(spot);
