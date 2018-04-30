@@ -7,6 +7,7 @@ import com.smartparking.entity.Parking;
 import com.smartparking.entity.Role;
 import com.smartparking.model.request.ParkingNearbyRequest;
 import com.smartparking.model.request.ParkingRequest;
+import com.smartparking.model.request.ParkingSearchCriterias;
 import com.smartparking.model.response.ParkingDetailResponse;
 import com.smartparking.model.response.ParkingResponse;
 import com.smartparking.model.response.ParkingWithSpotsResponse;
@@ -91,9 +92,14 @@ public class ParkingController {
 
     @GetMapping("manager-configuration/parkings")
     public ResponseEntity<List<ParkingResponse>> parkings() {
-        String email = SecurityContextHolder.getContext().getAuthentication().getName();
-        Client client = clientService.findOne(email);
+        Client client = getCurrentUser();
         return new ResponseEntity<>(parkingService.findAllByProviderIdResponse(client.getProvider().getId()), HttpStatus.OK);
+    }
+
+    @PostMapping("/manager-configuration/parkings/criterias")
+    public ResponseEntity<List<ParkingResponse>> findParkings(@RequestBody ParkingSearchCriterias parkingSearchCriterias) {
+        Client client = getCurrentUser();
+        return new ResponseEntity<>(parkingService.findParkingsByCriterias(client.getProvider().getId(), parkingSearchCriterias), HttpStatus.OK);
     }
 
     @PostMapping("/manager-configuration/parking/save")
@@ -103,9 +109,6 @@ public class ParkingController {
             parkingRequest.setProviderId(client.getProvider().getId());
         }
         Parking parking = parkingRequest.toParking();
-        parking.setHasCharger(false);
-        parking.setHasInvalid(false);
-        parking.setIsCovered(false);
         parking.setProvider(providerService.getOne(parkingRequest.getProviderId()));
         if (parking.getProvider().getEmployees().contains(client) || client.getRole() == Role.SUPERUSER) {
             long parkingId = 0;

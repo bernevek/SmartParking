@@ -1,4 +1,4 @@
-moment@2.22.0
+moment@2.22.1
 MIT
 Copyright (c) JS Foundation and other contributors
 
@@ -486,7 +486,7 @@ that file reads as follows:
   // License, v. 2.0. If a copy of the MPL was not distributed with this
   // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-agm-direction@0.4.2
+agm-direction@0.4.3
 MIT
 MIT
 
@@ -1594,7 +1594,7 @@ MIT
 MIT
 MIT
 
-@angular/material@5.2.4
+@angular/material@5.2.5
 MIT
 The MIT License
 
@@ -1626,7 +1626,7 @@ MIT
 MIT
 MIT
 
-@ng-bootstrap/ng-bootstrap@1.1.0
+@ng-bootstrap/ng-bootstrap@1.1.2
 MIT
 The MIT License (MIT)
 
@@ -1650,7 +1650,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-ngx-bootstrap@2.0.3
+ngx-bootstrap@2.0.4
 MIT
 The MIT License (MIT)
 
@@ -1675,7 +1675,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@angular/cdk@5.2.4
+@angular/cdk@5.2.5
 MIT
 The MIT License
 

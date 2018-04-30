@@ -2,6 +2,7 @@ package com.smartparking.service.impl;
 
 import com.smartparking.entity.Parking;
 import com.smartparking.entity.Spot;
+import com.smartparking.model.request.SpotSearchCriterias;
 import com.smartparking.model.response.SpotStatisticResponse;
 import com.smartparking.model.response.SpotStatusResponse;
 import com.smartparking.repository.SpotRepository;
@@ -11,6 +12,7 @@ import com.smartparking.service.SpotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.Comparator;
 import java.util.List;
@@ -63,6 +65,16 @@ public class SpotServiceImpl extends AbstractService<Spot, Long, SpotRepository>
     }
 
     @Override
+    public List<Parking> findBestParkingsByLocationPriceAndFunctional(Double latitude, Double longitude, Double radius,
+                                                                      Instant date, BigDecimal minPrice, BigDecimal maxPrice,
+                                                                      Boolean hasCharger, Boolean hasInvalid, Boolean isCovered) {
+        return repository.findBestParkingsByLocationPriceAndFunctional(
+                latitude, longitude, radius,
+                date, minPrice, maxPrice,
+                hasCharger, hasInvalid, isCovered);
+    }
+
+    @Override
     public List<SpotStatusResponse> findAllSpotsByParkingIdResponse(Long parkingId) {
         List<SpotStatusResponse> spots = findAllSpotsByParkingId(parkingId).stream().
                 map(spot -> new SpotStatusResponse(spot.getId(), false,
@@ -73,7 +85,34 @@ public class SpotServiceImpl extends AbstractService<Spot, Long, SpotRepository>
     }
 
     @Override
+    public Spot findFirstBySpotNumberAndParking(Long spotNumber, Parking parking) {
+        return repository.findFirstBySpotNumberAndParking(spotNumber, parking);
+    }
+
+    @Override
     public List<SpotStatisticResponse> getSpotStatistic(long id, long startDate, long endDate) {
         return spotStatisticRepository.getSpotStatistic(id, startDate, endDate);
+    }
+
+    @Override
+    public List<SpotStatusResponse> findSpotsByCriterias(Long parkingId, SpotSearchCriterias criterias) {
+        List<SpotStatusResponse> filteredSpots = findAllSpotsByParkingIdResponse(parkingId).stream().filter(spotStatusResponse -> {
+            if (spotStatusResponse.getSpotNumber().toString().contains(criterias.getSearch())) {
+                if (criterias.getAll()) {
+                    return true;
+                }
+                if (spotStatusResponse.getHasCharger() == criterias.getHasCharger() && criterias.getHasCharger()) {
+                    return true;
+                }
+                if (spotStatusResponse.getIsInvalid() == criterias.getIsInvalid() && criterias.getIsInvalid()) {
+                    return true;
+                }
+                if (spotStatusResponse.getIsBlocked() == criterias.getIsBlocked() && criterias.getIsBlocked()) {
+                    return true;
+                }
+            }
+            return false;
+        }).collect(Collectors.toList());
+        return filteredSpots;
     }
 }

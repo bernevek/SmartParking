@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 public class ClientDetailResponse {
 
     private Long id;
+    private Boolean activated;
     private Long providersId;
     private String firstName;
     private String lastName;
@@ -19,16 +20,15 @@ public class ClientDetailResponse {
     private String providerName;
     private String role;
     private String image;
-    private List<Long> favoritesId;
-    private List<String> favoritesNames;
 
     public static ClientDetailResponse of(Client client) {
         ClientDetailResponse response = new ClientDetailResponse();
         response.setId(client.getId());
+        response.setActivated(client.getActivated());
 
         if (client.getProvider() == null) {
-            response.setProvidersId(0L);
-            response.setProviderName("no provider");
+            response.setProvidersId(null);
+            response.setProviderName(null);
         } else {
             response.setProvidersId(client.getProvider().getId());
             response.setProviderName(client.getProvider().getName());
@@ -39,16 +39,9 @@ public class ClientDetailResponse {
         response.setEmail(client.getEmail());
         response.setRole(client.getRole().toString());
 
-        response.setFavoritesId(client.getFavorites()
-                .stream().map(Favorite::getId)
-                .collect(Collectors.toList()));
-        response.setFavoritesNames(client.getFavorites()
-                .stream().map(Favorite::getName)
-                .collect(Collectors.toList()));
         if (client.getImage() != null) {
             response.setImage(Base64.getEncoder().encodeToString(client.getImage()));
         }
-
         return response;
     }
 }
