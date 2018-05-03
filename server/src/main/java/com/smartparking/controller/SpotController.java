@@ -51,19 +51,17 @@ public class SpotController {
         List<Spot> allSpots = spotService.findAllSpotsByParkingId(id);
         List<Spot> freeSpots = spotService.findAllAvailableSpotsByParkingId(id);
         List<SpotStatusResponse> spotStatusResponseList = new ArrayList<>();
-        allSpots.forEach(spot -> {
-            SpotStatusResponse spotStatusResponse = new SpotStatusResponse();
-            spotStatusResponse.setId(spot.getSpotNumber());
-            spotStatusResponse.setIsFree(freeSpots.contains(spot));
-            spotStatusResponse.setHasCharger(spot.getHasCharger());
-            spotStatusResponse.setIsInvalid(spot.getIsInvalid());
-            spotStatusResponse.setSpotNumber(spot.getSpotNumber());
-            if (spot.getIsBlocked()) {
-                return;
-            }
-            spotStatusResponseList.add(spotStatusResponse);
-        });
-        spotStatusResponseList.sort(Comparator.comparing(SpotStatusResponse::getSpotNumber));
+        allSpots.stream().filter(spot -> !spot.getIsBlocked())
+                .sorted(Comparator.comparing(Spot::getSpotNumber))
+                .forEach(spot -> {
+                    SpotStatusResponse spotStatusResponse = new SpotStatusResponse();
+                    spotStatusResponse.setId(spot.getSpotNumber());
+                    spotStatusResponse.setIsFree(freeSpots.contains(spot));
+                    spotStatusResponse.setHasCharger(spot.getHasCharger());
+                    spotStatusResponse.setIsInvalid(spot.getIsInvalid());
+                    spotStatusResponse.setSpotNumber(spot.getSpotNumber());
+                    spotStatusResponseList.add(spotStatusResponse);
+                });
         return spotStatusResponseList;
     }
 
@@ -71,19 +69,17 @@ public class SpotController {
     List<SpotStatusResponse> findAvailableSpotsDto(@PathVariable Long id) {
         List<Spot> freeSpots = spotService.findAllAvailableSpotsByParkingId(id);
         List<SpotStatusResponse> spotStatusResponseList = new ArrayList<>();
-        freeSpots.forEach(spot -> {
-            SpotStatusResponse spotStatusResponse = new SpotStatusResponse();
-            spotStatusResponse.setId(spot.getSpotNumber());
-            spotStatusResponse.setIsFree(true);
-            spotStatusResponse.setHasCharger(spot.getHasCharger());
-            spotStatusResponse.setIsInvalid(spot.getIsInvalid());
-            spotStatusResponse.setSpotNumber(spot.getSpotNumber());
-            if (spot.getIsBlocked()) {
-                return;
-            }
-            spotStatusResponseList.add(spotStatusResponse);
-        });
-        spotStatusResponseList.sort(Comparator.comparing(SpotStatusResponse::getSpotNumber));
+        freeSpots.stream().filter(spot -> !spot.getIsBlocked())
+                .sorted(Comparator.comparing(Spot::getSpotNumber))
+                .forEach(spot -> {
+                    SpotStatusResponse spotStatusResponse = new SpotStatusResponse();
+                    spotStatusResponse.setId(spot.getSpotNumber());
+                    spotStatusResponse.setIsFree(true);
+                    spotStatusResponse.setHasCharger(spot.getHasCharger());
+                    spotStatusResponse.setIsInvalid(spot.getIsInvalid());
+                    spotStatusResponse.setSpotNumber(spot.getSpotNumber());
+                    spotStatusResponseList.add(spotStatusResponse);
+                });
         return spotStatusResponseList;
     }
 
@@ -110,7 +106,8 @@ public class SpotController {
     }
 
     @PostMapping("/manager-configuration/spot/delete")
-    @PreAuthorize("hasAuthority('SUPERUSER') or @spotController.getCurrentUser().getProvider().getParkings().contains(#spotRequest.toSpot().parking)")
+    @PreAuthorize("hasAuthority('SUPERUSER')" +
+            " or @spotController.getCurrentUser().getProvider().getParkings().contains(#spotRequest.toSpot().parking)")
     public ResponseEntity<?> delete(@P("spotRequest") @RequestBody SpotRequest spotRequest) {
         Spot spot = spotRequest.toSpot();
         spotService.delete(spot);
@@ -119,7 +116,8 @@ public class SpotController {
     }
 
     @GetMapping("/manager-configuration/spotsforparking/{parkingId}")
-    @PreAuthorize("hasAuthority('SUPERUSER') or @spotController.getCurrentUser().getProvider().getParkings().contains(@parkingServiceImpl.findById(#parkingId).get())")
+    @PreAuthorize("hasAuthority('SUPERUSER')" +
+            " or @spotController.getCurrentUser().getProvider().getParkings().contains(@parkingServiceImpl.findById(#parkingId).get())")
     public ResponseEntity<List<SpotStatusResponse>> spots(@P("parkingId") @PathVariable Long parkingId) {
         return new ResponseEntity<>(spotService.findAllSpotsByParkingIdResponse(parkingId), HttpStatus.OK);
     }
@@ -142,7 +140,7 @@ public class SpotController {
 
     private ResponseEntity<?> editSpot(Spot spot) {
         if (spotService.findFirstBySpotNumberAndParking(spot.getSpotNumber(), spot.getParking()) == null ||
-                spotService.findFirstBySpotNumberAndParking(spot.getSpotNumber(), spot.getParking()).getId() == spot.getId()) {
+                spotService.findFirstBySpotNumberAndParking(spot.getSpotNumber(), spot.getParking()).getId().equals(spot.getId())) {
             spotService.save(spot);
             spotEventPublisher.publishSave(spot, spot.getId());
             return new ResponseEntity<>(HttpStatus.OK);
